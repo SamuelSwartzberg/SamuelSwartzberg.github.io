@@ -32,7 +32,7 @@ select { text-rendering: auto; color: inherit; letter-spacing: normal; word-spac
 /* Styling general html elements */
 
 a{ color: inherit; font-weight:bold; text-decoration: none;}
-code{font-family: Inconsolata, monospace;}
+code{font-family: Inconsolata, monospace; font-size: 2rem;}
 pre code { white-space: pre-wrap;}
 
 /*Utility classes*/
@@ -48,13 +48,14 @@ pre code { white-space: pre-wrap;}
 body{ font-family: Inter, Helvetica, Arial, sans-serif; font-size: 2.7rem; --big-font-size: 6rem; --small-font-size: 2rem;}
 
 /*colors*/
-body.default-theme{
+body{
 	--main-font-color: #000;
 	--main-bg-color: #fff;
 	--emphasize-font-color: #b02;
 	--deemphasize-font-color: rgba(0,0,0,0.6);
 	color: var(--main-font-color);
 }
+
 section#translation, a.quicklink[href="#translation"]{
 	--theme-main: #29b6f6;
 	--theme-variant-dark: #0086c3;
@@ -160,8 +161,6 @@ width: 1.8rem;
 	padding: 0 2.5rem;
 }
 .mockup-body > div{
-	flex: 1 0 2rem;
-	height: 0;
 	padding: 2rem 0;
 }
 .mockup-footer{
@@ -200,7 +199,7 @@ a.quicklink .invertable{transition: fill 0.3s ease}
 a.quicklink:hover {    transform: translateY(-0.5rem);}
 a.quicklink:hover .invertable{fill:var(--theme-main) !important;}
 a.quicklink:focus{}
-a.quicklink:active{}
+a.quicklink:active{ /* TODO: invert */}
 a.quicklink > div {
 	padding: 10%;
 	height: 100%;
@@ -225,11 +224,16 @@ a.quicklink > div > div:first-of-type{
 	color: var(--theme-variant-dark);
 }
 
+#translation .mockup-body{
+	font-family: Nunito;
+	line-height: 1.2em;
+	font-size: 2.2rem;
+}
+
 #translation .mockup-body > div:first-of-type{
 	color: rgba(0,0,0,0.6);
 }
 #translation .mockup-body > div > div{
-	overflow: scroll;
 	height: 100%;
 }
 #translation .mockup-header-inner .language-selector-container{
@@ -262,7 +266,37 @@ a.quicklink > div > div:first-of-type{
 	padding-top: 1rem; padding-bottom: 1rem;
 }
 #code .mockup-body .js-code, #code .mockup-body .html-code{display: none;}
+#code .html-code input{
+	display: inline-block;
+background-color: rgba(255, 255, 255, 0.08);
+margin: 0 0.3rem;
+padding: 0.3rem 0.6rem;
+border-radius: 0.5rem;
+border: none;
+font: inherit;
+color: inherit;
+resize: none;
+line-height: 1rem;
+width: 14ch;
+animation: pulseBG 3s linear infinite;
+}
+@keyframes pulseBG {
+	0%, 100%{
+		background-color: rgba(255, 255, 255, 0.11);
+	}
+	50%{
+		background-color: rgba(255, 255, 255, 0.05);
+	}
+}
+#code .html-code input:focus{
+	outline: none;
+	border: 0.1rem solid #aaa;
+	animation: none;
+}
 
+#code .html-code input:focus:before{
+	display: none;
+}
 #code .language-selector-container::after{
 	background-image: url('triangle-white.svg');
 }
@@ -309,6 +343,76 @@ a.quicklink > div > div:first-of-type{
     margin-top: -1rem;
     margin-left: -0.9rem;
 }
+
+/* Dark theme*/
+body.dark-theme{
+	background-color: #000;
+	color: #fff;
+}
+.dark-theme .mockup-border, .dark-theme #code .mockup-border, .dark-theme .quicklink{
+	background-color: #333;
+	color: #fff;
+}
+
 /* Learning */
 
+#learning .mockup-border{
+	position: relative;
+}
+
+.clickable-l-r{
+	position: absolute;
+	height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.clickable-l-r > div {
+	height: 100%;
+    width: 50%;
+}
+
+.clickable-l{
+
+}
+
+.clickable-r{
+
+}
+
+.image-container{
+    height: 100%;
+    background-color: red;
+}
+
+.image-container img{
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.image-container img.active{
+	display: block;
+}
+
+.image-bubbles{
+  position: absolute;
+	width: 100%;
+	height: 10vw;
+	display: flex;
+	bottom:1rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.img-bubble{
+	display: inline-block;
+	height: 3vw;
+	width: 3vw;
+	margin: 3.5vw 1.2rem;
+	background-color: rgba(255,255,255,0.4);
+	border-radius: 1.5vw;
+}
+.img-bubble.active{
+	background-color: #fff;
+}
 /* More */

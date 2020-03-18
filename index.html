@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="atelier-cave-dark.css">
 </head>
-<body class="default-theme">
+<body>
   <script src="highlight.pack.js"></script>
   <div class="main-container">
     <section id="intro">
       <div class="text-section-container">
-        <h1>Hi, I'm Sam.</h1>
+        <h1>Hi<span class="insert-name"></span>, I'm Sam.</h1>
         <h2>I do things with language. Message me at <a href="mailto:">me@samswartzberg.com</a> or scroll to see more...</h2>
       </div>
       <div class="rest-intro center-content-horizontally">
@@ -140,7 +140,7 @@ themeChanger.onclick=function(e, i){
 <pre><code>&lt;div class=&quot;main-container&quot;&gt;
 &lt;section id=&quot;intro&quot;&gt;
 &lt;div class=&quot;text-section-container&quot;&gt;
-&lt;h1&gt;Hi, I&#39;m Sam.&lt;/h1&gt;
+&lt;h1&gt;Hi<input id="name-input" type="text">, I&#39;m Sam.&lt;/h1&gt;
 &lt;h2&gt;I do things with language. Message me at &lt;a href=&quot;mailto:&quot;&gt;me@samswartzberg.com&lt;/a&gt; or scroll to see more...&lt;/h2&gt;
 &lt;/div&gt;
 &lt;div class=&quot;rest-intro center-content-horizontally&quot;&gt;
@@ -150,7 +150,6 @@ themeChanger.onclick=function(e, i){
           </div>
         </div>
       </section>
-      <script>hljs.initHighlightingOnLoad();</script>
       <section id="learning" class="with-mockup">
         <div class="text-section-container">
           <h1>(Language) Learning.</h1>
@@ -158,7 +157,20 @@ themeChanger.onclick=function(e, i){
         </div>
         <div class="mockup-container">
           <div class="mockup-border">
+            <div class="clickable-l-r">
+              <div class="clickable-l">
 
+              </div>
+              <div class="clickable-r">
+
+              </div>
+            </div>
+            <div class="image-container">
+              <img class="active" src="testimg1.jpg">
+              <img src="testimg2.jpg">
+              <img src="testimg3.jpg">
+            </div>
+            <div class="image-bubbles"></div>
           </div>
         </div>
       </section>
