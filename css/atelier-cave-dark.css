@@ -18,7 +18,7 @@
 .hljs-name,
 .hljs-selector-id,
 .hljs-selector-class {
-  color: #ff3589;
+  color: var(--fab-color);
 }
 
 /* Atelier-Cave Orange */

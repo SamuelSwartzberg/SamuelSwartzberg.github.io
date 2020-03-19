@@ -122,7 +122,7 @@ section{ padding: var(--generic-spacer) var(--mockup-side-padding);}
 	display: block;
   content: ' ';
 	margin-top: 0.2rem;
-  background-image: url('triangle.svg');
+  background-image: url('../svg/triangle.svg');
 	--triangle-size: 1.8rem;
   background-size: var(--triangle-size) var(--triangle-size);
   height: var(--triangle-size);
@@ -233,7 +233,7 @@ height: 7rem;
 }
 
 #code .language-selector-container::after{
-	background-image: url('triangle-white.svg');
+	background-image: url('../svg/triangle-white.svg');
 }
 
 .clickme-bubble-container{
@@ -336,6 +336,6 @@ height: 7rem;
   padding: calc(0.28 * var(--fab-size));
 }
 
-/* @font-face { font-family: 'Inter'; src: local('Inter'), url('Inter.ttf') format('truetype'); unicode-range: U+000-5FF; }
-@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF;  }
-@font-face { font-family: 'Nunito'; src: local('Nunito'), url('Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  } */
+/* @font-face { font-family: 'Inter'; src: local('Inter'), url('../fonts/Inter.ttf') format('truetype'); unicode-range: U+000-5FF; }
+@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF;  }
+@font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  } */
