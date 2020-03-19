@@ -175,7 +175,7 @@ a.quicklink > div > div:first-of-type{
 border-bottom: 0.4rem solid #ddd;
 margin-bottom: 2rem;
 }
-#translation .mockup-body, #translation .mockup-body, *{
+#translation .mockup-body, #translation .mockup-body *{
 	overflow: hidden;
 }
 
@@ -309,6 +309,6 @@ margin-bottom: 2rem;
   padding: calc(0.28 * var(--fab-size));
 }
 
-@font-face { font-family: 'Inter'; src: local('Inter'), url('/Inter.ttf') format('truetype'); unicode-range: U+000-5FF; /* Latin glyphs */ }
-@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF; /* Latin glyphs */ }
-@font-face { font-family: 'Nunito'; src: local('Nunito'), url('/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF; /* Latin glyphs */ }
+/* @font-face { font-family: 'Inter'; src: local('Inter'), url('Inter.ttf') format('truetype'); unicode-range: U+000-5FF; }
+@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF;  }
+@font-face { font-family: 'Nunito'; src: local('Nunito'), url('Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  } */
