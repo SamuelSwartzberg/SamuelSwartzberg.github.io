@@ -37,7 +37,7 @@ pre code { white-space: pre-wrap;}
 
 body{font-family: Inter, Helvetica, Arial, sans-serif;}
 code{font-family: Inconsolata, monospace;}
-.app .mockup-body{font-family: Nunito;}
+.app .mockup-body, #contact .mockup-border{font-family: Nunito;}
 
 body{font-size: 2.7rem; --big-font-size: 6rem; --small-font-size: 2.2rem;
 	--text-line-height: 1.2em; --close-line-height: 1em;
@@ -177,6 +177,33 @@ margin-bottom: 2rem;
 }
 #translation .mockup-body, #translation .mockup-body *{
 	overflow: hidden;
+}
+
+#translation .mockup-header,#translation  .language-selector-container{
+	padding: 1.5rem 0;
+}
+#translation .mockup-header{
+	display: flex;
+	justify-content: space-between;
+}
+.topic-switcher{
+	background-color: #6200ee;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 4rem;
+height: 7rem;
+    width: 7rem;
+}
+@keyframes pulseTopicSwitcher {
+	0%, 100%{background-color: #6200ee;}
+	50%{background-color: #fff}
+}
+
+.topic-switcher svg{
+	fill: white;
+  padding: 1rem;
 }
 
 
