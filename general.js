@@ -1,9 +1,16 @@
 document.querySelector(".code-selector").onchange = function (e,i) {
     document.querySelectorAll("#code .mockup-body > div").forEach((item, i) => {
-        item.style.display="none";
+        item.classList.remove("active");
     });
-    document.querySelector("#code .mockup-body ."+e.target.value).style.display="block";
+    document.querySelector("#code .mockup-body ."+e.target.value).classList.add("active");
 };
+document.querySelector("#tl-lang-selector").onchange = function (e,i) {
+    document.querySelectorAll("#translation .mockup-body > div").forEach((item, i) => {
+        item.classList.remove("active");
+    });
+    document.querySelector("#translation .mockup-body ."+e.target.value).classList.add("active");
+};
+
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
@@ -14,7 +21,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       alert("Due to security concerns, you may not enter special characters.\nPlease try again.");
       e.target.value = "";
     } else{
-      document.querySelector("#intro h1 .insert-name").innerText=" "+e.target.value;
+      document.querySelectorAll(".insert-name").forEach((item, i) => {
+        item.innerText=" "+e.target.value;
+      });
     }
     console.log(e.target.value);
   };

@@ -9,11 +9,12 @@
 </head>
 <body>
   <script src="highlight.pack.js"></script>
+  <div id="contact-fab"><a class="center-content-both" href="mailto:me@samswartzberg.com"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></a></div>
   <div class="main-container">
     <section id="intro">
       <div class="text-section-container">
         <h1>Hi<span class="insert-name"></span>, I'm Sam.</h1>
-        <h2>I do things with language. Message me at <a href="mailto:">me@samswartzberg.com</a> or scroll to see more...</h2>
+        <h2>I do things with language. Message me at <a href="mailto:me@samswartzberg.com">me@samswartzberg.com</a> or scroll to see more...</h2>
       </div>
       <div class="rest-intro center-content-horizontally">
         <div class="quicklink-container">
@@ -33,14 +34,14 @@
           </div></a>
           <a href="#contact" class="quicklink">
             <div>
-              <div>Questions & Further Projects.</div>
+              <div>Contact.</div>
               <svg width="100%" height="100%" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;"> <g transform="matrix(0.64,0,0,0.64,0,0)"> <g transform="matrix(1.08305,0,0,1.03153,-7.51294,-3.62614)"> <path class="invertable" d="M276.152,40.569C276.152,24.002 263.342,10.552 247.563,10.552L41.146,10.552C25.368,10.552 12.558,24.002 12.558,40.569L12.558,191.655C12.558,208.222 25.368,221.672 41.146,221.672L65.025,221.672L65.277,286.453L138.274,221.672L247.563,221.672C263.342,221.672 276.152,208.222 276.152,191.655L276.152,40.569Z" style="fill:white;"/> </g> <g transform="matrix(1.05351,0,0,1.00931,-1.90501,0.573164)"> <path d="M276.152,40.569C276.152,24.002 263.267,10.552 247.395,10.552L41.315,10.552C25.443,10.552 12.558,24.002 12.558,40.569L12.558,191.655C12.558,208.222 25.443,221.672 41.315,221.672L65.959,221.672L65.956,286.453L137.765,221.672L247.395,221.672C263.267,221.672 276.152,208.222 276.152,191.655L276.152,40.569Z" style="fill:none;stroke:black;stroke-width:18.17px;"/> </g> </g> </svg>
             </div>
           </a>
         </div>
       </div>
     </section>
-    <section id="translation" class="with-mockup">
+    <section id="translation" class="with-mockup app">
       <div class="text-section-container">
         <h1>Translation.</h1>
         <h2>The hand-crafted translation you need.</h2>
@@ -48,32 +49,24 @@
       <div class="mockup-container">
         <div class="mockup-border">
           <div class="mockup-header">
-            <div class="mockup-header-inner">
               <div class="language-selector-container center-content-horizontally">
-                <select class="" name="left-lang-selector">
-                  <option value="" selected>English</option>
-                  <option value="">German</option>
+                <select class="" id="tl-lang-selector">
+                  <option value="lang-en" selected>English</option>
+                  <option value="lang-de" >German</option>
+                  <option value="lang-ja" disabled>🇯🇵: soon</option>
+                  <option value="lang-es" disabled>🇪🇸: soon</option>
                 </select>
               </div>
-              <div class="switch-bubble-container center-content-horizontally">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve"><g><g><polygon points="316,354 154,354 154,407.5 39.8,333.9 154,258.3 154,316 316,316   "/><g><path d="M316.4,343.9c-47.3,0-94.7,0-142,0c-6.8,0-13.6,0-20.3,0c-5.4,0-10,4.6-10,10c0,17.9,0,35.7,0,53.6   c5-2.9,10-5.8,15-8.6c-33.3-21.5-66.7-42.9-100-64.4c-4.7-3.1-9.5-6.1-14.2-9.2c0,5.8,0,11.5,0,17.3   c33.4-22.1,66.8-44.3,100.3-66.4c4.7-3.1,9.3-6.2,14-9.2c-5-2.9-10-5.8-15-8.6c0,19.3,0,38.5,0,57.8c0,5.4,4.6,10,10,10   c47.3,0,94.7,0,142,0c6.8,0,13.6,0,20.3,0c-3.3-3.3-6.7-6.7-10-10c0,12.6,0,25.2,0,37.8c0,12.9,20,12.9,20,0   c0-12.6,0-25.2,0-37.8c0-5.4-4.6-10-10-10c-47.3,0-94.7,0-142,0c-6.8,0-13.6,0-20.3,0c3.3,3.3,6.7,6.7,10,10   c0-19.3,0-38.5,0-57.8c0-7.3-8.6-12.9-15-8.6c-33.4,22.1-66.8,44.3-100.3,66.4c-4.7,3.1-9.3,6.2-14,9.2c-6.4,4.2-6.5,13.1,0,17.3   c33.3,21.5,66.7,42.9,100,64.4c4.7,3.1,9.5,6.1,14.2,9.2c6.5,4.2,15-1.3,15-8.6c0-17.9,0-35.7,0-53.6c-3.3,3.3-6.7,6.7-10,10   c47.3,0,94.7,0,142,0c6.8,0,13.6,0,20.3,0C329.3,363.9,329.3,343.9,316.4,343.9z"/></g></g><g><polygon points="184,188 346,188 346,241.7 460.2,168.2 346,92.5 346,150 184,150   "/><g><path d="M183.6,198.1c47.3,0,94.7,0,142,0c6.8,0,13.6,0,20.3,0c-3.3-3.3-6.7-6.7-10-10c0,17.9,0,35.7,0,53.6   c0,7.3,8.6,12.8,15,8.6c33.3-21.5,66.7-42.9,100-64.4c4.7-3.1,9.5-6.1,14.2-9.2c6.5-4.2,6.4-13.1,0-17.3   c-33.4-22.1-66.8-44.3-100.3-66.4c-4.7-3.1-9.3-6.2-14-9.2c-6.4-4.3-15,1.4-15,8.6c0,19.3,0,38.5,0,57.8c3.3-3.3,6.7-6.7,10-10   c-47.3,0-94.7,0-142,0c-6.8,0-13.6,0-20.3,0c-5.4,0-10,4.6-10,10c0,12.6,0,25.2,0,37.8c0,12.9,20,12.9,20,0c0-12.6,0-25.2,0-37.8   c-3.3,3.3-6.7,6.7-10,10c47.3,0,94.7,0,142,0c6.8,0,13.6,0,20.3,0c5.4,0,10-4.6,10-10c0-19.3,0-38.5,0-57.8c-5,2.9-10,5.8-15,8.6   c33.4,22.1,66.8,44.3,100.3,66.4c4.7,3.1,9.3,6.2,14,9.2c0-5.8,0-11.5,0-17.3c-33.3,21.5-66.7,42.9-100,64.4   c-4.7,3.1-9.5,6.1-14.2,9.2c5,2.9,10,5.8,15,8.6c0-17.9,0-35.7,0-53.6c0-5.4-4.6-10-10-10c-47.3,0-94.7,0-142,0   c-6.8,0-13.6,0-20.3,0C170.7,178.1,170.7,198.1,183.6,198.1z"/></g></g></g></svg>
-              </div>
-              <div class="language-selector-container center-content-horizontally">
-                <select class="" name="right-lang-selector">
-                  <option value="" >English</option>
-                  <option value="" selected>German</option>
-                  <option value="" disabled>日本語 - coming soon?</option>
-                  <option value="" disabled>Español - coming soon?</option>
-                </select>
-              </div>
-            </div>
           </div>
           <div class="mockup-body">
-            <div class="">
-              <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a ex facilisis, iaculis metus eu, tristique justo. Nam dignissim, mauris non tempus semper, dolor ante lacinia felis, sed luctus mi leo non lacus. Sed ut eros risus.</div>
+            <div class="lang-en active">
+              <div><p>Superior quality without compromises. To meet and surpass your expectations for a belt, one that earns and not merely receives the label 'premium', each and every belt and buckle are hand-crafted from superior materials.
+</p><p>The unique JET BELT® System is based on the Safety-Belt Technology, the very same that keeps you safe and comfortable on every flight. Open and close the belt within milliseconds.
+</p><p>We value sustainability. Many years down the line, the JET BELT® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s seamlessly adjustable length to account for the changes – and to thus fit your needs exactly.
+</p></div>
             </div>
-            <div class="">
-              <div>In eu pulvinar lectus, ac faucibus leo. Nam sed dolor blandit, efficitur nulla sit amet, aliquam mi. Nullam luctus quis ipsum ac ultricies. Duis a risus consectetur lacus consequat blandit. Nulla ut condimentum diam.</div>
+            <div class="lang-de">
+              <div>In eu pulvinar lectus, ac faucibus leo. Nam sed dolor blandit, efficitur nulla sit amet, aliquam mi. Nullam luctus quis ipsum ac ultricies. Duis a risus consectetur lacus consequat blandit. Nulla ut condimentum diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a ex facilisis, iaculis metus eu, tristique justo. Nam dignissim, mauris non tempus semper, dolor ante lacinia felis, sed luctus mi leo non lacus. Sed ut eros risus.</div>
             </div>
           </div>
 
@@ -88,7 +81,6 @@
       <div class="mockup-container">
         <div class="mockup-border">
           <div class="mockup-header">
-            <div class="mockup-header-inner">
               <div class="language-selector-container center-content-horizontally">
                 <select class="code-selector" name="">
                   <option value="css-code" selected>CSS</option>
@@ -96,10 +88,9 @@
                   <option value="html-code">HTML</option>
                 </select>
               </div>
-            </div>
           </div>
           <div class="mockup-body">
-            <div class="css-code">
+            <div class="css-code active">
 <pre><code>.quicklink-container{
   display: flex;
   flex-wrap: wrap;
@@ -156,7 +147,7 @@ themeChanger.onclick=function(e, i){
           <h2>Learn something. And never forget it.</h2>
         </div>
         <div class="mockup-container">
-          <div class="mockup-border">
+          <div class="mockup-border ">
             <div class="clickable-l-r">
               <div class="clickable-l">
 
@@ -177,9 +168,23 @@ themeChanger.onclick=function(e, i){
       <section id="contact">
         <div class="text-section-container">
           <h1>Interested? Anything else?</h1>
-          <h2>Hit me up via email!</h2>
+          <h2>Got a project? Want to talk shop or just say hi? Just message me!</h2>
         </div>
-        <div>
+        <div class="mockup-container app">
+          <div class="mockup-border">
+            <div class="mockup-header">
+              <div class="header-line"><div><span class="name-desc">From:</span><span class="insert-name"></span></div></div>
+              <div class="header-line"><div><span class="name-desc">To:</span><span> me@samswartzberg.com</span></div></div>
+              <div class="header-line subject"><div><span class="name-desc">Subject: </span><span class="subject-bar dummy-line">&nbsp;</span></div></div>
+            </div>
+            <div class="message-body"><div>
+              <span class="dummy-line">&nbsp;</span>
+              <span class="dummy-line">&nbsp;</span>
+              <span class="dummy-line">&nbsp;</span>
+              <span class="dummy-line">&nbsp;</span>
+              <span class="dummy-line">&nbsp;</span>
+            </div></div>
+          </div>
         </div>
       </section>
     </div>
