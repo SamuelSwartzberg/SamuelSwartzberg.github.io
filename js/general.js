@@ -1,14 +1,35 @@
+var fitSelect = function (e) {
+  console.log(window.getComputedStyle(e.target.children[e.target.selectedIndex]).width);
+  var tempMeasureNode = document.createElement("div");
+  var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
+  tempMeasureNode.appendChild(tempText);
+  var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
+  var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
+  newAttachedNode.remove();
+  e.target.style.width = textWidth;
+}
 document.querySelector(".code-selector").onchange = function (e,i) {
     document.querySelectorAll("#code .mockup-body > div").forEach((item, i) => {
         item.classList.remove("active");
     });
     document.querySelector("#code .mockup-body ."+e.target.value).classList.add("active");
+    fitSelect(e);
 };
-document.querySelector("#tl-lang-selector").onchange = function (e,i) {
-    document.querySelectorAll("#translation .mockup-body > div").forEach((item, i) => {
+document.querySelector("#tl-topic-selector").onchange = function (e,i) {
+    document.querySelectorAll("#translation .mockup-body .topic").forEach((item, i) => {
         item.classList.remove("active");
     });
     document.querySelector("#translation .mockup-body ."+e.target.value).classList.add("active");
+    fitSelect(e);
+};
+document.querySelector("#tl-lang-selector").onchange = function (e,i) {
+    document.querySelectorAll("#translation .mockup-body .lang").forEach((item, i) => {
+        item.classList.remove("active");
+    });
+    document.querySelectorAll("#translation .mockup-body ."+e.target.value).forEach((item, i) => {
+      item.classList.add("active");
+    });
+    fitSelect(e);
 };
 document.querySelector(".dance-selector").onchange = function (e,i) {
     document.querySelectorAll("section .mockup-border").forEach((item, i) => {
@@ -20,10 +41,17 @@ document.querySelector(".dance-selector").onchange = function (e,i) {
     elm.parentNode.replaceChild(newone, elm);
     document.querySelector(e.target.value +" .mockup-border").classList.add("dance");
     document.querySelector(e.target.value +" .mockup-border").onanimationend = (e) => {
-
-      e.target.classList.remove("dance");
+      console.log(e);
+      if(e.animationName==="color-change"&&e.elapsedTime===1.5){
+        e.target.classList.remove("dance");
+      }
     };
+    fitSelect(e);
 };
+
+document.querySelectorAll('select').forEach((item, i) => {
+  fitSelect({target:item});
+});
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
