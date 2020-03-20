@@ -46,10 +46,9 @@ document.querySelector(".dance-selector").onchange = function (e,i) {
         e.target.classList.remove("dance");
       }
     };
-    fitSelect(e);
 };
 
-document.querySelectorAll('select').forEach((item, i) => {
+document.querySelectorAll('select:not(.dance-selector)').forEach((item, i) => {
   fitSelect({target:item});
 });
 

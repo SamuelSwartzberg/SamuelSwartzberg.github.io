@@ -11,7 +11,7 @@ ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 table { border-collapse: collapse; border-spacing: 0; }
-select { text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; }
+select { -webkit-appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; }
 *:focus{	outline: none;}
 input[type=text]{ border: none; font: inherit; color: inherit; resize: none; line-height: 1rem; }
 
@@ -54,7 +54,8 @@ h2{	line-height: var(--text-line-height);font-weight: var(--slightly-bold-font-w
 body{--z-higher: 1; --z-top: 2;}
 
 body{--page-side-padding: 7.5vw; --mockup-side-padding: 7.5vw;
-	--generic-spacer: 5rem; --small-spacer: 2.5rem;}
+	--generic-spacer: 5rem; --small-spacer: 2.5rem;
+	--fab-size: 12vw;}
 
 body{
 	--transparent-white: rgba(255,255,255,0.6);
@@ -72,7 +73,7 @@ body{
 	--code-deemphasize-color: var(--transparent-white);
 	--theme-color-a: var(--main-font-color);
 	--theme-color-b: var(--main-font-color);
-	--fab-color:  rgba(255, 0, 110, 1);
+	--fab-color:  #fff;
 	--theme-changer-bg: var(--fab-color);
 	--theme-changer-color: #fff;
 	--dance-hsla-l: 50;}
@@ -169,7 +170,7 @@ section:first-of-type > .text-section-container{
 	display: block;
 	box-shadow: var(--main-box-shadow);
 	flex: 1 0 40%;
-	margin: 3%;
+	margin: calc(var(--mockup-side-padding) - (var(--fab-size) / 2));
 	border-radius: var(--medium-border-radius);
 	background-color: var(--card-bg-color);
 	overflow: hidden;
@@ -235,6 +236,9 @@ a.quicklink > div > div:first-of-type{
 }
 
 /* Code */
+#code .mockup-container{
+	height: 50rem;
+}
 
 #code .mockup-border{
 	background: var(--code-bg-color);
@@ -261,7 +265,7 @@ a.quicklink > div > div:first-of-type{
 	animation: none;
 }
 
-#code .language-selector-container::after{
+#code .language-selector-container::after, .dark-theme .language-selector-container::after{
 	background-image: url('../svg/triangle-white.svg');
 }
 
@@ -283,7 +287,7 @@ a.quicklink > div > div:first-of-type{
 	height: var(--generic-spacer);
 }
 .theme-changer svg{
-	fill: var(--main-bg-color);
+	fill: #000;
 }
 .theme-changer svg > g > g:nth-child(2) path{
 	fill: var(--theme-changer-bg) !important;
@@ -306,15 +310,22 @@ a.quicklink > div > div:first-of-type{
 }
 
 #code article{
-	border-bottom: 0.4rem solid var(--slightly-white);
+	border-bottom: none;
+	margin-bottom:  0;
+	padding-bottom: 0;
+}
+
+#code article:not(:first-of-type) pre code{
+	color: transparent;
+	background-color: var(--slightly-white);
 }
 
 /* Learning */
 
 #learning .mockup-container{
-	 height: 50rem;
+	 height: 60rem;
 }
-#learning .mockup-border{ position: relative; padding: 0;} .clickable-l-r{ position: absolute; display: flex; }
+#learning .mockup-border{ position: relative; padding: 0; background-color: #fff !important;} .clickable-l-r{ position: absolute; display: flex; }
 .clickable-l-r > div { width: 50%; }
 
 .image-container {
@@ -363,7 +374,6 @@ a.quicklink > div > div:first-of-type{
 /*FAB*/
 
 #contact-fab{
-	--fab-size: 14vw;
 	width: var(--fab-size); height: var(--fab-size);
 	border-radius: calc(0.5 * var(--fab-size));
 	position: fixed;
@@ -375,7 +385,7 @@ a.quicklink > div > div:first-of-type{
 }
 #contact-fab a{ width: inherit; height: inherit; }
 #contact-fab svg{
-	fill: var(--main-bg-color);
+	fill: #000;
 	width: 200px;
   height: 200px;
   padding: calc(0.28 * var(--fab-size));
