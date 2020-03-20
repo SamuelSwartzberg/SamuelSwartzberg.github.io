@@ -67,10 +67,10 @@
           </div>
           <div class="mockup-body">
             <div class="lang-en active">
-              <div><p>Superior quality without compromises. To meet and surpass your expectations for a belt, one that earns and not merely receives the label 'premium', each and every belt and buckle are hand-crafted from superior materials.
-</p><p>The unique JET BELT® System is based on the Safety-Belt Technology, the very same that keeps you safe and comfortable on every flight. Open and close the belt within milliseconds.
-</p><p>We value sustainability. Many years down the line, the JET BELT® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s seamlessly adjustable length to account for the changes – and to thus fit your needs exactly.
-</p></div>
+              <div><article>Superior quality without compromises. To meet and surpass your expectations for a belt, one that earns and not merely receives the label 'premium', each and every belt and buckle are hand-crafted from superior materials.
+</article><article>The unique JET BELT® System is based on the Safety-Belt Technology, the very same that keeps you safe and comfortable on every flight. Open and close the belt within milliseconds.
+</article><article>We value sustainability. Many years down the line, the JET BELT® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s seamlessly adjustable length to account for the changes – and to thus fit your needs exactly.
+</article></div>
             </div>
             <div class="lang-de">
               <div>In eu pulvinar lectus, ac faucibus leo. Nam sed dolor blandit, efficitur nulla sit amet, aliquam mi. Nullam luctus quis ipsum ac ultricies. Duis a risus consectetur lacus consequat blandit. Nulla ut condimentum diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a ex facilisis, iaculis metus eu, tristique justo. Nam dignissim, mauris non tempus semper, dolor ante lacinia felis, sed luctus mi leo non lacus. Sed ut eros risus.</div>
@@ -98,18 +98,32 @@
           </div>
           <div class="mockup-body">
             <div class="css-code active">
-<pre><code>.quicklink-container{
-  display: flex;
-  flex-wrap: wrap;
-}
-.quicklink{
-  display: block;
-  box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
-  flex: 1 0 40%;
-  margin: 3%;
-  border-radius: 1rem;
-  overflow: hidden;
-}</code></pre>
+<article><code><select class="dance-selector" name="">
+  <option value="" selected>Select...</option>
+  <option value="#translation">#translation</option>
+  <option value="#code">#code</option>
+  <option value="#contact">#contact</option>
+</select></code><pre><code>.mockup-border{
+  animation: dance 3s linear,
+  color-change 3s linear,
+  color-change 1.5s linear 3s;
+}</code></pre></article>
+<article><pre><code>@keyframes dance {
+	6.25%, 18.75%{
+    transform: translateX(-8vw)
+    translateY(0);
+</code></pre></article>
+<article><pre><code>@keyframes color-change{
+	6.25%{
+    --hue: 0;
+    background-color:
+    hsla(var(--hue),100%,50%,1);
+</code></pre></article>
+<article><pre><code>.language-selector-container{
+	display: flex;
+	flex-direction: row;
+  align-items: center;
+</code></pre></article>
             </div>
             <div class="js-code">
 <pre><code>

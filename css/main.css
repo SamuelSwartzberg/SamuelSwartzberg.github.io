@@ -18,6 +18,7 @@ input[type=text]{ border: none; font: inherit; color: inherit; resize: none; lin
 /* Styling general html elements */
 a{ color: inherit; font-weight:bold; text-decoration: none;}
 pre code { white-space: pre-wrap;}
+pre{display: inline;}
 
 /*Utility classes*/
 .center-content-horizontally{ display: flex; flex-direction: column; justify-content: center; }
@@ -62,8 +63,10 @@ body{
 	--main-box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
 	--deemphasize-font-color: rgba(0,0,0,0.6);
 	--transparent-white: rgba(255,255,255,0.6);
+	--slightly-white: rgba(255,255,255,0.1);
 	--code-bg-color: #011627;
-	--fab-color:  rgba(255, 0, 110, 1);}
+	--fab-color:  rgba(255, 0, 110, 1);
+	--dance-hsla-l: 50;}
 
 body.dark-theme{
 	--main-bg-color: #000;
@@ -168,16 +171,13 @@ a.quicklink > div > div:first-of-type{
     height: var(--generic-spacer);
 }
 
-/* Translation*/
-
-#translation .mockup-body p{
-	padding-bottom: 2rem;
-border-bottom: 0.4rem solid #ddd;
-margin-bottom: 2rem;
-}
-#translation .mockup-body, #translation .mockup-body *{
+#translation .mockup-body, #translation .mockup-body *, #code .mockup-body, #code .mockup-body *{
 	overflow: hidden;
 }
+
+/* Translation*/
+
+
 
 #translation .mockup-header,#translation  .language-selector-container{
 	padding: 1.5rem 0;
@@ -211,16 +211,19 @@ height: 7rem;
 
 #code .mockup-border{
 	background: var(--code-bg-color);
-	color: var(--main-bg-color);}
+	color: var(--main-bg-color);
+	}
+
 #code .mockup-body .js-code, #code .mockup-body .html-code{display: none;}
 #code .html-code input{
 	display: inline-block;
 
 	margin: 0 0.3rem;
+
+	width: 14ch;}
+#code .html-code input, #code .css-code select{
 	padding: 0.3rem 0.6rem;
 	border-radius: var(--small-border-radius);
-	width: 14ch;
-
 	background-color: rgba(255, 255, 255, 0.08);
 	animation: pulseBG 3s linear infinite; }
 @keyframes pulseBG {
@@ -271,7 +274,9 @@ height: 7rem;
   margin-left: calc(-0.9 * var(--arrow-size)); /*prevent tiny line*/
 }
 
-
+#code article{
+	border-bottom: 0.4rem solid var(--slightly-white);
+}
 
 /* Learning */
 
@@ -339,3 +344,38 @@ height: 7rem;
 /* @font-face { font-family: 'Inter'; src: local('Inter'), url('../fonts/Inter.ttf') format('truetype'); unicode-range: U+000-5FF; }
 @font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF;  }
 @font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  } */
+
+.mockup-body article{
+	padding-bottom: 2rem;
+border-bottom: 0.4rem solid #ddd;
+margin-bottom: 2rem;
+}
+
+
+.dance{
+	animation: dance 3s linear, color-change 3s linear, color-change 1.5s linear 3s ;
+}
+.dance *{
+	color: var(--transparent-white) !important;border-color: var(--transparent-white) !important;fill:var(--transparent-white) !important; background-color: transparent !important;
+}
+
+@keyframes dance {
+	0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{
+		transform: translateX(0) translateY(0);
+	}
+	6.25%, 18.75%{transform: translateX(-8vw) translateY(0);}
+	31.25%, 43.75%{transform: translateX(0) translateY(8vw);}
+	56.25%, 68.75%{transform: translateX(0) translateY(-8vw);}
+	81.25%, 93.75%{transform: translateX(8vw) translateY(0);}}
+
+@keyframes color-change{
+	0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--code-bg-color);}
+	6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);}
+	18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);}
+	31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);}
+	43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);}
+	56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);}
+	68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);}
+	81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);}
+	93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);}
+}

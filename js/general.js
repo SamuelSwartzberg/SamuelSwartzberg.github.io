@@ -10,6 +10,20 @@ document.querySelector("#tl-lang-selector").onchange = function (e,i) {
     });
     document.querySelector("#translation .mockup-body ."+e.target.value).classList.add("active");
 };
+document.querySelector(".dance-selector").onchange = function (e,i) {
+    document.querySelectorAll("section .mockup-border").forEach((item, i) => {
+        item.classList.remove("dance");
+    });
+    var elm = document.querySelector(e.target.value +" .mockup-border");
+    var newone = elm.cloneNode(true);
+    try {newone.querySelector(".dance-selector").onchange = this.onchange;}catch(e){}
+    elm.parentNode.replaceChild(newone, elm);
+    document.querySelector(e.target.value +" .mockup-border").classList.add("dance");
+    document.querySelector(e.target.value +" .mockup-border").onanimationend = (e) => {
+
+      e.target.classList.remove("dance");
+    };
+};
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('pre code').forEach((block) => {
