@@ -216,7 +216,7 @@ section:first-of-type > .text-section-container{ padding-top: 20rem; }
 }
 a.quicklink:hover { transform: translateY(var(--hover-raise-distance));}
 a.quicklink:focus { transform: translateY(var(--hover-raise-distance));}
-a.quicklink:active { background-color: var(--main-font-color); color: var(--card-bg-color); fill: var(--card-bg-color);/* TODO: invert */}
+a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--card-bg-color);/* TODO: invert */}
 a.quicklink:visited{transform: translateY(0);}
 a.quicklink > div {
 	padding: 1em;
