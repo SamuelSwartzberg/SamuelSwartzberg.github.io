@@ -68,7 +68,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
   var themeChanger=document.querySelector(".theme-changer");
   themeChanger.onclick=function(e, i){
-    document.querySelector("body").classList.toggle("dark-theme");}
+    var body = document.querySelector("body");
+    body.classList.toggle("dark-theme");
+    document.querySelector("meta[name='theme-color']").content = getComputedStyle(body).getPropertyValue("--main-bg-color");
+    }
   var images = document.querySelectorAll(".image-container picture");
   for (var i = 0; i < images.length; i++) {
     var bubble = document.createElement('div');
