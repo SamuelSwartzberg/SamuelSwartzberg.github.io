@@ -177,6 +177,13 @@ padding-right: var(--arrow-clickability-distance);}
   width: var(--triangle-size);
 }
 
+.language-selector-container select, .language-selector-container::after{
+	animation: animateOpacity 6s ease-in-out infinite;}
+
+@keyframes animateOpacity{
+0%, 100%{ opacity: 1; }
+50%{ opacity: 0.8; } }
+
 /* Intro */
 
 section:first-of-type > .text-section-container{ padding-top: 20rem; }
@@ -233,11 +240,11 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	width: 14ch;}
 
 #code .html-code input, #code .css-code select{
+	padding: 0.15em 0.3em;
+	border-radius: var(--small-border-radius);
 	color: var(--code-font-color);
 	--bg-shade: 255,255,255;
 	--current-opacity: 0.1;
-	padding: 0.15em 0.3em;
-	border-radius: var(--small-border-radius);
 	background-color: rgba(var(--bg-shade), var(--current-opacity));
 	animation: pulseBG 3s linear infinite;
 	--opacity-range: 2; /*relative to current bg-color*/}
@@ -315,7 +322,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 /* contact */
 
-#contact{ max-height: 73rem; overflow: hidden; }
+#contact{ max-height: 77rem; overflow: hidden; }
 #contact .header-line{
 	margin-bottom: 0.8em;
 }
