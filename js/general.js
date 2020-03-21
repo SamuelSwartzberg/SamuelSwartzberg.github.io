@@ -8,36 +8,38 @@ var fitSelect = function (e) {
   newAttachedNode.remove();
   e.target.style.width = textWidth;
 }
+var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
+  document.querySelectorAll(allElementsSelector).forEach((item, i) => {
+      item.classList.remove("active");
+  });
+  document.querySelectorAll(correctSelectorPrefix+e.target.value).forEach((item, i) => {
+    item.classList.add("active");
+  });
+  fitSelect(e);
+}
 document.querySelector(".code-selector").onchange = function (e,i) {
-    document.querySelectorAll("#code .mockup-body > div").forEach((item, i) => {
-        item.classList.remove("active");
-    });
-    document.querySelector("#code .mockup-body ."+e.target.value).classList.add("active");
-    fitSelect(e);
-};
-document.querySelector("#tl-topic-selector").onchange = function (e,i) {
-    document.querySelectorAll("#translation .mockup-body .topic").forEach((item, i) => {
-        item.classList.remove("active");
-    });
-    document.querySelector("#translation .mockup-body ."+e.target.value).classList.add("active");
-    fitSelect(e);
-};
+  changeActive(e, "#code .mockup-body > div", "#code .mockup-body .");};
+
+document.querySelector("#tl-topic-selector").onchange =function (e,i) {
+  changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");};
+
 document.querySelector("#tl-lang-selector").onchange = function (e,i) {
-    document.querySelectorAll("#translation .mockup-body .lang").forEach((item, i) => {
-        item.classList.remove("active");
-    });
-    document.querySelectorAll("#translation .mockup-body ."+e.target.value).forEach((item, i) => {
-      item.classList.add("active");
-    });
-    fitSelect(e);
-};
+  changeActive(e, "#translation .mockup-body .lang", "#translation .mockup-body .");};
+
 document.querySelector(".dance-selector").onchange = function (e,i) {
     document.querySelectorAll("section .mockup-border").forEach((item, i) => {
         item.classList.remove("dance");
     });
     var elm = document.querySelector(e.target.value +" .mockup-border");
+    var prevOnchange = [];
+    elm.querySelectorAll("select").forEach((item, i) => {
+      prevOnchange.push(item.onchange);
+    });
+
     var newone = elm.cloneNode(true);
-    try {newone.querySelector(".dance-selector").onchange = this.onchange;}catch(e){}
+    try {for (var i = 0; i < prevOnchange.length; i++) {
+      newone.querySelector("select").onchange = prevOnchange[i]
+    };}catch(e){}
     elm.parentNode.replaceChild(newone, elm);
     document.querySelector(e.target.value +" .mockup-border").classList.add("dance");
     document.querySelector(e.target.value +" .mockup-border").onanimationend = (e) => {

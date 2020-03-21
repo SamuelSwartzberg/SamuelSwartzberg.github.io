@@ -158,9 +158,13 @@ section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding);}
 	flex-direction: row;
   align-items: center;
 	justify-content: left;
-	font-weight: var(--bold-font-weight);}
+	font-weight: var(--bold-font-weight);
+	--arrow-clickability-distance: 2em;
+	}
 
-.language-selector-container select{ z-index: var(--z-higher);}
+.language-selector-container select{ z-index: var(--z-higher);
+	box-sizing:content-box;
+padding-right: var(--arrow-clickability-distance);}
 
 .language-selector-container::after{
 	margin-left: calc(-1 * var(--arrow-clickability-distance));
@@ -359,4 +363,6 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	a.quicklink {
 		--quicklink-margin: 0.5em;
 	}
+	#learning .mockup-container{
+		 --mockup-container-height: var(--mockup-container-max-height);}
 }
