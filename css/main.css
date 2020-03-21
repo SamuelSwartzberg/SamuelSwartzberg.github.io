@@ -135,25 +135,12 @@ section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding);}
 	}
 }
 
-/* @media screen and (min-width: 1400px) {
-  .main-container{
-		width: 95vw;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-	#intro{
-		height: auto;
-		width: 100vw;
-		flex-basis: 100%;
-	}
-	#intro .rest-intro{
-		display: none;
-	}
-	section{
-		flex: 1 0 40%;
-	}
+@media screen and (hover: hover) {
+	a.quicklink:hover { transform: translateY(var(--hover-raise-distance));}
+	a.quicklink:focus { transform: translateY(var(--hover-raise-distance));}
+	a.quicklink:visited{transform: translateY(0);}
 }
-@media screen and (min-width: 1600px) {
+/* @media screen and (min-width: 1600px) {
 
 	section{
 		flex: 1 0 20%;
@@ -224,10 +211,7 @@ section:first-of-type > .text-section-container{ padding-top: 20rem; }
 .quicklink svg{
 	fill: inherit;
 }
-a.quicklink:hover { transform: translateY(var(--hover-raise-distance));}
-a.quicklink:focus { transform: translateY(var(--hover-raise-distance));}
 a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--card-bg-color);/* TODO: invert */}
-a.quicklink:visited{transform: translateY(0);}
 a.quicklink > div {
 	padding: 1em;
 	height: 100%;
