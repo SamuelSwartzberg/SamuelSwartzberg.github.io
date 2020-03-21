@@ -27,18 +27,17 @@ pre{display: inline; white-space: pre-wrap;}
 
 .mockup-container > div.mockup-border, #translation .mockup-body > div > div, .clickable-l-r, .clickable-l-r > div, .image-container{
 	height: 100%;}
-.clickable-l-r, .image-container img{	width: 100%;}
+.clickable-l-r, .image-container picture, .image-container img{	width: 100%;}
 .theme-changer, #contact-fab, .img-bubble {border-radius: 50%;}
 #code .mockup-body > div, #translation .mockup-body > div{ column-count: 1; }
 #translation .mockup-body, #translation .mockup-body *, #code .mockup-body, #code .mockup-body *{
 	overflow: hidden; }
 .clickme-bubble-container, .clickme-bubble-container *{ overflow: visible !important; }
 /*hide & seek*/
-.image-container img, #code .mockup-body > div:not(.active), #translation .mockup-body div:not(.active){ display: none; } .active{ display: block !important; }
+.image-container picture, #code .mockup-body > div:not(.active), #translation .mockup-body div:not(.active){ display: none; } .active{ display: block !important; }
 
 
 /*Defining variables and base units*/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap');
 body{font-family: 'Inter', Helvetica, Arial, sans-serif;}
 code{font-family: 'Inconsolata', monospace;}
 .app .mockup-body, #contact .mockup-border{font-family: 'Nunito';}
@@ -49,7 +48,7 @@ body{--default-font-size: 2.7rem; font-size: var(--default-font-size); --big-fon
 	--small-border-radius: 0.5rem; --medium-border-radius: calc( 2 * var(--small-border-radius)); --big-border-radius: calc( 3 * var(--small-border-radius));
 }
 code, #translation .mockup-body, .message-body pre{font-size: var(--small-font-size);}
-#translation .mockup-body, .message-body pre{line-height:var(--text-line-height); }
+#translation .mockup-body{line-height:1.6em; }
 h1{font-size: var(--big-font-size);font-weight: var(--bold-font-weight);}
 h2{	line-height: var(--text-line-height);font-weight: var(--slightly-bold-font-weight);}
 #contact .header-line .name-desc{ font-weight: bold; color: var(--deemphasize-font-color); }
@@ -99,7 +98,7 @@ body{
 	color: var(--main-font-color);
 	background-color: var(--main-bg-color);}
 
-.hljs { color: var(--code-deephasize-color); }
+.hljs { color: var(--code-deemphasize-color); }
 .hljs-important{ color: var(--code-font-color); }
 
 .main-container, section, .mockup-border, .mockup-body{ display: flex; flex-direction: column; }
@@ -193,7 +192,7 @@ section:first-of-type > .text-section-container{ padding-top: 20rem; }
 .quicklink svg{
 	fill: inherit;
 }
-a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--card-bg-color);/* TODO: invert */}
+a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--main-bg-color);}
 a.quicklink > div {
 	padding: 1em;
 	height: 100%;
@@ -238,6 +237,10 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	background-color: rgba(var(--bg-shade), var(--current-opacity));
 	animation: pulseBG 3s linear infinite;
 	--opacity-range: 2; /*relative to current bg-color*/}
+
+#code .css-code option{
+	color: var(--constant-black-color);
+}
 @keyframes pulseBG {
 	0%, 100%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) * var(--opacity-range)));}
 	50%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) / var(--opacity-range))); }}
@@ -286,7 +289,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	padding: 0 5%;
 	display: flex;
 }
-.image-container img{
+.image-container picture{
 	align-self: flex-end;
 }
 
@@ -335,9 +338,9 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 @keyframes dance { 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{ transform: translateX(0) translateY(0); } 6.25%, 18.75%{transform: translateX(calc(-1 * var(--distance))) translateY(0);} 31.25%, 43.75%{transform: translateX(0) translateY(var(--distance));} 56.25%, 68.75%{transform: translateX(0) translateY(calc(-1 * var(--distance)));} 81.25%, 93.75%{transform: translateX(var(--distance)) translateY(0);}}
 @keyframes color-change{ 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--code-bg-color);} 6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);} 18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);} 31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);} 43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);} 56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);} 68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);} 81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);} 93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);} }
 
-/* @font-face { font-family: 'Inter'; src: local('Inter'), url('../fonts/Inter.ttf') format('truetype'); unicode-range: U+000-5FF; } */
-@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF;  }
-@font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap');
+@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF; font-display: swap; }
+@font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  font-display: swap;}
 
 @media screen and (min-width: 1024px) {
 	html{

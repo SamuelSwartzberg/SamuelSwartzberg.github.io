@@ -4,10 +4,8 @@
   <title>samswartzberg.com</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/atelier-cave-dark.css">
 </head>
 <body>
-  <script src="js/highlight.pack.js"></script>
   <div id="contact-fab"><a class="center-content-both" href="mailto:me@samswartzberg.com"><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 24 24" width="200"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></a></div>
   <div class="main-container">
     <section id="intro">
@@ -258,9 +256,18 @@ i < images.length; i++) {
               </div>
             </div>
             <div class="image-container">
-              <img class="active" src="images/screen1.png">
-              <img src="images/screen2.png">
-              <img src="images/screen3.png">
+              <picture class="active">
+                <source src="images/screen1.webp" type="image/webp">
+                <img src="images/screen1.png">
+              </picture>
+              <picture class="">
+                <source src="images/screen2.webp" type="image/webp">
+                <img src="images/screen2.png">
+              </picture>
+              <picture class="">
+                <source src="images/screen3.webp" type="image/webp">
+                <img src="images/screen3.png">
+              </picture>
             </div>
             <div class="image-bubbles center-content-both"></div>
           </div>

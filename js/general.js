@@ -53,10 +53,6 @@ document.querySelectorAll('select:not(.dance-selector)').forEach((item, i) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((block) => {
-    hljs.highlightBlock(block);
-    console.log("hey");
-  });
   document.querySelector("#name-input").oninput = function (e,i){
     if(e.target.value.match(/[\{\}\[\]\(\)\;\=\+\-\"\*\:\>\<\!\,\.\-\_\@\%\&\?\^]/g)){
       alert("Due to security concerns, you may not enter special characters.\nPlease try again.");
@@ -71,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   var themeChanger=document.querySelector(".theme-changer");
   themeChanger.onclick=function(e, i){
     document.querySelector("body").classList.toggle("dark-theme");}
-  var images = document.querySelectorAll(".image-container img");
+  var images = document.querySelectorAll(".image-container picture");
   for (var i = 0; i < images.length; i++) {
     var bubble = document.createElement('div');
     bubble.setAttribute('class','img-bubble');
@@ -79,7 +75,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector(".image-bubbles").appendChild(bubble);
   }
   function switchImage(plusMinus){
-    var activeImage = document.querySelector(".image-container img.active");
+    var activeImage = document.querySelector(".image-container picture.active");
     var currentIndex = Array.from(activeImage.parentNode.children).indexOf(activeImage);
     var currentIndexCremented = currentIndex+plusMinus;
     var imageBubbles = document.querySelector(".image-bubbles")
