@@ -38,6 +38,7 @@ pre{display: inline; white-space: pre-wrap;}
 
 
 /*Defining variables and base units*/
+html{font-size: 0.4em;}
 body{font-family: 'Inter', Helvetica, Arial, sans-serif;}
 code{font-family: 'Inconsolata', monospace;}
 .app .mockup-body, #contact .mockup-border{font-family: 'Nunito';}
@@ -353,7 +354,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 @font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF; font-display: swap; }
 @font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  font-display: swap;}
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 500px) {
 	html{
 		font-size: 0.6em;
 	}
