@@ -38,7 +38,7 @@ pre{display: inline; white-space: pre-wrap;}
 
 
 /*Defining variables and base units*/
-html{font-size: 0.4em;}
+html{font-size: 0.5em;}
 body{font-family: 'Inter', Helvetica, Arial, sans-serif;}
 code{font-family: 'Inconsolata', monospace;}
 .app .mockup-body, #contact .mockup-border{font-family: 'Nunito';}
@@ -351,7 +351,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 @keyframes color-change{ 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--code-bg-color);} 6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);} 18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);} 31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);} 43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);} 56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);} 68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);} 81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);} 93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);} }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@531&display=swap');
-@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/_Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF; font-display: swap; }
+@font-face { font-family: 'Inconsolata'; src: local('Inconsolata'), url('../fonts/Inconsolata.ttf') format('truetype'); unicode-range: U+000-5FF; font-display: swap; }
 @font-face { font-family: 'Nunito'; src: local('Nunito'), url('../fonts/Nunito-Regular.ttf') format('truetype'); unicode-range: U+000-5FF;  font-display: swap;}
 
 @media screen and (min-width: 500px) {
