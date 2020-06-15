@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sam Swartzberg - Language, Natural and Formal.</title>
+  <meta name="og:title" property="og:title" content="Sam Swartzberg - Language, Natural and Formal.">
+  <meta name="description" content="Translation from English to German and back; HTML, CSS, and JS, and language learning to boot!">
+  <meta name="og:description" property="og:description" content="Translation from English to German and back; HTML, CSS, and JS, and language learning to boot!">
+  <meta name="og:image" property="og:image" content="images/social-banner.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/cv.css">
+  <!-- favicon --> <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png"> <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png"> <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png"> <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png"> <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png"> <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png"> <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png"> <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png"> <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png"> <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png"> <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png"> <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+  <section id="cv-container">
+    <div id="cv-container-inner">
+      <article id="cv" lang="en">
+        <header>
+          <h1>Sam Swartzberg</h1>
+        </header>
+        <section id="experience">
+          <header>
+            <h2><span lang="de">Berufserfahrung</span><span lang="en">Work Experience</span></h2>
+          </header>
+        </section>
+        <section id="skills">
+          <header>
+            <h2><span lang="de">Fähigkeiten</span><span lang="en">Skills</span></h2>
+          </header>
+        </section>
+        <section id="education">
+          <header>
+            <h2><span lang="de">Bildung</span><span lang="en">Education</span></h2>
+          </header>
+        </section>
+        <section id="interests">
+          <header>
+            <h2><span lang="de">Interessen</span><span lang="en">Interests</span></h2>
+          </header>
+        </section>
+      </article>
+    </div>
+  </section>
+  <section id="options-container">
+    <div id="options-container-inner">
+      <section id="purpose" class="opt-section">
+        <details open>
+          <summary class="opt-header">Choose a preset</summary>
+          <div class="button-container">
+            <button type="button" class="buttonlike">Language</button>
+            <button type="button" class="buttonlike">Web Development</button>
+            <button type="button" class="buttonlike">All</button>
+          </div>
+        </details>
+      </section>
+      <section id="theme" class="opt-section">
+        <details open>
+          <summary class="opt-header">Choose a style</summary>
+          <div class="button-container">
+            <button type="button" class="buttonlike">Traditional</button>
+            <button type="button" class="buttonlike">Blocky</button>
+            <button type="button" class="buttonlike">Dynamic</button>
+          </div>
+        </details>
+      </section>
+      <section id="language" data-language-active="en" class="opt-section">
+        <details open>
+          <summary class="opt-header">Choose a language</summary>
+          <div class="button-container">
+            <button type="button" value="en" class="buttonlike">🇺🇸 English</button>
+            <button type="button" value="de" class="buttonlike">🇩🇪 German</button>
+          </div>
+        </details>
+      </section>
+      <section id="incl-exl" class="opt-section">
+        <details open>
+          <summary class="opt-header">Include & exclude items</summary>
+          <div class="button-container">
+            <button type="button" class="buttonlike">Open Editor...</button>
+          </div>
+        </details>
+      </section>
+      <section id="finalize" class="opt-section">
+        <details open>
+          <summary class="opt-header">What do you want to with the CV?</summary>
+          <div class="button-container">
+            <a href="mailto:" class="buttonlike">Send a link</a>
+            <a href="mailto:" class="buttonlike">Send a copy</a>
+            <button type="button" onclick="window.print()" class="buttonlike">Print</button>
+            <a href="mailto:me@samswartzberg.com" class="buttonlike">Message me!</a>
+          </div>
+        </details>
+      </section>
+    </div>
+  </section>
+  <script src="js/events.js" charset="utf-8"></script>
+</body>
