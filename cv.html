@@ -16,32 +16,117 @@
   <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-
   <section id="cv-container">
     <div id="cv-container-inner">
       <article id="cv" lang="en">
-        <header>
+        <header class="cv-section">
           <h1>Sam Swartzberg</h1>
         </header>
-        <section id="experience">
+        <address class="cv-section" id="contact">
+          <span class="address">Am Kreuzberg 6</span>
+          <span class="address">85125 Kinding</span>
+          <span class="mail"><a href="maito:me@samswartzberg.com">me@samswartzberg.com</a></span>
+          <span class="phone"><span class="area-code">173</span><span>53</span><span>60</span><span>142</span></span>
+        </address>
+        <section id="experience" class="cv-section">
           <header>
             <h2><span lang="de">Berufserfahrung</span><span lang="en">Work Experience</span></h2>
           </header>
+          <section class="cv-subsection" id="freelance">
+            <div class="cv-item-header">
+              <h3><span lang="de"></span><span lang="en"></span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span lang="de"></span><span lang="en"></span></span>
+            </div>
+            <div class="cv-institution-item"></div>
+            <div class="cv-description-item"><span lang="de"></span><span lang="en"></span></div>
+          </section>
+          <section class="cv-subsection" id="boh">
+            <div class="cv-item-header">
+              <h3><span lang="de"></span><span lang="en"></span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span lang="de"></span><span lang="en"></span></span>
+            </div>
+            <div class="cv-institution-item"></div>
+            <div class="cv-description-item"><span lang="de"></span><span lang="en"></span></div>
+          </section>
+          <section class="cv-subsection" id="jobmama">
+            <div class="cv-item-header">
+              <h3><span lang="de">Front-End Entwickler</span><span lang="en">Front-end developer</span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span class="date">2016</span></span>
+            </div>
+            <div class="cv-institution-item"><span class="institution-name">Fools Forward</span></div>
+            <div class="cv-description-item"><span lang="de"></span><span lang="en"></span></div>
+          </section>
+          <section class="cv-subsection" id="foodora">
+            <div class="cv-item-header">
+              <h3><span lang="de">Fahrradkurier für Gastronomie</span><span lang="en">Bicycle courier for food delivery</span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span class="date">2015</span></span>
+            </div>
+            <div class="cv-institution-item"><span class="institution-name">Foodora</span></div>
+          </section>
         </section>
-        <section id="skills">
+        <section id="skills" class="cv-section">
           <header>
             <h2><span lang="de">Fähigkeiten</span><span lang="en">Skills</span></h2>
           </header>
+          <section class="cv-subsection">
+            <ul>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+            </ul>
+          </section>
         </section>
-        <section id="education">
+        <section id="education" class="cv-section">
           <header>
             <h2><span lang="de">Bildung</span><span lang="en">Education</span></h2>
           </header>
+          <section class="cv-subsection" id="ba">
+            <div class="cv-item-header">
+              <h3><span lang="de"><abbr class="rank" title="Bachelor of Arts">B. A.</abbr> <span class="title">Kultur und Technik</span></span><span lang="en"><abbr class="rank" title="Bachelor of Arts">BA</abbr> <span class="title">Culture and Technology</span></span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span class="date begin">2016</span><span class="date end">2020</span></span>
+            </div>
+            <div class="cv-institution-item"><span class="institution-name"><span lang="de">Technische Universität Berlin</span><span lang="en">Berlin Institute of Technology</span></span></div>
+            <div class="cv-description-item"><ul>
+              <li><span lang="en">Major in philosophy and minors in history as well as linguistics</span></li>
+              <li><span lang="en">Courses in equal parts at all three of Berlin's major universities Humboldt University, Free University and the Institute of Technology</span></li>
+            </ul>
+              <span lang="de"></span></div>
+          </section>
+          <section class="cv-subsection" id="highschool">
+            <div class="cv-item-header">
+              <h3><span lang="de">Abitur</span><span lang="en">High School Diploma</span></h3>
+            </div>
+            <div class="cv-time-item">
+              <span class="duration"><span class="date begin">2007</span><span class="date end">2015</span></span>
+            </div>
+            <div class="cv-institution-item"><span class="institution-name">Maria Theresia Gymnasium</span><span lang="de"><span class="location city">München</span><span class="location state">Bayern</span></span><span lang="en"><span class="location city">Munich</span><span class="location state">Bavaria</span></span></div>
+          </section>
         </section>
-        <section id="interests">
+        <section id="interests" class="cv-section">
           <header>
             <h2><span lang="de">Interessen</span><span lang="en">Interests</span></h2>
           </header>
+          <section class="cv-subsection">
+            <ul>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+              <li>Lorem Ipsum Dolor sit amet.</li>
+            </ul>
+          </section>
         </section>
       </article>
     </div>
@@ -52,9 +137,9 @@
         <details open>
           <summary class="opt-header">Choose a preset</summary>
           <div class="button-container">
-            <button type="button" class="buttonlike">Language</button>
-            <button type="button" class="buttonlike">Web Development</button>
-            <button type="button" class="buttonlike">All</button>
+            <button type="button" class="buttonlike apply-attr" value="translation">Translation</button>
+            <button type="button" class="buttonlike apply-attr" value="webdev">Web Development</button>
+            <button type="button" class="buttonlike apply-attr" value="all">All</button>
           </div>
         </details>
       </section>
@@ -62,18 +147,18 @@
         <details open>
           <summary class="opt-header">Choose a style</summary>
           <div class="button-container">
-            <button type="button" class="buttonlike">Traditional</button>
-            <button type="button" class="buttonlike">Blocky</button>
-            <button type="button" class="buttonlike">Dynamic</button>
+            <button type="button" class="buttonlike apply-attr" value="traditional">Traditional</button>
+            <button type="button" class="buttonlike apply-attr" value="blocky">Blocky</button>
+            <button type="button" class="buttonlike apply-attr" value="dynamic">Dynamic</button>
           </div>
         </details>
       </section>
-      <section id="language" data-language-active="en" class="opt-section">
+      <section id="language" data-language="en" class="opt-section">
         <details open>
           <summary class="opt-header">Choose a language</summary>
           <div class="button-container">
-            <button type="button" value="en" class="buttonlike">🇺🇸 English</button>
-            <button type="button" value="de" class="buttonlike">🇩🇪 German</button>
+            <button type="button" value="en" class="buttonlike apply-attr">🇺🇸 English</button>
+            <button type="button" value="de" class="buttonlike apply-attr">🇩🇪 German</button>
           </div>
         </details>
       </section>
@@ -89,8 +174,8 @@
         <details open>
           <summary class="opt-header">What do you want to with the CV?</summary>
           <div class="button-container">
-            <a href="mailto:" class="buttonlike">Send a link</a>
-            <a href="mailto:" class="buttonlike">Send a copy</a>
+            <a href="" id="send-link" class="buttonlike">Send a link</a>
+            <button type="button" onclick="window.print()" class="buttonlike">Download a copy</a>
             <button type="button" onclick="window.print()" class="buttonlike">Print</button>
             <a href="mailto:me@samswartzberg.com" class="buttonlike">Message me!</a>
           </div>
