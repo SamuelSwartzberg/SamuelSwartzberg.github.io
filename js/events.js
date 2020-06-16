@@ -11,6 +11,7 @@ function siteInit() {
       document.querySelector('#cv').dataset[key] = value;
       document.querySelector(`[value=${value}]`).classList.add('active');
       updateMailtoHref();
+      setLang();
     }
 }
 function updateMailtoHref() {
