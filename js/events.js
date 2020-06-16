@@ -1,13 +1,17 @@
 function siteInit() {
   let url = document.URL.split('?')[1];
+  let params;
   if(url){
-    const params = new URLSearchParams(url);
+     params = new URLSearchParams(url);
+  }
+  if(!url || !params) {
+    params = new Map([["langugage", "en"],["theme", "traditional"],["purpose", "translation"],]);
+  }
     for (const [key, value] of params) {
       document.querySelector('#cv').dataset[key] = value;
       document.querySelector(`[value=${value}]`).classList.add('active');
       updateMailtoHref();
     }
-  }
 }
 function updateMailtoHref() {
   document.querySelector('#send-link').href =
@@ -18,10 +22,10 @@ function updateMailtoHref() {
     Cheers,`)
 }
 
-function getOptionSectionParent(node) {
-  if(node.classList.contains('opt-section')) return node;
-  else if (node.nodeName==='BODY') throw 'There is no .opt-section element that is a parent of this node!';
-  else return getOptionSectionParent(node.parentNode);
+function getParentWithClass(node, nodeClass) {
+  if(node.classList.contains(nodeClass)) return node;
+  else if (node.nodeName==='BODY') throw `There is no ${nodeClass} element that is a parent of this node`;
+  else return getParentWithClass(node.parentNode, nodeClass);
 }
 function applyActive(target, sectionParent) {
   sectionParent.querySelectorAll('button.apply-attr').forEach(item => item.classList.remove('active'));
@@ -32,25 +36,25 @@ function setLang() {
   cv.lang=cv.dataset.language;
 }
 function modifyUrl(key, value){
+  if (!key || !value) throw `Key or value provided were falsy - ${key}: ${value}`
   let url = document.URL.split('?')[1];
-  if(url){
-    const params = new URLSearchParams(url);
-    params.set(key, value);
-    url = params.toString();
-  }
+  const params = new URLSearchParams(url);
+  params.set(key, value);
+  url = params.toString();
   history.pushState({}, null, document.URL.split('?')[0] + "?" + url);
   updateMailtoHref();
 }
 
 function applyAttr(event) {
-  console.log(event.target);
+  let button = event.target.classList.contains('buttonlike') ? event.target : getParentWithClass(event.target, 'buttonlike');
+  console.log(button);
   try {
-    let optionSectionParent = getOptionSectionParent(event.target);
+    let optionSectionParent = getParentWithClass(button, 'opt-section');
     let dataAttr = optionSectionParent.id;
-    document.querySelector('#cv').dataset[dataAttr] = event.target.value;
+    document.querySelector('#cv').dataset[dataAttr] = button.value;
     setLang();
-    modifyUrl(dataAttr, event.target.value);
-    applyActive(event.target, optionSectionParent);
+    modifyUrl(dataAttr, button.value);
+    applyActive(button, optionSectionParent);
   } catch (e) {
     console.log(e);
     return;

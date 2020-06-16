@@ -31,13 +31,11 @@ html{
   font-family: Roboto;
 }
 
-@media screen and (min-width: 700px){
-  #cv {
+
+  #cv, #cv-container-inner {
     --a4-cm: calc(94vh / var(--din-a-4-height-in-cm));
     height: calc(var(--din-a-4-height-in-cm) * var(--a4-cm));
-    width: calc(var(--din-a-4-width-in-cm) * var(--a4-cm));
-  }
-}
+    width: calc(var(--din-a-4-width-in-cm) * var(--a4-cm));}
 
 #cv{
   background-color: white;
@@ -184,30 +182,38 @@ html{
   }
 
   body > #cv-container {
-    flex: 2 0 1px;
+    flex: 1 1 auto;
     display: flex;
-    align-items: center;
     justify-content: center;
+		align-items: center;
+		min-height: 100vh;
   }
   #cv-container-inner{
-    margin: 3vh;
+    margin: 0 5%;
     box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
-    overflow: hidden;
-    border-radius: 1.3rem;
+    overflow-y: scroll;
+		border-radius: calc(94vh/50);
   }
 
   body > #options-container {
-    font-size: 1.3em;
-    flex: 1 0 1px;
-    max-width: 31em;
+    font-size: 1.7vh;
+		display: flex;
+    flex: 1 1 auto;
+    max-width: 30em;
     line-height: 1;
     margin: 2em 2em;
     justify-content: center;
+		align-items: center;
+		height: calc(100vh - 4em);
   }
   #options-container-inner{
     max-width: 25em;
     display: flex;
     flex-flow: column nowrap;
+		justify-content: space-evenly;
+		height: 100%;
+		max-height: 60em;
+
   }
   #options-container  .opt-section {
 
@@ -219,12 +225,14 @@ html{
     margin-top: 1.5em;
     color: #333;
   }
+	/* .opt-header span, .buttonlike span{
+		font-size: 1.3rem;
+	} */
 
   .button-container{
     display: flex;
     flex-flow: row wrap;
     margin: 0.5em;
-    margin-bottom: 2.5em;
   }
   .button-container > .buttonlike{
     font-family: Karla;
@@ -232,7 +240,7 @@ html{
     display: block;
     margin: 0.25em;
     padding: 1em;
-    border-radius: 2em;
+    border-radius: calc(1em + 1em/2);
     border: 0.1em solid #ddd;
     min-width: 10ch;
 		cursor: pointer;
@@ -253,6 +261,55 @@ html{
   }
 
 }
+@media screen and (max-aspect-ratio: 21/28){
+	body{
+		flex-direction: column;
+	}
+	#cv,#cv-container-inner{
+		--a4-cm: calc(90vw / var(--din-a-4-width-in-cm));
+	}
+	#cv-container-inner{
+		border-radius: calc(90vw/50);
+	}
+
+}
+
+
+@media screen and (min-aspect-ratio: 21/28) and (max-aspect-ratio: 19/14){
+	#cv, #cv-container-inner{
+		--a4-cm: calc(60vw / var(--din-a-4-width-in-cm));
+	}
+	#cv-container-inner{
+		border-radius: calc(60vw/50);
+	}
+	body > #options-container {
+    font-size: 1.5vh;
+		width: 20vw;
+  }
+}
+@media screen and (min-aspect-ratio: 21/28) and (max-aspect-ratio: 14/14){
+	#cv, #cv-container-inner{
+		--a4-cm: calc(55vw / var(--din-a-4-width-in-cm));
+	}
+	#cv-container-inner{
+		border-radius: calc(55vw/50);
+	}
+	body > #options-container {
+		font-size: 1.40vh;
+		width: 25vw;
+	}
+}
+@media screen and (min-aspect-ratio: 15/14) and (max-aspect-ratio: 19/14){
+	#cv, #cv-container-inner{
+		--a4-cm: calc(94vh / var(--din-a-4-height-in-cm));
+		height: calc(var(--din-a-4-height-in-cm) * var(--a4-cm));
+		width: calc(var(--din-a-4-width-in-cm) * var(--a4-cm));
+	}
+	#cv-container-inner{
+		border-radius: calc(94vh/50);
+	}
+}
+
 
 summary::-webkit-details-marker{
   color: #ddd;
