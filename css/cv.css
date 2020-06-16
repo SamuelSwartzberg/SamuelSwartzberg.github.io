@@ -288,7 +288,7 @@ html{
 	}
 	#options-container-inner{
 		max-width: none;
-		max-height: 85vh;
+		max-height: 85%;
 	}
 	#cv,#cv-container-inner{
 		--a4-cm: calc(90vw / var(--din-a-4-width-in-cm));
@@ -299,7 +299,7 @@ html{
 	#mobile-fab{
 		z-index: 2;
 		--theme-hue: 278;
-		font-size: 1.25rem;
+		font-size: 2.5vh;
 		background-color: hsl(var(--theme-hue), 90%, 45%);
 		box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.2);
 		color: white;

@@ -36,7 +36,7 @@ function setLang() {
   cv.lang=cv.dataset.language;
 }
 function modifyUrl(key, value){
-  if (!key || !value) throw `Key or value provided were falsy - ${key}: ${value}`
+  if (!key || !value) throw `Key or value provided were falsy - ${key}: ${value}`;
   let url = document.URL.split('?')[1];
   const params = new URLSearchParams(url);
   params.set(key, value);
