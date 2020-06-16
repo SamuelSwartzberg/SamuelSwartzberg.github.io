@@ -53,7 +53,7 @@
             </div>
             <div class="cv-institution-item">Berliner Obdachlosenhilfe e.V.</div>
             <div class="cv-description-item">
-              <span lang="en">Cooking & distributing food & clothing to homeless people, organizing distribution tours</span>
+              <span lang="en">Cooking & distributing food & clothing to homeless people, organizing distribution tours</span>
               <span lang="de">Ausgabe von Essen und Kleidung an Obdachlose, Organisation von Ausgabetouren</span>
               </div>
           </section>
@@ -204,7 +204,7 @@
           <summary class="opt-header"><span>What do you want to with the CV?</span></summary>
           <div class="button-container">
             <a href="" id="send-link" class="buttonlike"><span>Send a link</span></a>
-            <button type="button" onclick="window.print()" class="buttonlike"><span>Download a copy</span></a>
+            <button type="button" onclick="window.print()" class="buttonlike"><span>Download a copy</span></button>
             <button type="button" onclick="window.print()" class="buttonlike"><span>Print</span></button>
             <a href="mailto:me@samswartzberg.com" class="buttonlike"><span>Message me!</span></a>
           </div>
@@ -212,5 +212,6 @@
       </section>
     </div>
   </section>
+  <button type="button" id="mobile-fab" onclick="document.querySelector('#options-container').classList.toggle('visible'); event.target.classList.toggle('active');">Customize...</button>
   <script src="js/events.js" charset="utf-8"></script>
 </body>

@@ -30,6 +30,9 @@ abbr{text-decoration: none;}
 html{
   font-family: Roboto;
 }
+#mobile-fab{
+	display: none;
+}
 
 
   #cv, #cv-container-inner {
@@ -234,7 +237,8 @@ html{
     flex-flow: row wrap;
     margin: 0.5em;
   }
-  .button-container > .buttonlike{
+  .buttonlike{
+		background-color: white;
     font-family: Karla;
     flex: 0 0 auto;
     display: block;
@@ -261,15 +265,65 @@ html{
   }
 
 }
+
+.visible{
+	display: block !important;
+}
 @media screen and (max-aspect-ratio: 21/28){
 	body{
-		flex-direction: column;
+		display: block;
+	}
+	body > #options-container{
+		display: none;
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: white;
+		margin: 0;
+		padding: 3vh 6vw;
+		max-width: none;
+	}
+	#options-container-inner{
+		max-width: none;
+		max-height: 85vh;
 	}
 	#cv,#cv-container-inner{
 		--a4-cm: calc(90vw / var(--din-a-4-width-in-cm));
 	}
 	#cv-container-inner{
 		border-radius: calc(90vw/50);
+	}
+	#mobile-fab{
+		z-index: 2;
+		--theme-hue: 278;
+		font-size: 1.25rem;
+		background-color: hsl(var(--theme-hue), 90%, 45%);
+		box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.2);
+		color: white;
+		display: block;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 3vh;
+		font-family: Karla;
+    display: block;
+    margin: 0.25em;
+    padding: 1.25em 2em;
+    border-radius: calc(1.25em + 1em/2);
+    border: none;
+    min-width: 10ch;
+    cursor: pointer;
+	}
+	#mobile-fab.active{
+		background-color: white;
+		color: hsl(var(--theme-hue), 90%, 45%);
+		box-shadow: none;
+	}
+	#mobile-fab.active::after{
+		content: "X";
 	}
 
 }
@@ -309,6 +363,7 @@ html{
 		border-radius: calc(94vh/50);
 	}
 }
+
 
 
 summary::-webkit-details-marker{
