@@ -257,26 +257,27 @@ summary::-webkit-details-marker{
 		border-radius: calc(1.25em + 1em/2); }
 
 	#mobile-fab-container .background-purple{
-		z-index: 3;
 		background-color: hsl(var(--fab-hue), 90%, 45%);
+		box-shadow: 0 0.4vh 1.2vh 0 rgba(0,0,0,.2);
 		transition: transform 0.5s 0.2s, z-index 0s 0.5s; }
 
 	#mobile-fab-container .background-white{
-		z-index: 0;
+		z-index: 2;
 		background-color: white;
-		box-shadow: 0 0.4vh 1.2vh 0 rgba(0,0,0,.2);
-		transition: transform 0.5s, z-index 0s 0.5s; }
+		opacity: 0;
+		transition: transform 0.55s, opacity 0.2s 0.35s; }
 
   #mobile-fab-container.active .background{
 		transform: translateX(-50%) scale(4,12) translateY(-40%);}
 
 	#mobile-fab-container.active .background-purple{
 		z-index: 1;
+		box-shadow: none;
 		transition: transform 0.5s;}
 
 	#mobile-fab-container.active .background-white{
-		z-index: 2; box-shadow: none;
-		transition: transform 0.5s 0.2s, z-index 0s 0.2s;}
+		opacity: 1;
+		transition: transform 0.55s 0.15s, opacity 0.2s 0.15s;}
 
 	#mobile-fab-container > .mobile-fab{
 		z-index: 4;}
@@ -291,21 +292,21 @@ summary::-webkit-details-marker{
 		transform: rotate(45deg); }
 
 	#mobile-fab-container .mobile-fab .y-bar{
-		background-color: white;
-		visibility: hidden;
+		background-color: transparent;
+		opacity: 0;
 		position: absolute;
 		top: 0; }
 
 
 	#mobile-fab-container > .mobile-fab .bar{
-		transition: transform 0.7s, background-color 0.5s, visibility 0s 0.5s, border-radius 0s 0.7s, color 0s 0.7s; }
+		transition: transform 0.7s, background-color 0.5s, opacity 0s 0.7s, border-radius 0s 0.7s, color 0.2s 0.5s; }
 
 	#mobile-fab-container.active .mobile-fab .bar {
-		transition: transform 0.7s, color 0.2s, background-color 0.5s 0.2s, visibility 0s 0.2s;
+		transition: transform 0.7s, color 0.2s, background-color 0.5s 0.2s, opacity 0s 0.2s;
 		color: transparent;
 		background-color: hsl(var(--fab-hue), 90%, 45%);
 		border-radius: 0.5vh/1.25vh;
-		visibility: visible;}
+		opacity: 1;}
 
 	#mobile-fab-container.active .mobile-fab .x-bar {
 		transform: scaleY(0.2) scaleX(0.5);
