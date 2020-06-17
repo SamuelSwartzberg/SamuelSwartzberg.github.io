@@ -5,7 +5,7 @@ function siteInit() {
      params = new URLSearchParams(url);
   }
   if(!url || !params) {
-    params = new Map([["langugage", "en"],["theme", "traditional"],["purpose", "translation"],]);
+    params = new Map([["language", "en"],["theme", "traditional"],["purpose", "translation"],]);
   }
     for (const [key, value] of params) {
       document.querySelector('#cv').dataset[key] = value;
