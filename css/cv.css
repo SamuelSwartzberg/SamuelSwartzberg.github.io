@@ -158,12 +158,12 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
     overflow-y: scroll;
 		border-radius: calc(var(--cv-base-unit)/50);}
 
-  body > #options-container {
+  #options-container {
     font-size: 1.7vh;
     max-width: 30em;
     line-height: 1;
     padding: 2em;}
-		
+
   #options-container-inner{
     display: flex; flex-flow: column nowrap; justify-content: space-evenly;
 		height: 100%;}
@@ -213,48 +213,110 @@ summary::-webkit-details-marker{
 	#cv-container{
 		--cv-base-unit: 90vw;
 		--cv-calculation-side-length: var(--din-a-4-width-in-cm);}
-	body > #options-container{
-		display: none;
-		z-index: 1;
+	#options-container{
+		align-items: start;
+		opacity: 0;
+		pointer-events: none;
+		z-index: 3;
 		position: absolute;
 		top: 0; left: 0; margin: 0;
 		width: 100vw; height: 100vh;
 		background-color: white;
 		padding: 3vh 6vw;
-		max-width: none;}
+		max-width: none;
+		transition: opacity 0.15s;}
+
+	#options-container.visible{
+		opacity: 1;
+		pointer-events: auto;
+		transition: opacity 0.15s 0.45s; }
 
 	#options-container-inner{
 		max-width: none;
 		--total-distance-covered-by-fab: calc((3vh * 2) + 2.5vh + (2.5vh * 2 * 1.25)); /* bottom * 2 (for top spacing)+ font-size + font-size * 2 (top and bottom) * 1.25 padding size in em */
 		max-height: calc(100vh - var(--total-distance-covered-by-fab));}
 
-	#mobile-fab{
+	#mobile-fab-container{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		--fab-hue: 278; }
+
+	#mobile-fab-container > .mobile-fab, #mobile-fab-container .background{
 		display: block;
 		position: absolute;
-		z-index: 2;
 		left: 50%; transform: translateX(-50%);
 		bottom: 3.5vh;
 		font-size: 2.5vh;
-		padding: 1.25em 2em;
+		padding: 1.25em 2em; }
 
-		--fab-hue: 278;
+	#mobile-fab-container .background{
+		color: transparent;
+		border-radius: calc(1.25em + 1em/2); }
+
+	#mobile-fab-container .background-purple{
+		z-index: 3;
 		background-color: hsl(var(--fab-hue), 90%, 45%);
-		box-shadow: 0 0.4vh 1.2vh 0 rgba(0,0,0,.2);
-		color: white;
-    border: none;
-    border-radius: calc(1.25em + 1em/2);}
+		transition: transform 0.5s 0.2s, z-index 0s 0.5s; }
 
-	#mobile-fab.active{
+	#mobile-fab-container .background-white{
+		z-index: 0;
 		background-color: white;
+		box-shadow: 0 0.4vh 1.2vh 0 rgba(0,0,0,.2);
+		transition: transform 0.5s, z-index 0s 0.5s; }
+
+  #mobile-fab-container.active .background{
+		transform: translateX(-50%) scale(4,12) translateY(-40%);}
+
+	#mobile-fab-container.active .background-purple{
+		z-index: 1;
+		transition: transform 0.5s;}
+
+	#mobile-fab-container.active .background-white{
+		z-index: 2; box-shadow: none;
+		transition: transform 0.5s 0.2s, z-index 0s 0.2s;}
+
+	#mobile-fab-container > .mobile-fab{
+		z-index: 4;
+		color: white;}
+	#mobile-fab-container .mobile-fab span{
+		display: block; }
+
+	#mobile-fab-container > .mobile-fab .rotate-container{
+		position: relative;
+		transition: transform 0.7s;}
+	#mobile-fab-container.active .rotate-container{
+		transform: rotate(45deg); }
+
+	#mobile-fab-container .mobile-fab .y-bar{
+		visibility: hidden;
+		position: absolute;
+		top: 0; }
+
+
+	#mobile-fab-container > .mobile-fab .bar{
+		transition: transform 0.7s, color 0.7s, background-color 0.7s, visibility 0s 0.7s, border-radius 0s 0.7s; }
+
+	#mobile-fab-container.active .mobile-fab .bar {
+		transition: transform 0.7s, color 0.7s, background-color 0.7s;
 		color: hsl(var(--fab-hue), 90%, 45%);
-		box-shadow: none;}
+		background-color: hsl(var(--fab-hue), 90%, 45%);
+		border-radius: 0.5vh/1.25vh;
+		visibility: visible;}
 
-	#mobile-fab.active::after{
-		content: "X";}
+	#mobile-fab-container.active .mobile-fab .x-bar {
+		transform: scaleY(0.2) scaleX(0.5);
+	}
 
-	.visible{
-			display: block !important;
-		}}
+	#mobile-fab-container.active .mobile-fab .y-bar {
+		transform: scaleY(0.5) scaleX(0.2) rotate(90deg);
+	}
+
+
+
+}
 
 /* Responsive design - not mobile layout */
 
@@ -262,14 +324,14 @@ summary::-webkit-details-marker{
 	#cv-container{
 		--cv-base-unit: 58vw;
 		--cv-calculation-side-length: var(--din-a-4-width-in-cm); }
-	body > #options-container {
+	#options-container {
     font-size: 1.55vh;
 		width: 35vw; } }
 @media screen and (min-aspect-ratio: 21/28) and (max-aspect-ratio: 18/20){
 	#cv-container{
 		--cv-base-unit: 56vw;
 		--cv-calculation-side-length: var(--din-a-4-width-in-cm); }
-	body > #options-container {
+	#options-container {
 		font-size: 1.7vw;
 		width: 38vw; } }
 @media screen and (min-aspect-ratio: 23/20){

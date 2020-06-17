@@ -212,6 +212,10 @@
       </section>
     </div>
   </section>
-  <button type="button" id="mobile-fab" onclick="document.querySelector('#options-container').classList.toggle('visible'); event.target.classList.toggle('active');">Customize...</button>
+  <div id="mobile-fab-container">
+    <button type="button" class="mobile-fab" onclick="document.querySelector('#options-container').classList.toggle('visible'); document.querySelector('#mobile-fab-container').classList.toggle('active');"><span class="rotate-container"><span class="x-bar bar">Customize...</span><span class="y-bar bar">Customize...</span></span></button>
+    <div class="background background-purple">Customize...</div>
+    <div class="background background-white">Customize...</div>
+  </div>
   <script src="js/events.js" charset="utf-8"></script>
 </body>
