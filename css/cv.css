@@ -120,11 +120,27 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	color: black; }
 
 /* Dynamic Theme */
+/* a white-bg theme that places large emphasis on the skills I want to get across by substituting them with emoji where possible
+and using color and bold fonts where not, similar to a lot of dev blogs such as https://www.smashingmagazine.com/2020/06/website-stressing-out-visitors/ (random article)
+and another one which I can't find right now but which included emoji in a left-hand menu*/
 
 #cv[data-theme="dynamic"]{
-	/* a white-bg theme that places large emphasis on the skills I want to get across by substituting them with emoji where possible
-	and using color and bold fonts where not, similar to a lot of dev blogs such as https://www.smashingmagazine.com/2020/06/website-stressing-out-visitors/ (random article)
-	and another one which I can't find right now but which included emoji in a left-hand menu*/
+	--main-font-size: calc(0.4 * var(--a4-cm));
+	font-size: var(--main-font-size);
+}
+#cv[data-theme="dynamic"] header.cv-section{
+	font-size: 3.3em;
+	margin-bottom: 0.2em;}
+
+#cv[data-theme="dynamic"] [data-emoji-equivalent]{
+	font-size: 0px;line-height: 0px;
+}
+#cv[data-theme="dynamic"] [data-emoji-equivalent]::after{
+	content: attr(data-emoji-equivalent);
+		line-height: initial; font-size: var(--main-font-size);
+}
+#cv[data-theme="dynamic"] .code{
+	font-weight: bold;
 }
 
 /* CSS hiding and formatting based on language */
