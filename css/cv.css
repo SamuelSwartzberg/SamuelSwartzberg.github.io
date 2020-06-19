@@ -247,17 +247,13 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 @media not print{
 	body, #cv-container, #options-container{
-		height: -moz-available;
-		height: -webkit-fill-available;
-		height: fill-available;
+		height: 100vh;
 		display: flex; justify-content: center; align-items: center;}
 
   body > #cv-container {
 		min-width: calc(var(--cv-width) * 1.1);
 		max-width: calc(var(--cv-width) * 1.2);
-		max-height: -moz-available;
-		max-height: -webkit-fill-available;
-		max-height: fill-available;
+		max-height: 100vh;
 	}
 
   #cv-container-inner{
@@ -342,7 +338,10 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		display: block;}
 	#cv-container{
 		--cv-base-unit: 90vw;
-		--cv-calculation-side-length: var(--din-a-4-width-in-cm);}
+		--cv-calculation-side-length: var(--din-a-4-width-in-cm);
+		max-height: -moz-available;
+		max-height: -webkit-fill-available;
+		max-height: fill-available;}
 
 	#options-container{
 		align-items: start;
@@ -352,13 +351,15 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		position: absolute;
 		top: 0; left: 0; margin: 0;
 		width: 100vw;
-		height: -moz-available;
-    height: -webkit-fill-available;
-    height: fill-available;
 		background-color: white;
 		padding: 3vh 6vw;
 		max-width: none;
 		transition: opacity 0.15s;}
+
+	body, #cv-container, #options-container{
+		height: -moz-available;
+		height: -webkit-fill-available;
+		height: fill-available;}
 
 	#options-container.visible{
 		opacity: 1;
