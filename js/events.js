@@ -1,7 +1,7 @@
 function siteInit() {
   let url = document.URL.split('?')[1];
   let params;
-  let defaultParams = new Map([["language", "en"],["theme", "traditional"],["purpose", "translation"],]);
+  let defaultParams = new Map([["language", "en"],["theme", "modern"],["purpose", "translation"],]);
   params = new URLSearchParams(url);
   for (const [key, value] of defaultParams) {
     if(!params || params.has(key) === false){
@@ -69,3 +69,10 @@ function applyAttr(event) {
 }
 document.addEventListener('DOMContentLoaded', siteInit);
 document.querySelectorAll('button.apply-attr').forEach(item => item.onclick = applyAttr);
+window.addEventListener('popstate', function(ev){ //fix back button behavior
+    if(document.referrer){
+      window.location = document.referrer;
+    } else {
+      history.pushState(null, null, window.location.pathname);
+    }
+}, false);
