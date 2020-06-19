@@ -112,7 +112,12 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	width: max-content;
 	line-height: 1.5; }
 #cv[data-theme="traditional"] .cv-subsection {
-	margin: 0.75em 0 1.25em 0; }
+	margin: 0.75em 0 0.75em 0; }
+#cv[data-theme="traditional"] #experience .cv-subsection, #cv[data-theme="traditional"] #education .cv-subsection, #cv[data-theme="traditional"] .cv-orderable-list li   {
+	padding-left: 1.5em;
+	border-left: 0.375em solid rgba(0,0,0,0.05);}
+	#cv[data-theme="traditional"] .cv-orderable-list li   {
+		margin-bottom: 0.5em;}
 #cv[data-theme="traditional"] .cv-subsection > div{
 	float: left;
 	margin-right: 0.5em; }
@@ -159,7 +164,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	--list-spacer: var(--generic-spacer);
 	margin-bottom: var(--list-spacer);}
 #cv[data-theme="modern"] .cv-orderable-list li {
-	padding-left: var(--list-spacer);
+	padding-left: 1.5em;
 	border-left: var(--yellow-border);}
 #cv[data-theme="modern"] .cv-section#contact .contact-line{
   padding-right: var(--list-spacer);
