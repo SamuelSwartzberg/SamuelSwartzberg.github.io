@@ -392,6 +392,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		max-height: calc(95vh - var(--total-distance-covered-by-fab));}
 
 	#mobile-fab-container{
+		overflow: hidden;
 		pointer-events: none;
 		display: block;
 		position: absolute;
