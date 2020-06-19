@@ -21,7 +21,7 @@ html{scroll-behavior: smooth;}
 *{box-sizing: border-box;}
 abbr{text-decoration: none;}
 
-html{overflow: hidden;}
+html{overflow: hidden; max-height: 100vh; max-width: 100vw;}
 
 /*constants*/
 :root{
