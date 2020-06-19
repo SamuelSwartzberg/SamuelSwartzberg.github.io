@@ -183,7 +183,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #cv[data-theme="modern"] .cv-section#contact {
 	position: absolute;
   top: calc(2.05 * var(--a4-cm)); right: calc(2 * var(--a4-cm));
-  width: 22ch;
+  width: 25ch;
 	display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;}
 
 #cv[data-theme="modern"] div.cv-item-header {
