@@ -189,6 +189,8 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #cv[data-theme="modern"] #experience .cv-extra-item, #cv[data-theme="modern"] div.cv-item-header {
 	order: -1;
 	margin-bottom: 0.2em;}
+#cv[data-theme="modern"] #experience .cv-extra-item {
+	height: 1em;}
 #cv[data-theme="modern"] .language-container, #cv[data-theme="modern"] #education .cv-extra-item{
 	margin-left: 1ch; }
 
@@ -382,12 +384,14 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	#mobile-fab-container .background-purple{
 		background-color: hsl(var(--fab-hue), 90%, 45%);
 		box-shadow: 0 0.4vh 1.2vh 0 rgba(0,0,0,.2);
+		will-change: transform, box-shadow, border-radius;
 		transition: transform 0.5s 0.2s, z-index 0s 0.5s; }
 
 	#mobile-fab-container .background-white{
 		z-index: 2;
 		background-color: white;
 		opacity: 0;
+		will-change: transform opacity;
 		transition: transform 0.55s, opacity 0.2s 0.35s; }
 
   #mobile-fab-container.active .background{
@@ -422,6 +426,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 
 	#mobile-fab-container > .mobile-fab .bar{
+		will-change: transform, background-color, opacity, color, border-radius;
 		transition: transform 0.7s, background-color 0.5s, opacity 0s 0.7s, border-radius 0s 0.7s, color 0.2s 0.5s; }
 
 	#mobile-fab-container.active .mobile-fab .bar {
