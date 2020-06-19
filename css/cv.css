@@ -247,13 +247,17 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 @media not print{
 	body, #cv-container, #options-container{
-		height: 100vh;
+		height: -moz-available;
+		height: -webkit-fill-available;
+		height: fill-available;
 		display: flex; justify-content: center; align-items: center;}
 
   body > #cv-container {
 		min-width: calc(var(--cv-width) * 1.1);
 		max-width: calc(var(--cv-width) * 1.2);
-		max-height: 100vh;
+		max-height: -moz-available;
+		max-height: -webkit-fill-available;
+		max-height: fill-available;
 	}
 
   #cv-container-inner{
@@ -347,7 +351,10 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		z-index: 3;
 		position: absolute;
 		top: 0; left: 0; margin: 0;
-		width: 100vw; height: 100vh;
+		width: 100vw;
+		height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
 		background-color: white;
 		padding: 3vh 6vw;
 		max-width: none;
@@ -361,7 +368,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	#options-container-inner{
 		max-width: none;
 		--total-distance-covered-by-fab: calc((3vh * 2) + 2.5vh + (2.5vh * 2 * 1.25)); /* bottom * 2 (for top spacing)+ font-size + font-size * 2 (top and bottom) * 1.25 padding size in em */
-		max-height: calc(100vh - var(--total-distance-covered-by-fab));}
+		max-height: calc(95vh - var(--total-distance-covered-by-fab));}
 
 	#mobile-fab-container{
 		display: block;
@@ -369,7 +376,9 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 100vh;
+		height: -moz-available;
+		height: -webkit-fill-available;
+		height: fill-available;
 		--fab-hue: 278; }
 
 	#mobile-fab-container > .mobile-fab, #mobile-fab-container .background{
