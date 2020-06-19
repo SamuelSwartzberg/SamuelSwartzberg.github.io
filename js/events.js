@@ -1,13 +1,17 @@
 function siteInit() {
   let url = document.URL.split('?')[1];
   let params;
-  if(url){
-     params = new URLSearchParams(url);
+  let defaultParams = new Map([["language", "en"],["theme", "traditional"],["purpose", "translation"],]);
+  params = new URLSearchParams(url);
+  for (const [key, value] of defaultParams) {
+    if(!params || params.has(key) === false){
+      params.append(key, value); // If a key is unspecified, populate it with the default value
+    }
   }
-  if(!url || !params) {
-    params = new Map([["language", "en"],["theme", "traditional"],["purpose", "translation"],]);
-  }
-    for (const [key, value] of params) {
+    for (let [key, value] of params) {
+      if(!params.get(key)){ // Value may still be undefined or null because of some error, generally anything falsy will not be useful, so replace it with the default param
+        value = defaultParams(key);
+      }
       document.querySelector('#cv').dataset[key] = value;
       document.querySelector(`[value=${value}]`).classList.add('active');
       updateMailtoHref();

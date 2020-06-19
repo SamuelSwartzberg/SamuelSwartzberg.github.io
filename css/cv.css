@@ -38,9 +38,9 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 #cv{
 	width: 100%; height: 100%;
+		position: relative;
   font-size: calc(0.4 * var(--a4-cm));
-  padding: calc(2.5 * var(--a4-cm));
-	display: grid; }
+  padding: calc(2.5 * var(--a4-cm));}
 
 .cv-orderable-list{
 	display: flex;
@@ -50,12 +50,20 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 .date.end::before{
   content: " - "; }
-.phone span:not(:last-child){
-	margin-right: 0.5ch; }
+
 .location > span:not(:last-child)::after{
 	content: ", "; }
-.language{
-	margin-right: 1ch; }
+
+.punct::before{
+	margin-left: -0.5ch;
+	content: " ";
+}
+.comma::after, .email-part::after, .email-part::before, .phone-part::after, .phone-part::before{
+	content: " ";
+}
+.email-part:nth-of-type(n+2)::before {
+	margin-left: -0.4ch;
+}
 
 /* CSS-Based hiding and orderingof things based on preset */
 
@@ -73,7 +81,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #cv[data-theme="traditional"]{
 	background-color: white;
 	display: block;
-	font-family: Baskerville, 'Hoefler Text', 'Times New Roman', Times, serif;
+	font-family: Baskerville, 'Baskerville Old Face', 'Libre Baskerville', 'Hoefler Text', Garamond, 'Times New Roman', Times, serif;
 	font-size: calc(0.4 * var(--a4-cm));
 	--medium-emphasis-grey: rgba(0,0,0,0.75);
 	--low-emphasis-grey: rgba(0,0,0,0.5);
@@ -111,37 +119,116 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	color: var(--low-emphasis-grey); }
 #cv[data-theme="traditional"] .cv-institution-item {
 	clear: left; }
+#cv[data-theme="traditional"] #freelance .language-container:not(:last-child)::after{
+	 content: " & "}
+#cv[data-theme="traditional"] #freelance .language:not(:last-child)::after{
+	 content: " - "; }
 #cv[data-theme="traditional"] .cv-description-item {
 	float: none;
 	clear: left;
 	margin-top: 0.5em;
 	color: var(--medium-emphasis-grey); }
-#cv[data-theme="traditional"] em{
+#cv[data-theme="traditional"] .keyword{
 	color: black; }
 
-/* Dynamic Theme */
-/* a white-bg theme that places large emphasis on the skills I want to get across by substituting them with emoji where possible
-and using color and bold fonts where not, similar to a lot of dev blogs such as https://www.smashingmagazine.com/2020/06/website-stressing-out-visitors/ (random article)
-and another one which I can't find right now but which included emoji in a left-hand menu*/
+/* Modern Theme */
 
-#cv[data-theme="dynamic"]{
-	--main-font-size: calc(0.4 * var(--a4-cm));
+#cv[data-theme="modern"]{
+	--main-font-size: calc(0.35 * var(--a4-cm));
 	font-size: var(--main-font-size);
+	font-family: "Inter", Inter, sans-serif;
+	padding: calc(1.75 * var(--a4-cm)) calc(2 * var(--a4-cm));
+	--yellow: #fdf200;
+	--almost-white: rgba(0,0,0,0.13);
+	--very-transparent-grey: rgba(0,0,0,0.4);
+	--somewhat-transparent-grey: rgba(0,0,0,0.75);
+	--yellow-border: 0.5em solid var(--yellow);
+	--grey-border: 0.2em solid var(--almost-white);
+	--generic-spacer: 0.5em;
+	--indent-spacer: 2em;
 }
-#cv[data-theme="dynamic"] header.cv-section{
-	font-size: 3.3em;
-	margin-bottom: 0.2em;}
 
-#cv[data-theme="dynamic"] [data-emoji-equivalent]{
-	font-size: 0px;line-height: 0px;
-}
-#cv[data-theme="dynamic"] [data-emoji-equivalent]::after{
-	content: attr(data-emoji-equivalent);
-		line-height: initial; font-size: var(--main-font-size);
-}
-#cv[data-theme="dynamic"] .code{
+/*all grey underlined elements*/ #cv[data-theme="modern"] .keyword, #cv[data-theme="modern"] #experience .code, #cv[data-theme="modern"] #experience .language{
+	border-bottom: var(--grey-border);}
+/*Lists with side dashes*/
+#cv[data-theme="modern"] .cv-orderable-list li, #cv[data-theme="modern"] .cv-section#contact .contact-line{
+	--list-spacer: var(--generic-spacer);
+	margin-bottom: var(--list-spacer);}
+#cv[data-theme="modern"] .cv-orderable-list li {
+	padding-left: var(--list-spacer);
+	border-left: var(--yellow-border);}
+#cv[data-theme="modern"] .cv-section#contact .contact-line{
+  padding-right: var(--list-spacer);
+	border-right: var(--yellow-border);}
+
+/*Very grey things*/ #cv[data-theme="modern"] .cv-section#contact .contact-line, #cv[data-theme="modern"] .cv-time-item{
+  color: var(--very-transparent-grey);}
+#cv[data-theme="modern"] #education .cv-extra-item, #cv[data-theme="modern"] .cv-institution-item{
+	color: var(--somewhat-transparent-grey);}
+
+#cv[data-theme="modern"] .cv-section{
+	margin-left: var(--indent-spacer);
+	line-height: 1.2;
+	margin-bottom: 1.5em;}
+
+#cv[data-theme="modern"] header.cv-section{
+	background-image: linear-gradient(to bottom, transparent 50%, #fef200 50% 100%);
+	font-size: 3em;
+	width: max-content;
+	font-weight: 700;
+	padding: 0 0.5em; margin-left: -0.5em; margin-bottom: 1.5em;}
+
+#cv[data-theme="modern"] .cv-section#contact {
+	position: absolute;
+  top: calc(2.05 * var(--a4-cm)); right: calc(2 * var(--a4-cm));
+  width: 22ch;
+	display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;}
+
+#cv[data-theme="modern"] div.cv-item-header {
+	font-size: 1.5em; font-family: "Work Sans", sans-serif;; font-weight: bold;}
+#cv[data-theme="modern"] #experience .cv-extra-item, #cv[data-theme="modern"] div.cv-item-header {
+	order: -1;
+	margin-bottom: 0.2em;}
+#cv[data-theme="modern"] .language-container, #cv[data-theme="modern"] #education .cv-extra-item{
+	margin-left: 1ch; }
+
+#cv[data-theme="modern"] .cv-section > header{
+	border-bottom: var(--grey-border);
+	font-size: 1.25em;
+	opacity: 0.4;
 	font-weight: bold;
-}
+	margin-bottom: 0.5em;
+	margin-left: -1em;
+	width: max-content;
+	line-height: 1.5; }
+
+#cv[data-theme="modern"] .cv-subsection{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	margin-bottom: 1em;}
+
+/* Make sure these two stay on the same line*/
+#cv[data-theme="modern"] .cv-time-item{
+	padding-right: 70%;}
+#cv[data-theme="modern"] .cv-institution-item{
+	margin-left: calc(1ch - 70%);}
+
+/* Flex items that don't resize */
+#cv[data-theme="modern"] .cv-subsection > div{
+	flex: 0 0 auto;}
+
+#cv[data-theme="modern"] div.cv-description-item {
+	margin-left: var(--indent-spacer);
+	margin-top: var(--generic-spacer);
+	flex-basis: 100%;}
+
+#cv[data-theme="modern"] .cv-orderable-list, #cv[data-theme="modern"] .cv-description-item {
+	line-height: 1.5;}
+#cv[data-theme="modern"] .first-half-sentence{
+	display: inline-block; width: 100%; } /*essentially forcing the second half sentence into a new line */
+#cv[data-theme="modern"] .language-container .language:first-child::after{
+	content: " -> " }
 
 /* CSS hiding and formatting based on language */
 
@@ -172,6 +259,7 @@ and another one which I can't find right now but which included emoji in a left-
 		border-radius: calc(var(--cv-base-unit)/50);}
 
   #options-container {
+		--light-gray: #ddd;
     font-size: 1.7vh;
     max-width: 30em;
     line-height: 1;
@@ -185,6 +273,10 @@ and another one which I can't find right now but which included emoji in a left-
 		margin: 1.5em 0;
     font-weight: 500;
     color: #333; }
+
+	summary::-webkit-details-marker{
+	  color: var(--light-gray); /* Non-webkit solution is too annoying, so we'll just have normal arrows in ff etc. */
+	}
 
   .button-container{
     display: flex; flex-flow: row wrap;
@@ -200,7 +292,7 @@ and another one which I can't find right now but which included emoji in a left-
 		cursor: pointer;
 		background-color: white;
 		color: #555;
-		border: 0.1em solid #ddd;
+		border: 0.1em solid var(--light-gray);
 		border-radius: calc(1em + 1em/2);}
 
 	.buttonlike.disabled{
@@ -211,16 +303,26 @@ and another one which I can't find right now but which included emoji in a left-
 
 	/* Theme colors for the buttons */
 	.buttonlike[value="translation"]{ --theme-hue: 350; } .buttonlike[value="webdev"]{--theme-hue: 193;} .buttonlike[value="all"]{ --theme-hue: 138; } .buttonlike[value="expanded"]{--theme-hue: 330;} .buttonlike[value="traditional"]{ --theme-hue: 115; }
-	.buttonlike[value="dynamic"]{ --theme-hue: 293; } .buttonlike[value="en"]{ --theme-hue: 244; } .buttonlike[value="de"]{--theme-hue: 42;}
+	.buttonlike[value="typographical"]{ --theme-hue: 293; } 	.buttonlike[value="modern"]{ --theme-hue: 50; } .buttonlike[value="en"]{ --theme-hue: 244; } .buttonlike[value="de"]{--theme-hue: 42;}
   .buttonlike.active{
 		background-color: hsl(var(--theme-hue), 90%, 45%);
 		border-color: hsl(var(--theme-hue), 90%, 40%);
 		color: white;}
+
 }
 
+@media (hover: hover){
+	.buttonlike.active:hover{
+		background-color: hsl(var(--theme-hue), 90%, 37%);
+		border-color: hsl(var(--theme-hue), 90%, 30%); }
 
-summary::-webkit-details-marker{
-  color: #ddd;
+	.buttonlike:not(.active):not(.disabled):hover{
+		background-color: hsla(var(--theme-hue), 90%, 45%, 0.2);
+		border-color: hsla(var(--theme-hue), 90%, 40%, 0.3); }
+
+	.buttonlike:not([value]):not(.disabled):hover{
+		background-color: #eee;
+		border-color: #bbb; }
 }
 
 /* Mobile layout */
@@ -232,6 +334,7 @@ summary::-webkit-details-marker{
 	#cv-container{
 		--cv-base-unit: 90vw;
 		--cv-calculation-side-length: var(--din-a-4-width-in-cm);}
+
 	#options-container{
 		align-items: start;
 		opacity: 0;
@@ -372,6 +475,46 @@ summary::-webkit-details-marker{
 
 /* Font faces to end of document */
 
+/* inter-regular - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/inter-v1-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/inter-v1-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/inter-v1-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/inter-v1-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/inter-v1-latin-regular.svg#Inter') format('svg'); /* Legacy iOS */
+}
+/* inter-500 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v1-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/inter-v1-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/inter-v1-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/inter-v1-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/inter-v1-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/inter-v1-latin-500.svg#Inter') format('svg'); /* Legacy iOS */
+}
+/* inter-700 - latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v1-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/inter-v1-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/inter-v1-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/inter-v1-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/inter-v1-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/inter-v1-latin-700.svg#Inter') format('svg'); /* Legacy iOS */
+}
+
 /* roboto-regular - latin */
 @font-face {
   font-family: 'Roboto';
@@ -437,3 +580,144 @@ summary::-webkit-details-marker{
        url('../fonts/karla-v13-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/karla-v13-latin-700.svg#Karla') format('svg'); /* Legacy iOS */
 }
+/* libre-baskerville-regular - latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/libre-baskerville-v7-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Libre Baskerville'), local('LibreBaskerville-Regular'),
+       url('../fonts/libre-baskerville-v7-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/libre-baskerville-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/libre-baskerville-v7-latin-regular.svg#LibreBaskerville') format('svg'); /* Legacy iOS */
+}
+/* libre-baskerville-italic - latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/libre-baskerville-v7-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local('Libre Baskerville Italic'), local('LibreBaskerville-Italic'),
+       url('../fonts/libre-baskerville-v7-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/libre-baskerville-v7-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/libre-baskerville-v7-latin-italic.svg#LibreBaskerville') format('svg'); /* Legacy iOS */
+}
+/* libre-baskerville-700 - latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/libre-baskerville-v7-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Libre Baskerville Bold'), local('LibreBaskerville-Bold'),
+       url('../fonts/libre-baskerville-v7-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/libre-baskerville-v7-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/libre-baskerville-v7-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/libre-baskerville-v7-latin-700.svg#LibreBaskerville') format('svg'); /* Legacy iOS */
+}
+/* CSS Fragments currently not in use */
+
+/* Leftovers from modern redesign */
+
+/* #cv[data-theme="modern"] [data-emoji-equivalent]{
+	font-size: 0px;line-height: 0px;
+}
+#cv[data-theme="modern"] [data-emoji-equivalent]::before{
+	line-height: initial; font-size: calc(var(--main-font-size));
+	content: attr(data-emoji-equivalent);
+} */
+/* .tag-equivalent[data-emoji-equivalent="🇩🇪"], .tag-equivalent[data-emoji-equivalent="🇺🇸"]{
+	font-size: 0px;line-height: 0px;
+} */
+/* .tag-equivalent[data-emoji-equivalent="🇩🇪"]::before, .tag-equivalent[data-emoji-equivalent="🇺🇸"]::before{
+	content: ' ';
+	display: inline-block;
+	line-height: initial; font-size: var(--main-font-size);
+	width: 4ch;
+	height: 1em;
+	background-image: linear-gradient(to bottom, black 33%, red 33% 66%, yellow 66%);
+}
+
+.tag-equivalent[data-emoji-equivalent="🇩🇪"]::before{
+	background-image: linear-gradient(to bottom, black 33%, red 33% 66%, yellow 66%);
+}
+
+.tag-equivalent[data-emoji-equivalent="🇺🇸"]::before{
+	background-image: linear-gradient(to bottom, black, transparent);
+	background-color: red;
+} */
+
+/* #cv[data-theme="modern"] .code.css{--code-or-lang-hue: 200deg;}
+#cv[data-theme="modern"] .code.html{--code-or-lang-hue: 12deg;}
+#cv[data-theme="modern"] .code.js{--code-or-lang-hue: 53deg;}
+#cv[data-theme="modern"] .code.git{--code-or-lang-hue: 0deg;}
+#cv[data-theme="modern"] .code.py{--code-or-lang-hue: 320deg;}
+#cv[data-theme="modern"] .code.cs{--code-or-lang-hue: 268deg;}
+#cv[data-theme="modern"] .language, #cv[data-theme="modern"] .code.github, #cv[data-theme="modern"] .code.bash, #cv[data-theme="modern"] .code.sh, #cv[data-theme="modern"] .code.meteor{--code-or-lang-saturation:0%;}
+#cv[data-theme="modern"] .code.java {--code-or-lang-hue: 200deg;} */
+
+/* typographical Theme
+
+Not done, disabled
+
+#cv[data-theme="typographical"]{
+	--main-font-size: calc(0.4 * var(--a4-cm));
+	font-size: var(--main-font-size);
+	font-family: "Inter";
+	padding: calc(1.75 * var(--a4-cm)) calc(2 * var(--a4-cm));
+}
+#cv[data-theme="typographical"] header.cv-section{
+	font-size: 4em;
+	font-family: "Playfair Display";
+	font-weight: 900;
+	margin-bottom: 0.7em;}
+#cv[data-theme="typographical"] header.cv-section .last-name{
+	display: block;
+	color: blue;}
+
+#cv[data-theme="typographical"] .cv-section > header{
+	font-size: 1.5em;
+	font-weight: bold;
+	background-blend-mode: color;
+	background-clip: padding-box;
+	margin-left: -0.5em;
+	padding-left: 0.5em;
+	padding-right: 1.5em;
+	background-image: linear-gradient(to bottom, transparent 50%, #d4d4ff 50% 100%);
+	margin-bottom: 1em;
+	width: max-content;
+	line-height: 1.5; }
+
+#cv[data-theme="typographical"] .cv-item-header {
+	font-size: 1.5em;
+	background-clip: padding-box;
+	padding: 0.2em;
+	width: max-content;
+  font-weight: 900; }
+
+#cv[data-theme="typographical"] .cv-subsection > div{
+	display: inline-block;
+	margin-right: 0.5em; }
+#cv[data-theme="typographical"] .cv-subsection > div:nth-child(n+2):not(.cv-description-item){
+	font-family: "Playfair Display";
+	font-weight: 500;
+	font-variant-caps: small-caps;
+ 	color: rgba(0,0,0,0.5);}
+
+#cv[data-theme="typographical"] .cv-description-item {
+	display: block;
+}
+ #cv[data-theme="typographical"] [data-image-equivalent]{
+	font-size: 0px;line-height: 0px;
+}
+#cv[data-theme="typographical"] [data-image-equivalent]::after{
+	content: attr(data-emoji-equivalent);
+		line-height: initial; font-size: var(--main-font-size);
+}
+#cv[data-theme="typographical"] .code{
+	font-weight: bold;
+} */
