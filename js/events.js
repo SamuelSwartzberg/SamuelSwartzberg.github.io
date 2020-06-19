@@ -52,6 +52,7 @@ function modifyUrl(key, value){
 
 function applyAttr(event) {
   let button = event.target.classList.contains('buttonlike') ? event.target : getParentWithClass(event.target, 'buttonlike');
+  if(button.classList.contains("disabled")) return;
   console.log(button);
   try {
     let optionSectionParent = getParentWithClass(button, 'opt-section');

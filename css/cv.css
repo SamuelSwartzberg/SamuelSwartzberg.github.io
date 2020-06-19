@@ -106,7 +106,8 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	display: block; } /* Contact lines */
 #cv[data-theme="traditional"] .cv-section > header{
 	font-weight: bold;
-	border-bottom: 0.1em solid var(--medium-emphasis-grey);
+	color: var(--low-emphasis-grey);
+	border-bottom: 0.1em solid var(--low-emphasis-grey);
 	margin-bottom: 1em;
 	width: max-content;
 	line-height: 1.5; }
@@ -323,8 +324,8 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		border-color: hsl(var(--theme-hue), 90%, 30%); }
 
 	.buttonlike:not(.active):not(.disabled):hover{
-		background-color: hsla(var(--theme-hue), 90%, 45%, 0.2);
-		border-color: hsla(var(--theme-hue), 90%, 40%, 0.3); }
+		background-color: hsla(var(--theme-hue), 90%, 45%, 0.1);
+		border-color: hsla(var(--theme-hue), 90%, 40%, 0.22); }
 
 	.buttonlike:not([value]):not(.disabled):hover{
 		background-color: #eee;
@@ -336,13 +337,26 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #mobile-fab-container{ display: none; }
 @media screen and (max-aspect-ratio: 21/28){
 	body{
-		display: block;}
+		display: block;
+		--total-distance-covered-by-fab: calc((3vh * 2) + 2.5vh + (2.5vh * 2 * 1.25)); /* bottom * 2 (for top spacing)+ font-size + font-size * 2 (top and bottom) * 1.25 padding size in em */}
 	#cv-container{
 		--cv-base-unit: 90vw;
 		--cv-calculation-side-length: var(--din-a-4-width-in-cm);
+		flex-direction: column;
 		max-height: -moz-available;
 		max-height: -webkit-fill-available;
 		max-height: fill-available;}
+
+	#cv-container::before, #cv-container::after{
+		content: " ";
+		display: block;
+		flex: 1 1 auto; }
+	#cv-container::before{
+		min-height: 3vh; }
+	#cv-container::after{
+		height: var(--total-distance-covered-by-fab); }
+	#cv-container-inner{
+		flex: 0 0 auto; }
 
 	#options-container{
 		align-items: start;
@@ -369,10 +383,11 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 	#options-container-inner{
 		max-width: none;
-		--total-distance-covered-by-fab: calc((3vh * 2) + 2.5vh + (2.5vh * 2 * 1.25)); /* bottom * 2 (for top spacing)+ font-size + font-size * 2 (top and bottom) * 1.25 padding size in em */
+
 		max-height: calc(95vh - var(--total-distance-covered-by-fab));}
 
 	#mobile-fab-container{
+		pointer-events: none;
 		display: block;
 		position: absolute;
 		top: 0;
@@ -384,6 +399,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 		--fab-hue: 278; }
 
 	#mobile-fab-container > .mobile-fab, #mobile-fab-container .background{
+		pointer-events: auto;
 		display: block;
 		position: absolute;
 		left: 50%; transform: translateX(-50%);
