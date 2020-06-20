@@ -89,3 +89,19 @@ document.querySelectorAll('.print').forEach((item, i) => {
     window.setTimeout(window.print, 50);
   }
 });
+
+//Since our HTML is indented with newlines, there will be ugly whitespace, which we have to remove
+function trimTextBefore(node) {
+  while (node.previousSibling.nodeName === "#text") { //Get rid of white space from preceeding text nodes first
+    node.previousSibling.textContent = node.previousSibling.textContent.trimRight();
+    if(node.previousSibling.textContent===""){node.previousSibling.remove();} // If the textnode was only whitespace and is now empty, there may be problematic whitespace in the preceeding text node
+    else break; //If it isn't only whitespace, then stop, since it has already been trimmed.
+  }
+  if(node.previousSibling.innerHTML && node.previousSibling.outerHTML){ //if our previous node is now an element, get rid of whitespace within and without
+    node.previousSibling.innerHTML = node.previousSibling.innerHTML.trimRight();
+    node.previousSibling.outerHTML = node.previousSibling.outerHTML.trimRight();
+  }
+  node.innerHTML = node.innerHTML.trimLeft(); //Get rid of any whitespace our node might itself contain
+  node.outerHTML = node.outerHTML.trimLeft();
+}
+document.querySelectorAll('.punct').forEach(trimTextBefore); //Do this before any punctuation

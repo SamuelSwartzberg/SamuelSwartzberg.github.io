@@ -56,10 +56,6 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 .location > span:not(:last-child)::after{
 	content: ", "; }
 
-.punct::before{
-	margin-left: -0.5ch;
-	content: " ";
-}
 .comma::after, .email-part::after, .email-part::before, .phone-part::after, .phone-part::before{
 	content: " ";
 }
@@ -514,9 +510,10 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 @media print{
   #options-container{ display: none; }
-  #cv-container-inner{ --a4-cm: 1cm; }
-	#cv-container-inner{
+  #cv-container-inner{
+		--a4-cm: 1cm;
 		padding: 0 !important;
+		overflow: visible;
 	}
 }
 
