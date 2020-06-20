@@ -12,8 +12,9 @@ function siteInit() {
       if(!params.get(key)){ // Value may still be undefined or null because of some error, generally anything falsy will not be useful, so replace it with the default param
         value = defaultParams(key);
       }
-      document.querySelector('#cv').dataset[key] = value;
+      document.querySelector('#cv-container-inner').dataset[key] = value;
       document.querySelector(`[value=${value}]`).classList.add('active');
+      updatePrintStylesheet();
       updateMailtoHref();
       setLang();
     }
@@ -27,6 +28,12 @@ function updateMailtoHref() {
     Cheers,`)
 }
 
+function updatePrintStylesheet() {
+  let theme = document.querySelector('#cv-container-inner').dataset["theme"];
+  document.querySelector('#print-styles').href = `css/print/${theme}-print.css`;
+  console.log(document.querySelector('#print-styles').href);
+}
+
 function getParentWithClass(node, nodeClass) {
   if(node.classList.contains(nodeClass)) return node;
   else if (node.nodeName==='BODY') throw `There is no ${nodeClass} element that is a parent of this node`;
@@ -37,7 +44,7 @@ function applyActive(target, sectionParent) {
   target.classList.add('active');
 }
 function setLang() {
-  let cv = document.querySelector('#cv')
+  let cv = document.querySelector('#cv-container-inner')
   cv.lang=cv.dataset.language;
 }
 function modifyUrl(key, value){
@@ -57,8 +64,9 @@ function applyAttr(event) {
   try {
     let optionSectionParent = getParentWithClass(button, 'opt-section');
     let dataAttr = optionSectionParent.id;
-    document.querySelector('#cv').dataset[dataAttr] = button.value;
+    document.querySelector('#cv-container-inner').dataset[dataAttr] = button.value;
     setLang();
+    updatePrintStylesheet();
     modifyUrl(dataAttr, button.value);
     applyActive(button, optionSectionParent);
   } catch (e) {
@@ -76,3 +84,8 @@ window.addEventListener('popstate', function(ev){ //fix back button behavior
       history.pushState(null, null, window.location.pathname);
     }
 }, false);
+document.querySelectorAll('.print').forEach((item, i) => {
+  item.onclick = (item) => {
+    window.setTimeout(window.print, 50);
+  }
+});

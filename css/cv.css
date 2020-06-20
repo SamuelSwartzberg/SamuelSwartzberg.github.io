@@ -42,8 +42,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #cv{
 	width: 100%; height: 100%;
 		position: relative;
-  font-size: calc(0.4 * var(--a4-cm));
-  padding: calc(2.5 * var(--a4-cm));}
+  font-size: calc(0.4 * var(--a4-cm));}
 
 .cv-orderable-list{
 	display: flex;
@@ -70,18 +69,20 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 /* CSS-Based hiding and orderingof things based on preset */
 
-#cv[data-purpose="webdev"] .hideable:not(.show-webdev),
-#cv[data-purpose="translation"] .hideable:not(.show-translation),
-#cv[data-purpose="expanded"] .hideable:not(.show-expanded){
+#cv-container-inner[data-purpose="webdev"] .hideable:not(.show-webdev),
+#cv-container-inner[data-purpose="translation"] .hideable:not(.show-translation),
+#cv-container-inner[data-purpose="expanded"] .hideable:not(.show-expanded){
 	display: none; }
-#cv[data-purpose="translation"] .cv-orderable-list li.list-nat-lang{order: -10;}
-#cv[data-purpose="webdev"] .cv-orderable-list li.list-code-lang{order: -10;}
+#cv-container-inner[data-purpose="translation"] .cv-orderable-list li.list-nat-lang{order: -10;}
+#cv-container-inner[data-purpose="webdev"] .cv-orderable-list li.list-code-lang{order: -10;}
 
 /* CSS CV Themes */
 
 /* Traditional Theme */
-
-#cv[data-theme="traditional"]{
+#cv-container-inner[data-theme="traditional"]{
+	padding: calc(2.5 * var(--a4-cm)) calc(2 * var(--a4-cm));
+	flex: 0 0 auto; }
+#cv-container-inner[data-theme="traditional"] #cv{
 	background-color: white;
 	display: block;
 	font-family: Baskerville, 'Baskerville Old Face', 'Libre Baskerville', 'Hoefler Text', Garamond, 'Times New Roman', Times, serif;
@@ -89,64 +90,65 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	--medium-emphasis-grey: rgba(0,0,0,0.75);
 	--low-emphasis-grey: rgba(0,0,0,0.5);
 	color: var(--medium-emphasis-grey);}
-#cv[data-theme="traditional"] header.cv-section{
+#cv-container-inner[data-theme="traditional"] header.cv-section{
 	font-size: 3.3em;
 	color: black;
 	margin-bottom: 0.2em;}
-#cv[data-theme="traditional"] .cv-section{
+#cv-container-inner[data-theme="traditional"] .cv-section{
 	display: block;
 	line-height: 1.2;
 	margin-bottom: 1.5em;
 }
-#cv[data-theme="traditional"] .cv-subsection::after {
+#cv-container-inner[data-theme="traditional"] .cv-subsection::after {
 	/* clearfix */ display: block; content: ""; clear: both;}
-#cv[data-theme="traditional"] .cv-section#contact{
+#cv-container-inner[data-theme="traditional"] .cv-section#contact{
 	margin-bottom: 2em; }
-#cv[data-theme="traditional"] .cv-section#contact>span{
+#cv-container-inner[data-theme="traditional"] .cv-section#contact>span{
 	display: block; } /* Contact lines */
-#cv[data-theme="traditional"] .cv-section > header{
+#cv-container-inner[data-theme="traditional"] .cv-section > header{
 	font-weight: bold;
 	color: var(--low-emphasis-grey);
 	border-bottom: 0.1em solid var(--low-emphasis-grey);
 	margin-bottom: 1em;
 	width: max-content;
 	line-height: 1.5; }
-#cv[data-theme="traditional"] .cv-subsection {
+#cv-container-inner[data-theme="traditional"] .cv-subsection {
 	margin: 0.75em 0 0.75em 0; }
-#cv[data-theme="traditional"] #experience .cv-subsection, #cv[data-theme="traditional"] #education .cv-subsection, #cv[data-theme="traditional"] .cv-orderable-list li   {
+#cv-container-inner[data-theme="traditional"] #experience .cv-subsection, #cv-container-inner[data-theme="traditional"] #education .cv-subsection, #cv-container-inner[data-theme="traditional"] .cv-orderable-list li   {
 	padding-left: 1.5em;
 	border-left: 0.375em solid rgba(0,0,0,0.05);}
-	#cv[data-theme="traditional"] .cv-orderable-list li   {
+	#cv-container-inner[data-theme="traditional"] .cv-orderable-list li   {
 		margin-bottom: 0.5em;}
-#cv[data-theme="traditional"] .cv-subsection > div{
+#cv-container-inner[data-theme="traditional"] .cv-subsection > div{
 	float: left;
 	margin-right: 0.5em; }
-#cv[data-theme="traditional"] .cv-item-header {
+#cv-container-inner[data-theme="traditional"] .cv-item-header {
   font-weight: bold;
 	color: black; }
-#cv[data-theme="traditional"] .cv-time-item, #cv[data-theme="traditional"] .cv-extra-item{
+#cv-container-inner[data-theme="traditional"] .cv-time-item, #cv-container-inner[data-theme="traditional"] .cv-extra-item{
 	color: var(--low-emphasis-grey); }
-#cv[data-theme="traditional"] .cv-institution-item {
+#cv-container-inner[data-theme="traditional"] .cv-institution-item {
 	clear: left; }
-#cv[data-theme="traditional"] #freelance .language-container:not(:last-child)::after{
+#cv-container-inner[data-theme="traditional"] #freelance .language-container:not(:last-child)::after{
 	 content: " & "}
-#cv[data-theme="traditional"] #freelance .language:not(:last-child)::after{
+#cv-container-inner[data-theme="traditional"] #freelance .language:not(:last-child)::after{
 	 content: " - "; }
-#cv[data-theme="traditional"] .cv-description-item {
+#cv-container-inner[data-theme="traditional"] .cv-description-item {
 	float: none;
 	clear: left;
 	margin-top: 0.5em;
 	color: var(--medium-emphasis-grey); }
-#cv[data-theme="traditional"] .keyword{
+#cv-container-inner[data-theme="traditional"] .keyword{
 	color: black; }
 
 /* Modern Theme */
-
-#cv[data-theme="modern"]{
+#cv-container-inner[data-theme="modern"]{
+	padding: calc(1.75 * var(--a4-cm)) calc(2 * var(--a4-cm));
+}
+#cv-container-inner[data-theme="modern"] #cv{
 	--main-font-size: calc(0.35 * var(--a4-cm));
 	font-size: var(--main-font-size);
 	font-family: "Inter", Inter, sans-serif;
-	padding: calc(1.75 * var(--a4-cm)) calc(2 * var(--a4-cm));
 	--yellow: #fdf200;
 	--almost-white: rgba(0,0,0,0.13);
 	--very-transparent-grey: rgba(0,0,0,0.4);
@@ -157,53 +159,53 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	--indent-spacer: 2em;
 }
 
-/*all grey underlined elements*/ #cv[data-theme="modern"] .keyword, #cv[data-theme="modern"] #experience .code, #cv[data-theme="modern"] #experience .language{
+/*all grey underlined elements*/ #cv-container-inner[data-theme="modern"] .keyword, #cv-container-inner[data-theme="modern"] #experience .code, #cv-container-inner[data-theme="modern"] #experience .language{
 	border-bottom: var(--grey-border);}
 /*Lists with side dashes*/
-#cv[data-theme="modern"] .cv-orderable-list li, #cv[data-theme="modern"] .cv-section#contact .contact-line{
+#cv-container-inner[data-theme="modern"] .cv-orderable-list li, #cv-container-inner[data-theme="modern"] .cv-section#contact .contact-line{
 	--list-spacer: var(--generic-spacer);
 	margin-bottom: var(--list-spacer);}
-#cv[data-theme="modern"] .cv-orderable-list li {
+#cv-container-inner[data-theme="modern"] .cv-orderable-list li {
 	padding-left: 1.5em;
 	border-left: var(--yellow-border);}
-#cv[data-theme="modern"] .cv-section#contact .contact-line{
+#cv-container-inner[data-theme="modern"] .cv-section#contact .contact-line{
   padding-right: var(--list-spacer);
 	border-right: var(--yellow-border);}
 
-/*Very grey things*/ #cv[data-theme="modern"] .cv-section#contact .contact-line, #cv[data-theme="modern"] .cv-time-item{
+/*Very grey things*/ #cv-container-inner[data-theme="modern"] .cv-section#contact .contact-line, #cv-container-inner[data-theme="modern"] .cv-time-item{
   color: var(--very-transparent-grey);}
-#cv[data-theme="modern"] #education .cv-extra-item, #cv[data-theme="modern"] .cv-institution-item{
+#cv-container-inner[data-theme="modern"] #education .cv-extra-item, #cv-container-inner[data-theme="modern"] .cv-institution-item{
 	color: var(--somewhat-transparent-grey);}
 
-#cv[data-theme="modern"] .cv-section{
+#cv-container-inner[data-theme="modern"] .cv-section{
 	margin-left: var(--indent-spacer);
 	line-height: 1.2;
 	margin-bottom: 1.5em;}
 
-#cv[data-theme="modern"] header.cv-section{
-	background-image: linear-gradient(to bottom, transparent 50%, #fef200 50% 100%);
+#cv-container-inner[data-theme="modern"] header.cv-section{
+	background-image: linear-gradient(to bottom, #fff 0% 50%, #fef200 50% 100%);
 	font-size: 3em;
 	width: max-content;
 	font-weight: 700;
 	padding: 0 0.5em; margin-left: -0.5em; margin-bottom: 1.5em;}
 
-#cv[data-theme="modern"] .cv-section#contact {
+#cv-container-inner[data-theme="modern"] .cv-section#contact {
 	position: absolute;
-  top: calc(2.05 * var(--a4-cm)); right: calc(2 * var(--a4-cm));
+  top: calc(0.3 * var(--a4-cm)); right: 0;
   width: 25ch;
 	display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end;}
 
-#cv[data-theme="modern"] div.cv-item-header {
+#cv-container-inner[data-theme="modern"] div.cv-item-header {
 	font-size: 1.5em; font-family: "Work Sans", sans-serif;; font-weight: bold;}
-#cv[data-theme="modern"] #experience .cv-extra-item, #cv[data-theme="modern"] div.cv-item-header {
+#cv-container-inner[data-theme="modern"] #experience .cv-extra-item, #cv-container-inner[data-theme="modern"] div.cv-item-header {
 	order: -1;
 	margin-bottom: 0.2em;}
-#cv[data-theme="modern"] #experience .cv-extra-item {
+#cv-container-inner[data-theme="modern"] #experience .cv-extra-item {
 	height: 1em;}
-#cv[data-theme="modern"] .language-container, #cv[data-theme="modern"] #education .cv-extra-item{
+#cv-container-inner[data-theme="modern"] .language-container, #cv-container-inner[data-theme="modern"] #education .cv-extra-item{
 	margin-left: 1ch; }
 
-#cv[data-theme="modern"] .cv-section > header{
+#cv-container-inner[data-theme="modern"] .cv-section > header{
 	border-bottom: var(--grey-border);
 	font-size: 1.25em;
 	opacity: 0.4;
@@ -213,41 +215,41 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 	width: max-content;
 	line-height: 1.5; }
 
-#cv[data-theme="modern"] .cv-subsection{
+#cv-container-inner[data-theme="modern"] .cv-subsection{
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
 	margin-bottom: 1em;}
 
 /* Make sure these two stay on the same line*/
-#cv[data-theme="modern"] .cv-time-item{
+#cv-container-inner[data-theme="modern"] .cv-time-item{
 	padding-right: 80%;}
-#cv[data-theme="modern"] .cv-institution-item{
+#cv-container-inner[data-theme="modern"] .cv-institution-item{
 	margin-left: calc(1ch - 80%);}
 
 /* Flex items that don't resize */
-#cv[data-theme="modern"] .cv-subsection > div{
+#cv-container-inner[data-theme="modern"] .cv-subsection > div{
 	flex: 0 0 auto;}
 
-#cv[data-theme="modern"] div.cv-description-item {
+#cv-container-inner[data-theme="modern"] div.cv-description-item {
 	margin-left: var(--indent-spacer);
 	margin-top: var(--generic-spacer);
 	flex-basis: 100%;}
 
-#cv[data-theme="modern"] .cv-orderable-list, #cv[data-theme="modern"] .cv-description-item {
+#cv-container-inner[data-theme="modern"] .cv-orderable-list, #cv-container-inner[data-theme="modern"] .cv-description-item {
 	line-height: 1.5;}
-#cv[data-theme="modern"] .first-half-sentence{
+#cv-container-inner[data-theme="modern"] .first-half-sentence{
 	display: inline-block; width: 100%; } /*essentially forcing the second half sentence into a new line */
-#cv[data-theme="modern"] .language-container .language:first-child::after{
+#cv-container-inner[data-theme="modern"] .language-container .language:first-child::after{
 	content: " -> " }
 
 /* CSS hiding and formatting based on language */
 
-#cv[lang="en"] [lang="de"], #cv[lang="de"] [lang="en"]{
+#cv-container-inner[lang="en"] [lang="de"], #cv-container-inner[lang="de"] [lang="en"]{
   display: none; }
-#cv[lang="en"] .area-code::before{
+#cv-container-inner[lang="en"] .area-code::before{
 	content: "+49 "; }
-#cv[lang="de"] .area-code::before{
+#cv-container-inner[lang="de"] .area-code::before{
 	content: "0"; }
 
 /* Default page layout */
@@ -512,11 +514,11 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 @media print{
   #options-container{ display: none; }
-  #cv{ --a4-cm: 1cm; }
-
-/* @page {
-	margin: 1.75cm 2cm;
-} */
+  #cv-container-inner{ --a4-cm: 1cm; }
+	#cv-container-inner{
+		padding: 0 !important;
+	}
+}
 
 /* Theoretically, to make sure more than one page gets printed well, I would need to set margins in @page rules,
 but since the layout is built on #cv having padding, it'll be quite a challenge to fix this. */
@@ -737,10 +739,10 @@ but since the layout is built on #cv having padding, it'll be quite a challenge 
 
 /* Leftovers from modern redesign */
 
-/* #cv[data-theme="modern"] [data-emoji-equivalent]{
+/* #cv-container-inner[data-theme="modern"] [data-emoji-equivalent]{
 	font-size: 0px;line-height: 0px;
 }
-#cv[data-theme="modern"] [data-emoji-equivalent]::before{
+#cv-container-inner[data-theme="modern"] [data-emoji-equivalent]::before{
 	line-height: initial; font-size: calc(var(--main-font-size));
 	content: attr(data-emoji-equivalent);
 } */
@@ -765,35 +767,35 @@ but since the layout is built on #cv having padding, it'll be quite a challenge 
 	background-color: red;
 } */
 
-/* #cv[data-theme="modern"] .code.css{--code-or-lang-hue: 200deg;}
-#cv[data-theme="modern"] .code.html{--code-or-lang-hue: 12deg;}
-#cv[data-theme="modern"] .code.js{--code-or-lang-hue: 53deg;}
-#cv[data-theme="modern"] .code.git{--code-or-lang-hue: 0deg;}
-#cv[data-theme="modern"] .code.py{--code-or-lang-hue: 320deg;}
-#cv[data-theme="modern"] .code.cs{--code-or-lang-hue: 268deg;}
-#cv[data-theme="modern"] .language, #cv[data-theme="modern"] .code.github, #cv[data-theme="modern"] .code.bash, #cv[data-theme="modern"] .code.sh, #cv[data-theme="modern"] .code.meteor{--code-or-lang-saturation:0%;}
-#cv[data-theme="modern"] .code.java {--code-or-lang-hue: 200deg;} */
+/* #cv-container-inner[data-theme="modern"] .code.css{--code-or-lang-hue: 200deg;}
+#cv-container-inner[data-theme="modern"] .code.html{--code-or-lang-hue: 12deg;}
+#cv-container-inner[data-theme="modern"] .code.js{--code-or-lang-hue: 53deg;}
+#cv-container-inner[data-theme="modern"] .code.git{--code-or-lang-hue: 0deg;}
+#cv-container-inner[data-theme="modern"] .code.py{--code-or-lang-hue: 320deg;}
+#cv-container-inner[data-theme="modern"] .code.cs{--code-or-lang-hue: 268deg;}
+#cv-container-inner[data-theme="modern"] .language, #cv-container-inner[data-theme="modern"] .code.github, #cv-container-inner[data-theme="modern"] .code.bash, #cv-container-inner[data-theme="modern"] .code.sh, #cv-container-inner[data-theme="modern"] .code.meteor{--code-or-lang-saturation:0%;}
+#cv-container-inner[data-theme="modern"] .code.java {--code-or-lang-hue: 200deg;} */
 
 /* typographical Theme
 
 Not done, disabled
 
-#cv[data-theme="typographical"]{
+#cv-container-inner[data-theme="typographical"]{
 	--main-font-size: calc(0.4 * var(--a4-cm));
 	font-size: var(--main-font-size);
 	font-family: "Inter";
 	padding: calc(1.75 * var(--a4-cm)) calc(2 * var(--a4-cm));
 }
-#cv[data-theme="typographical"] header.cv-section{
+#cv-container-inner[data-theme="typographical"] header.cv-section{
 	font-size: 4em;
 	font-family: "Playfair Display";
 	font-weight: 900;
 	margin-bottom: 0.7em;}
-#cv[data-theme="typographical"] header.cv-section .last-name{
+#cv-container-inner[data-theme="typographical"] header.cv-section .last-name{
 	display: block;
 	color: blue;}
 
-#cv[data-theme="typographical"] .cv-section > header{
+#cv-container-inner[data-theme="typographical"] .cv-section > header{
 	font-size: 1.5em;
 	font-weight: bold;
 	background-blend-mode: color;
@@ -806,32 +808,32 @@ Not done, disabled
 	width: max-content;
 	line-height: 1.5; }
 
-#cv[data-theme="typographical"] .cv-item-header {
+#cv-container-inner[data-theme="typographical"] .cv-item-header {
 	font-size: 1.5em;
 	background-clip: padding-box;
 	padding: 0.2em;
 	width: max-content;
   font-weight: 900; }
 
-#cv[data-theme="typographical"] .cv-subsection > div{
+#cv-container-inner[data-theme="typographical"] .cv-subsection > div{
 	display: inline-block;
 	margin-right: 0.5em; }
-#cv[data-theme="typographical"] .cv-subsection > div:nth-child(n+2):not(.cv-description-item){
+#cv-container-inner[data-theme="typographical"] .cv-subsection > div:nth-child(n+2):not(.cv-description-item){
 	font-family: "Playfair Display";
 	font-weight: 500;
 	font-variant-caps: small-caps;
  	color: rgba(0,0,0,0.5);}
 
-#cv[data-theme="typographical"] .cv-description-item {
+#cv-container-inner[data-theme="typographical"] .cv-description-item {
 	display: block;
 }
- #cv[data-theme="typographical"] [data-image-equivalent]{
+ #cv-container-inner[data-theme="typographical"] [data-image-equivalent]{
 	font-size: 0px;line-height: 0px;
 }
-#cv[data-theme="typographical"] [data-image-equivalent]::after{
+#cv-container-inner[data-theme="typographical"] [data-image-equivalent]::after{
 	content: attr(data-emoji-equivalent);
 		line-height: initial; font-size: var(--main-font-size);
 }
-#cv[data-theme="typographical"] .code{
+#cv-container-inner[data-theme="typographical"] .code{
 	font-weight: bold;
 } */
