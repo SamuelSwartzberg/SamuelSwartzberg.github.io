@@ -81,7 +81,7 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 #cv-container-inner[data-theme="traditional"] #cv{
 	background-color: white;
 	display: block;
-	font-family: Baskerville, 'Baskerville Old Face', 'Libre Baskerville', 'Hoefler Text', Garamond, 'Times New Roman', Times, serif;
+	font-family: 'Libre Baskerville', 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', Times, serif;
 	font-size: calc(0.4 * var(--a4-cm));
 	--medium-emphasis-grey: rgba(0,0,0,0.75);
 	--low-emphasis-grey: rgba(0,0,0,0.5);
