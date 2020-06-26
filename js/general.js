@@ -101,3 +101,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
 
 });
+
+document.querySelector("#contact-fab").onclick = () => {
+  document.querySelector("#contact-fab").classList.add("send");
+  window.setTimeout(() => {
+    document.querySelector("#contact-fab").classList.remove("send");
+  }, 3000)
+}

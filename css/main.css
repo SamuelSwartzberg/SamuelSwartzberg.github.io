@@ -52,7 +52,7 @@ body{--default-font-size: 2.7rem; font-size: var(--default-font-size); --big-fon
 code, #translation .mockup-body, .message-body pre{font-size: var(--small-font-size);}
 #translation .mockup-body{line-height:1.6em; }
 h1{font-size: var(--big-font-size);font-weight: var(--bold-font-weight);}
-h2{	line-height: var(--text-line-height);font-weight: var(--slightly-bold-font-weight);}
+h2{	line-height: var(--text-line-height);}
 #contact .header-line .name-desc{ font-weight: bold; color: var(--deemphasize-font-color); }
 
 /*Dummy lines*/#code article:not(:first-of-type) pre code, .message-body pre, .subject-bar, #translation .dummy article pre{ color: transparent; background-color: var(--bg-slight-offset); line-height: 1.9em; }
@@ -349,6 +349,14 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	z-index: var(--z-top);}
 #contact-fab a{ width: var(--fab-size); height: var(--fab-size); }
 #contact-fab svg{ padding: calc(0.28 * var(--fab-size)); }
+div#contact-fab.send{
+    animation: 0.7s cubic-bezier(.44,-0.82,.87,-0.66) forwards send;
+}
+@keyframes send{
+    100%{
+        right: -10em;
+    }
+}
 
 .dance{  --distance: 2em; animation: dance 3s linear, color-change 3s steps(16, jump-both), color-change 1.5s steps(16, jump-both) 3s; }
 .dance *{color: var(--transparent-white) !important;border-color: var(--slightly-white) !important;fill:var(--transparent-white) !important; }
