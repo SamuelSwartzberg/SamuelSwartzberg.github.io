@@ -367,9 +367,14 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 #contact-fab.send{
     animation: 0.7s cubic-bezier(.44,-0.82,.87,-0.66) forwards send;
 }
-#contact-fab:active, #contact-fab *:active{
+#contact-fab:active{
 	color: inherit;
 	background-color: inherit;
+	fill: inherit;
+}
+#contact-fab a:active{
+	color: inherit;
+	background-color: transparent;
 	fill: inherit;
 }
 @keyframes send{
