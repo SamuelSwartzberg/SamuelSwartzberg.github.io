@@ -12,7 +12,16 @@ blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 table { border-collapse: collapse; border-spacing: 0; }
 select { -webkit-appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; }
-*:focus{	outline: none;}
+*:focus{	outline: none !important;}
+*{
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 input[type=text]{ border: none; font: inherit; color: inherit; resize: none; line-height: 1rem; }
 html{scroll-behavior: smooth;}
 
@@ -119,10 +128,17 @@ section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding);}
 
 
 @media screen and (hover: hover) {
-	a.quicklink:hover { transform: translateY(var(--hover-raise-distance));}
+	a:hover{
+		color: var(--deemphasize-font-color);
+	}
+	a.quicklink:hover { color: inherit;
+		transform: translateY(var(--hover-raise-distance));}
 	a.quicklink:focus { transform: translateY(var(--hover-raise-distance));}
 	a.quicklink:visited{transform: translateY(0);}
+
 }
+
+a:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--main-bg-color);}
 /* @media screen and (min-width: 1600px) {
 
 	section{
@@ -205,7 +221,6 @@ section:first-of-type > .text-section-container{ padding-top: 20rem; }
 .quicklink svg{
 	fill: inherit;
 }
-a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--main-bg-color);}
 a.quicklink > div {
 	padding: 1em;
 	height: 100%;
@@ -349,8 +364,13 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	z-index: var(--z-top);}
 #contact-fab a{ width: var(--fab-size); height: var(--fab-size); }
 #contact-fab svg{ padding: calc(0.28 * var(--fab-size)); }
-div#contact-fab.send{
+#contact-fab.send{
     animation: 0.7s cubic-bezier(.44,-0.82,.87,-0.66) forwards send;
+}
+#contact-fab:active, #contact-fab *:active{
+	color: inherit;
+	background-color: inherit;
+	fill: inherit;
 }
 @keyframes send{
     100%{
