@@ -329,6 +329,11 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	margin-bottom: 0.8em;
 }
 #contact .dummy-line{ background-color: var(--bg-slight-offset);}
+#contact .header-line > div{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
 #contact .header-line.subject > div{ display: flex; }
 #contact .header-line span.subject-bar{ display: block; margin-left: 1ch; flex-grow: 1; line-height: 1;}
 
