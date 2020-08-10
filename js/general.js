@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       alert("Due to security concerns, you may not enter special characters.\nPlease try again.");
       e.target.value = "";
     } else{
+      document.querySelector("#contact-fab a").dataset.name=e.target.value;
+      generateMailtoLink();
       document.querySelectorAll(".insert-name").forEach((item, i) => {
         item.innerText=" "+e.target.value;
       });
@@ -101,6 +103,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
 
 });
+function generateMailtoLink(){
+  let contactFabLink=document.querySelector("#contact-fab a");
+  contactFabLink.href="mailto:me@samswartzberg.com?subject="
+  + encodeURIComponent(contactFabLink.dataset.subject) +
+  "&body=" + encodeURIComponent(contactFabLink.dataset.message) +
+  encodeURIComponent(contactFabLink.dataset.name);
+  contactFabLink.href=contactFabLink.href.replace(/%0A/g,"%0D%0A");
+}
+generateMailtoLink();
+
 
 document.querySelector("#contact-fab").onclick = () => {
   document.querySelector("#contact-fab").classList.add("send");
