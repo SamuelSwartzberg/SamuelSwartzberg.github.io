@@ -363,6 +363,8 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 }
 #contact #mail-select {
 	    width: 100% !important;
+padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
+    hyphens: auto;
 }
 #contact .language-selector-container::after{
 	animation: none;
