@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       e.target.value = "";
     } else{
       document.querySelector("#contact-fab a").dataset.name=e.target.value;
+      document.querySelector('.message-body pre').innerHTML = document.querySelector("#contact-fab a").dataset.message + e.target.value;
       generateMailtoLink();
       document.querySelectorAll(".insert-name").forEach((item, i) => {
         item.innerText=" "+e.target.value;
@@ -103,6 +104,61 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
 
 });
+let mailObject = {
+  defaultMail: {
+    subject: "Inquiry regarding translation/web development",
+    message: `Hey Sam,
+
+I saw your website and ...
+
+Cheers,
+
+`
+  },
+  translationArea: {
+    subject: "Question regarding your expertise in translating ___",
+    message: `Hey Sam,
+
+for my current project, I'm looking for someone who can translate ___. Do you think you could do that?
+
+Cheers,
+
+`
+  },
+  translationRates: {
+    subject: "Inquiry regarding your translation rates",
+    message: `Hey Sam,
+
+I was wondering what you would charge for a text of ___? The text ...
+
+Cheers,
+
+`
+  },
+  webdev: {
+    subject: "Inquiry regarding the creation of a website for ___",
+    message: `Hey Sam,
+
+I ___. For that purpose, I need a website. This website ...`
+  },
+  webdevMaintenance: {
+    subject: "Inquiry regarding website maintenance or improvement",
+    message: `Hey Sam,
+
+I ___ and over the years, the website has developed some problems. Could you ...
+
+Cheers,
+
+`
+  },
+  confession: {
+    subject: "愛の告白",
+    message: `サムさんがずっとずっと前から好きでした！付き合ってください！
+
+`
+  }
+}
+
 function generateMailtoLink(){
   let contactFabLink=document.querySelector("#contact-fab a");
   contactFabLink.href="mailto:me@samswartzberg.com?subject="
@@ -113,7 +169,15 @@ function generateMailtoLink(){
 }
 generateMailtoLink();
 
-
+document.querySelector('#mail-select').onchange = (e) =>{
+  console.log(e);
+  let contactFabLink=document.querySelector("#contact-fab a");
+  contactFabLink.dataset.subject = mailObject[e.target.value].subject;
+  contactFabLink.dataset.message = mailObject[e.target.value].message;
+  generateMailtoLink();
+  document.querySelector('.message-body pre').innerHTML = mailObject[e.target.value].message;
+  document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";
+}
 document.querySelector("#contact-fab").onclick = () => {
   document.querySelector("#contact-fab").classList.add("send");
   window.setTimeout(() => {
