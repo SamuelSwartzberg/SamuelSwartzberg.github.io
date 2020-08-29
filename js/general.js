@@ -21,7 +21,8 @@ document.querySelector(".code-selector").onchange = function (e,i) {
   changeActive(e, "#code .mockup-body > div", "#code .mockup-body .");};
 
 document.querySelector("#tl-topic-selector").onchange =function (e,i) {
-  changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");};
+  changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");
+  e.target.parentElement.classList.add("discovered"); /* to be able to stop the animation */};
 
 document.querySelector("#tl-lang-selector").onchange = function (e,i) {
   changeActive(e, "#translation .mockup-body .lang", "#translation .mockup-body .");};

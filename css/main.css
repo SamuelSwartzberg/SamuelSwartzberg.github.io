@@ -195,7 +195,7 @@ padding-right: var(--arrow-clickability-distance);}
   width: var(--triangle-size);
 }
 
-#translation h1 .language-selector-container select, #translation h1 .language-selector-container::after{
+#translation h1 .language-selector-container:not(.discovered) select, #translation h1 .language-selector-container:not(.discovered)::after{
 	animation: animateOpacity 4s ease-in-out infinite;}
 
 @keyframes animateOpacity{
