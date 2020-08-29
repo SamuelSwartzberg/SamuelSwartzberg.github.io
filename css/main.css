@@ -138,7 +138,7 @@ section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding);}
 
 }
 
-a:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--main-bg-color);}
+a:active, a.quicklink:active { background-color: var(--main-font-color); color: var(--main-bg-color); fill: var(--main-bg-color);}
 /* @media screen and (min-width: 1600px) {
 
 	section{
