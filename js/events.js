@@ -8,16 +8,16 @@ function siteInit() {
       params.append(key, value); // If a key is unspecified, populate it with the default value
     }
   }
-    for (let [key, value] of params) {
-      if(!params.get(key)){ // Value may still be undefined or null because of some error, generally anything falsy will not be useful, so replace it with the default param
-        value = defaultParams(key);
-      }
-      document.querySelector('#cv-container-inner').dataset[key] = value;
-      document.querySelector(`[value=${value}]`).classList.add('active');
-      updatePrintStylesheet();
-      updateMailtoHref();
-      setLang();
+  for (let [key, value] of params) {
+    if(!params.get(key)){ // Value may still be undefined or null because of some error, generally anything falsy will not be useful, so replace it with the default param
+      value = defaultParams(key);
     }
+    document.querySelector('#cv-container-inner').dataset[key] = value;
+    document.querySelector(`[value=${value}]`).classList.add('active');
+  }
+  updatePrintStylesheet();
+  updateMailtoHref();
+  setLang();
 }
 function updateMailtoHref() {
   document.querySelector('#send-link').href =
