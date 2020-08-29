@@ -69,7 +69,7 @@ h2{	line-height: var(--text-line-height);}
 body{--z-higher: 1; --z-top: 2;}
 
 body{--side-padding: 7.5vw; --page-side-padding: var(--side-padding); --mockup-side-padding: var(--side-padding);
-	--fab-size: 12vw; --fab-card-mid-place: calc(var(--page-side-padding) + var(--mockup-side-padding) - (0.5 * var(--fab-size)));
+	--fab-size: 15vw; --fab-card-mid-place: calc(var(--page-side-padding) + var(--mockup-side-padding) - (0.5 * var(--fab-size)));
 	--fab-offset: var(--fab-card-mid-place)}
 
 body{
@@ -83,7 +83,7 @@ body{
 	--main-bg-color: #fff;
 	--card-bg-color: var(--main-bg-color);
 	--bg-slight-offset: rgba(0,0,0,0.1);
-	--slight-box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.2);
+	--slight-box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.3);
 	--main-box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
 	--deemphasize-font-color: rgba(0,0,0,0.6);
 	--code-bg-color: #011627;
