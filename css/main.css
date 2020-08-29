@@ -69,7 +69,7 @@ h2{	line-height: var(--text-line-height);}
 body{--z-higher: 1; --z-top: 2;}
 
 body{--side-padding: 7.5vw; --page-side-padding: var(--side-padding); --mockup-side-padding: var(--side-padding);
-	--fab-size: 15vw; --fab-card-mid-place: calc(var(--page-side-padding) + var(--mockup-side-padding) - (0.5 * var(--fab-size)));
+	--fab-size: 12vw; --fab-card-mid-place: calc(var(--page-side-padding) + var(--mockup-side-padding) - (0.5 * var(--fab-size)));
 	--fab-offset: var(--fab-card-mid-place)}
 
 body{
