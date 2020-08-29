@@ -307,7 +307,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 /* Learning */
 
-#learning .mockup-container{
+/* #learning .mockup-container{
 	 --mockup-container-height: calc( var(--mockup-container-max-height) * 6 / 7);}
 #learning .mockup-border{padding: 0; background-color: var(--constant-white-color) !important;}
 .clickable-l-r{ position: absolute; display: flex; }
@@ -335,7 +335,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	background-color: var(--bubble-color);
 	opacity: 0.2;}
 .img-bubble.active{
-	opacity: 1;}
+	opacity: 1;} */
 
 /* contact */
 

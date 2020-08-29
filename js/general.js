@@ -76,33 +76,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
     body.classList.toggle("dark-theme");
     document.querySelector("meta[name='theme-color']").content = getComputedStyle(body).getPropertyValue("--main-bg-color");
     }
-  var images = document.querySelectorAll(".image-container picture");
-  for (var i = 0; i < images.length; i++) {
-    var bubble = document.createElement('div');
-    bubble.setAttribute('class','img-bubble');
-    if(i==0){bubble.setAttribute('class','img-bubble active');}
-    document.querySelector(".image-bubbles").appendChild(bubble);
-  }
-  function switchImage(plusMinus){
-    var activeImage = document.querySelector(".image-container picture.active");
-    var currentIndex = Array.from(activeImage.parentNode.children).indexOf(activeImage);
-    var currentIndexCremented = currentIndex+plusMinus;
-    var imageBubbles = document.querySelector(".image-bubbles")
-    var imageContainer = document.querySelector(".image-container");
-    if (currentIndexCremented>=0 && currentIndexCremented<imageContainer.children.length){
-      activeImage.classList.remove("active");
-      imageContainer.children[currentIndexCremented].classList.add("active");
-      imageBubbles.children[currentIndex].classList.remove("active");
-      imageBubbles.children[currentIndexCremented].classList.add("active");
-    }
-  }
+  // var images = document.querySelectorAll(".image-container picture");
+  // for (var i = 0; i < images.length; i++) {
+  //   var bubble = document.createElement('div');
+  //   bubble.setAttribute('class','img-bubble');
+  //   if(i==0){bubble.setAttribute('class','img-bubble active');}
+  //   document.querySelector(".image-bubbles").appendChild(bubble);
+  // }
+  // function switchImage(plusMinus){
+  //   var activeImage = document.querySelector(".image-container picture.active");
+  //   var currentIndex = Array.from(activeImage.parentNode.children).indexOf(activeImage);
+  //   var currentIndexCremented = currentIndex+plusMinus;
+  //   var imageBubbles = document.querySelector(".image-bubbles")
+  //   var imageContainer = document.querySelector(".image-container");
+  //   if (currentIndexCremented>=0 && currentIndexCremented<imageContainer.children.length){
+  //     activeImage.classList.remove("active");
+  //     imageContainer.children[currentIndexCremented].classList.add("active");
+  //     imageBubbles.children[currentIndex].classList.remove("active");
+  //     imageBubbles.children[currentIndexCremented].classList.add("active");
+  //   }
+  // }
 
-  document.querySelector(".clickable-l").onclick = function () {
-    switchImage(-1);
-  };
-  document.querySelector(".clickable-r").onclick = function () {
-    switchImage(1);
-  };
+  // document.querySelector(".clickable-l").onclick = function () {
+  //   switchImage(-1);
+  // };
+  // document.querySelector(".clickable-r").onclick = function () {
+  //   switchImage(1);
+  // };
 
 });
 let mailObject = {
