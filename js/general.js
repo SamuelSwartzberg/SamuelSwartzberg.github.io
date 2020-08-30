@@ -112,9 +112,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
       alert("Due to security concerns, you may not enter special characters.\nPlease try again.");
       e.target.value = "";
     } else{
-      document.querySelector("#contact-fab a").dataset.name=e.target.value;
-      document.querySelector('.message-body pre').innerHTML = document.querySelector("#contact-fab a").dataset.message + e.target.value;
-      generateMailtoLink();
+      let contactFab = document.querySelector("#contact-fab a");
+      contactFab.dataset.name=e.target.value;
+      document.querySelector('.message-body pre').innerHTML = contactFab.dataset.message + e.target.value;
+      generateMailtoLink(contactFab);
       document.querySelectorAll(".insert-name").forEach((item, i) => {
         item.innerText=" "+e.target.value;
       });
