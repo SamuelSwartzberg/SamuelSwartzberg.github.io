@@ -23,9 +23,25 @@ function changeLanguage(language){
 
 changeLanguage(getLanguageInit());
 
+function getOppositeLang(lang){
+  return lang==="de" ? "en" : "de";
+}
+
+function transposeSelects(currentLang){ // If the user switches the languages while having selects set, we want to make sure those selects are also correctly set in the new language
+  let oldSelects = document.querySelectorAll(`html [lang="${currentLang}"] select`);
+  let newSelects = document.querySelectorAll(`html [lang="${getOppositeLang(currentLang)}"] select`);
+  for (var i = 0; i < oldSelects.length; i++) {
+    newSelects[i].value = oldSelects[i].value;
+    newSelects[i].onchange({target:newSelects[i]});
+  }
+}
+
 document.querySelector(".language-switcher").onclick = e => {
-  if (document.querySelector("html").lang = "en") changeLanguage("de");
+  let currentLang = document.querySelector("html").lang;
+  if (currentLang === "en") changeLanguage("de");
   else changeLanguage("en");
+  // updateMailItems(document.querySelectorAll('.mail-select'));
+  transposeSelects(currentLang);
 }
 
 
@@ -141,80 +157,148 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 });
 let mailObject = {
-  defaultMail: {
-    subject: "Inquiry regarding translation/web development",
-    message: `Hey Sam,
+  de: {
+    defaultMail: {
+      subject: "Anfrage zu ...",
+      message: `Hey Sam,
+
+Ich war auf deiner Website und ...
+
+Viele Grüße,
+
+`
+    },
+    translationArea: {
+      subject: "Anfrage zu deiner Fachkenntnis bezüglich ___",
+      message: `Hey Sam,
+für mein momentanes Projekt bräuchte ich jemanden, der Kenntnisse im Bereich  ___ hat. Hast du in diesem Bereich Erfahrung?
+
+Viele Grüße,
+
+`
+    },
+    translationRates: {
+      subject: "Anfrage zum Preis einer Übersetzung",
+      message: `Hey Sam,
+
+was würde denn das Übersetzen eines Textes von etwa ___ kosten? Der Text ...
+
+Viele Grüße,
+
+`
+    },
+    webdev: {
+      subject: "Anfrage für eine Website ___",
+      message: `Hey Sam,
+
+ich ___, und dafür bräuchte ich eine Website. Diese Website ...
+
+Viele Grüße,
+
+`
+    },
+    webdevMaintenance: {
+      subject: "Anfrage zur (General)überholung/Instandsetzung/Erweiterung einer Website",
+      message: `Hey Sam,
+
+ich ___, und im Laufe der Zeit ___. Daher ...
+
+Viele Grüße,
+
+`
+    },
+    confession: {
+      subject: "愛の告白",
+      message: `サムさんがずっとずっと前から好きでした！付き合ってください！
+
+`
+    }
+  },
+  en: {
+    defaultMail: {
+      subject: "Inquiry regarding translation/web development",
+      message: `Hey Sam,
 
 I saw your website and ...
 
 Cheers,
 
 `
-  },
-  translationArea: {
-    subject: "Question regarding your expertise in translating ___",
-    message: `Hey Sam,
+    },
+    translationArea: {
+      subject: "Question regarding your expertise in translating ___",
+      message: `Hey Sam,
 
 for my current project, I'm looking for someone who can translate ___. Do you think you could do that?
 
 Cheers,
 
 `
-  },
-  translationRates: {
-    subject: "Inquiry regarding your translation rates",
-    message: `Hey Sam,
+    },
+    translationRates: {
+      subject: "Inquiry regarding your translation rates",
+      message: `Hey Sam,
 
 I was wondering what you would charge for a text of ___? The text ...
 
 Cheers,
 
 `
-  },
-  webdev: {
-    subject: "Inquiry regarding the creation of a website for ___",
-    message: `Hey Sam,
+    },
+    webdev: {
+      subject: "Inquiry regarding the creation of a website for ___",
+      message: `Hey Sam,
 
-I ___. For that purpose, I need a website. This website ...`
-  },
-  webdevMaintenance: {
-    subject: "Inquiry regarding website maintenance or improvement",
-    message: `Hey Sam,
+I ___. For that purpose, I need a website. This website ...
+
+Cheers,
+
+`
+    },
+    webdevMaintenance: {
+      subject: "Inquiry regarding website maintenance or improvement",
+      message: `Hey Sam,
 
 I ___ and over the years, the website has developed some problems. Could you ...
 
 Cheers,
 
 `
-  },
-  confession: {
-    subject: "愛の告白",
-    message: `サムさんがずっとずっと前から好きでした！付き合ってください！
+    },
+    confession: {
+      subject: "愛の告白",
+      message: `サムさんがずっとずっと前から好きでした！付き合ってください！
 
 `
+    }
   }
 }
 
-function generateMailtoLink(){
-  let contactFabLink=document.querySelector("#contact-fab a");
+function setDatasetValues(value, contactFabLink){
+  contactFabLink.dataset.subject = mailObject[document.querySelector("html").lang][value].subject;
+  contactFabLink.dataset.message = mailObject[document.querySelector("html").lang][value].message;
+}
+function generateMailtoLink(contactFabLink){
   contactFabLink.href="mailto:me@samswartzberg.com?subject="
   + encodeURIComponent(contactFabLink.dataset.subject) +
   "&body=" + encodeURIComponent(contactFabLink.dataset.message) +
   encodeURIComponent(contactFabLink.dataset.name);
   contactFabLink.href=contactFabLink.href.replace(/%0A/g,"%0D%0A");
 }
-generateMailtoLink();
+function updateMessagePre(contactFabLink){
+  document.querySelector('.message-body pre').innerHTML = contactFabLink.dataset.message;
+  document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";}
 
+function updateMailItems(value){
+  let contactFabLink=document.querySelector("#contact-fab a");
+  setDatasetValues(value, contactFabLink);
+  generateMailtoLink(contactFabLink);
+  updateMessagePre(contactFabLink);
+}
+document.querySelectorAll('.mail-select')
 document.querySelectorAll('.mail-select').forEach((select) => {
-  select.onchange = (e) =>{
-    console.log(e);
-    let contactFabLink=document.querySelector("#contact-fab a");
-    contactFabLink.dataset.subject = mailObject[e.target.value].subject;
-    contactFabLink.dataset.message = mailObject[e.target.value].message;
-    generateMailtoLink();
-    document.querySelector('.message-body pre').innerHTML = mailObject[e.target.value].message;
-    document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";
-  }
+  select.onchange = (e) => updateMailItems(e.target.value);
+  updateMailItems(select.value);
 });
 
 document.querySelector("#contact-fab").onclick = () => {

@@ -239,7 +239,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	margin-bottom: 1em;
 }
 
-#translation h1 span:first-of-type{display: block;}
+#translation h1 > span:first-of-type{display: block;}
 
 /* Code */
 
@@ -344,12 +344,12 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	margin-bottom: 0.8em;
 }
 #contact .dummy-line{ background-color: var(--bg-slight-offset);}
-#contact .header-line > div{
+#contact .header-line .header-line-inner{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-#contact .header-line.subject > div{ display: flex; align-items: baseline;}
+#contact .header-line.subject .header-line-inner{ display: flex; align-items: baseline;}
 #contact .header-line span.subject-bar{ display: block; margin-left: 1ch; flex-grow: 1; line-height: 1;}
 #contact .header-line:nth-child(2){margin-bottom: calc(0.8em - 0.325em);}
 #contact .subject-selector {
@@ -461,7 +461,24 @@ Language switchign
 	position: absolute;
 	top: 1em;
 	right: 1em;
+	width: 1em;
+	height: 1em;
 }
+html[lang="de"] .language-switcher::before{
+	display: block;
+	content: "🇺🇸";
+}
+html[lang="en"] .language-switcher::before{
+	display: block;
+	content: "🇩🇪";
+}
+html[lang="de"] [lang="en"]{
+	display: none;
+}
+html[lang="en"] [lang="de"]{
+	display: none;
+}
+
 
 .dance{  --distance: 2em; animation: dance 3s linear, color-change 3s steps(16, jump-both), color-change 1.5s steps(16, jump-both) 3s; }
 .dance *{color: var(--transparent-white) !important;border-color: var(--slightly-white) !important;fill:var(--transparent-white) !important; }
