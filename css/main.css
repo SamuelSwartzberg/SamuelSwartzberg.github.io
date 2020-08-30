@@ -11,7 +11,7 @@ ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 table { border-collapse: collapse; border-spacing: 0; }
-select { -webkit-appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; }
+select { -webkit-appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; line-height: 1.2;}
 *:focus{	outline: none !important;}
 *{
 	-webkit-touch-callout: none;
@@ -28,6 +28,8 @@ html{scroll-behavior: smooth;}
 /* Styling general html elements */
 a{ color: inherit; font-weight:bold; text-decoration: none;}
 pre{display: inline; white-space: pre-wrap;}
+option{color: inherit; background-color: var(--main-bg-color);
+}
 
 /*Utility classes*/
 .center-content-horizontally{ display: flex; flex-direction: column; justify-content: center; }
@@ -98,7 +100,7 @@ body.dark-theme{
 	--main-font-color: #fff;
 
 	--deemphasize-font-color: var(--transparent-white);
-	--card-bg-color: rgba(255,255,255,0.15);
+	--card-bg-color: rgb(38,38,38);
 	--code-bg-color: var(--card-bg-color);
 	--dark-theme-color: rgb(138, 180, 248);
 	--main-button-bg: var(--dark-theme-color);
@@ -251,6 +253,10 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	color: var(--code-font-color);
 	--bg-slight-offset: var(--slightly-white);}
 
+	#code .code-selector option, #code .css-code option{
+		background-color: var(--code-bg-color);
+	}
+
 #code .html-code input{
 	display: inline-block;
 	margin: 0 0.15em;
@@ -266,14 +272,6 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	animation: pulseBG 3s linear infinite;
 	--opacity-range: 2; /*relative to current bg-color*/}
 
-#code .css-code option{
-	color: var(--constant-black-color);
-}
-
-#code .code-selector option{
-	color: inherit;
-	background-color: var(--code-bg-color);
-}
 
 @keyframes pulseBG {
 	0%, 100%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) * var(--opacity-range)));}
