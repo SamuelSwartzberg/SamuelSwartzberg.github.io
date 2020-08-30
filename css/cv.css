@@ -323,9 +323,20 @@ html{ font-family: 'Roboto', Roboto, sans-serif; }
 
 #home{
 	position: absolute;
-	top: 1em;
-	left: 1em;
+	top: 0;
+	left: 0;
 	display: block;
+	z-index: 0;
+	font-size: 1em;
+	padding: 0.5em 1em 0.5em 0.5em;
+  border-radius: 0 0 1em 0;
+	background-color: #fff;
+	box-shadow:  0 0.13em 0.4em 0 rgba(0,0,0,.2);
+}
+#home > svg{
+	fill: rgba(0,0,0,0.5);
+	width: 1.5em;
+	height: 1.5em;
 }
 
 @media (hover: hover){
