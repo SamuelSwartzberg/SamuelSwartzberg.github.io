@@ -1,3 +1,34 @@
+// Language handling
+
+function getLanguageInit() {
+  if (localStorage.getItem("language")){
+    return localStorage.getItem("language");
+  } else {
+    return navigator.languages
+    ? navigator.languages[0]
+    : (navigator.language || navigator.userLanguage); // cf https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference/25603630#25603630
+  }
+}
+
+function sanitizeLanguage(language) {
+  if (language.startsWith("de")) return "de";
+  else return "en";
+}
+
+function changeLanguage(language){
+  language = sanitizeLanguage(language);
+  localStorage.setItem("language", language);
+  document.querySelector("html").lang = language;
+}
+
+changeLanguage(getLanguageInit());
+
+document.querySelector(".language-switcher").onclick = e => {
+  if (document.querySelector("html").lang = "en") changeLanguage("de");
+  else changeLanguage("en");
+}
+
+
 var fitSelect = function (e) {
   console.log(window.getComputedStyle(e.target.children[e.target.selectedIndex]).width);
   var tempMeasureNode = document.createElement("div");
