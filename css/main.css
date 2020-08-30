@@ -361,7 +361,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
     border: 0.075em solid var(--bg-slight-offset);
     border-radius: var(--small-border-radius);
 }
-#contact #mail-select {
+#contact .mail-select {
 	    width: 100% !important;
 padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
     hyphens: auto;
@@ -451,6 +451,16 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
     100%{
         right: -20em;
     }
+}
+
+/*
+Language switchign
+*/
+
+.language-switcher{
+	position: absolute;
+	top: 1em;
+	right: 1em;
 }
 
 .dance{  --distance: 2em; animation: dance 3s linear, color-change 3s steps(16, jump-both), color-change 1.5s steps(16, jump-both) 3s; }

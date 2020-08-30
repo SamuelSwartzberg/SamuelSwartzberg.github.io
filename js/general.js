@@ -51,12 +51,16 @@ var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
 document.querySelector(".code-selector").onchange = function (e,i) {
   changeActive(e, "#code .mockup-body > div", "#code .mockup-body .");};
 
-document.querySelector("#tl-topic-selector").onchange =function (e,i) {
-  changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");
-  e.target.parentElement.classList.add("discovered"); /* to be able to stop the animation */};
+document.querySelectorAll(".tl-topic-selector").forEach((selector) => {
+  selector.onchange =function (e,i) {
+    changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");
+    e.target.parentElement.classList.add("discovered"); /* to be able to stop the animation */};
+});
 
-document.querySelector("#tl-lang-selector").onchange = function (e,i) {
-  changeActive(e, "#translation .mockup-body .lang", "#translation .mockup-body .");};
+document.querySelectorAll(".tl-lang-selector").forEach((selector) => {
+  selector.onchange = function (e,i) {
+    changeActive(e, "#translation .mockup-body .lang", "#translation .mockup-body .");};
+});
 
 document.querySelector(".dance-selector").onchange = function (e,i) {
     document.querySelectorAll("section .mockup-border").forEach((item, i) => {
@@ -201,15 +205,18 @@ function generateMailtoLink(){
 }
 generateMailtoLink();
 
-document.querySelector('#mail-select').onchange = (e) =>{
-  console.log(e);
-  let contactFabLink=document.querySelector("#contact-fab a");
-  contactFabLink.dataset.subject = mailObject[e.target.value].subject;
-  contactFabLink.dataset.message = mailObject[e.target.value].message;
-  generateMailtoLink();
-  document.querySelector('.message-body pre').innerHTML = mailObject[e.target.value].message;
-  document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";
-}
+document.querySelectorAll('.mail-select').forEach((select) => {
+  select.onchange = (e) =>{
+    console.log(e);
+    let contactFabLink=document.querySelector("#contact-fab a");
+    contactFabLink.dataset.subject = mailObject[e.target.value].subject;
+    contactFabLink.dataset.message = mailObject[e.target.value].message;
+    generateMailtoLink();
+    document.querySelector('.message-body pre').innerHTML = mailObject[e.target.value].message;
+    document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";
+  }
+});
+
 document.querySelector("#contact-fab").onclick = () => {
   document.querySelector("#contact-fab-outer").classList.add("send");
   window.setTimeout(() => {
