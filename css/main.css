@@ -269,6 +269,12 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 #code .css-code option{
 	color: var(--constant-black-color);
 }
+
+#code .code-selector option{
+	color: inherit;
+	background-color: var(--code-bg-color);
+}
+
 @keyframes pulseBG {
 	0%, 100%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) * var(--opacity-range)));}
 	50%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) / var(--opacity-range))); }}
