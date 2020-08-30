@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
 /* CSS Reset*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
@@ -11,7 +13,7 @@ ol, ul { list-style: none; }
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
 table { border-collapse: collapse; border-spacing: 0; }
-select { -webkit-appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; line-height: 1.2;}
+select { -webkit-appearance: initial; -moz-appearance: initial; appearance: initial; text-rendering: auto; color: inherit; letter-spacing: normal; word-spacing: normal; text-transform: none; text-indent: unset; text-shadow: none; display: inline-block; text-align: unset; white-space: normal; background-color: transparent; cursor: default; margin: 0; font: inherit; border-radius: 0; border: none; font-size: inherit; line-height: 1.2;}
 *:focus{	outline: none !important;}
 *{
 	-webkit-touch-callout: none;
@@ -490,7 +492,6 @@ html[lang="en"] [lang="de"]{
 @keyframes dance { 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{ transform: translateX(0) translateY(0); } 6.25%, 18.75%{transform: translateX(calc(-1 * var(--distance))) translateY(0);} 31.25%, 43.75%{transform: translateX(0) translateY(var(--distance));} 56.25%, 68.75%{transform: translateX(0) translateY(calc(-1 * var(--distance)));} 81.25%, 93.75%{transform: translateX(var(--distance)) translateY(0);}}
 @keyframes color-change{ 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--code-bg-color);} 6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);} 18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);} 31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);} 43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);} 56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);} 68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);} 81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);} 93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);} }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @font-face {
   font-family: 'Inter';
   src: local('Inter'),
