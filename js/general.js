@@ -180,8 +180,11 @@ document.querySelector('#mail-select').onchange = (e) =>{
   document.querySelector('.message-body pre').innerHTML += contactFabLink.dataset.name || "";
 }
 document.querySelector("#contact-fab").onclick = () => {
-  document.querySelector("#contact-fab").classList.add("send");
+  document.querySelector("#contact-fab-outer").classList.add("send");
   window.setTimeout(() => {
-    document.querySelector("#contact-fab").classList.remove("send");
+    document.querySelector("#contact-fab-outer").classList.remove("send");
   }, 3000)
 }
+
+window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.add("message-reminder")},300000000);
+window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.remove("message-reminder")},100000000);

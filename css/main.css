@@ -49,7 +49,7 @@ pre{display: inline; white-space: pre-wrap;}
 
 /*Defining variables and base units*/
 html{font-size: 0.5em;}
-body{font-family: 'Inter', Helvetica, Arial, sans-serif;}
+body{font-family: 'Inter', Helvetica, Arial, sans-serif; max-width: 100vw; overflow-wrap: break-word;}
 code{font-family: 'Inconsolata', monospace;}
 .app .mockup-body, #contact .mockup-border{font-family: 'Nunito';}
 
@@ -177,7 +177,7 @@ a:active, a.quicklink:active { background-color: var(--main-font-color); color: 
   align-items: center;
 	justify-content: left;
 	font-weight: var(--bold-font-weight);
-	--arrow-clickability-distance: 2em;
+	--arrow-clickability-distance: 1em;
 	}
 
 .language-selector-container select{ z-index: var(--z-higher);
@@ -381,18 +381,61 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 }
 /*FAB*/
 
-#contact-fab{
-	fill: var(--constant-black-color);
+#contact-fab-outer{
 	position: fixed;
 	bottom: var(--fab-offset);
 	right: var(--fab-offset);
+	display: flex;
+    border-radius: calc( var(--fab-size)*1.28 / 2);
+    background-color: var(--main-button-bg);
+    align-items: flex-end;
+    box-shadow: var(--slight-box-shadow);
+		width: var(--fab-size);
+		height: var(--fab-size);
+		transition-property: width;
+		transition-duration: .5s;
+		transition-timing-function: ease-in;
+    z-index: var(--z-top);
+		justify-content: flex-end;
+}
+
+#contact-fab-outer.message-reminder{
+	transition-property: width;
+	transition-duration: .5s;
+			transition-timing-function: ease-in;
+  width: 65vw;
+	height: auto;
+	max-height: calc(2* var(--fab-size));
+	overflow: hidden;
+}
+
+
+#contact-fab{
+	fill: var(--constant-black-color);
+	height: max-content;
+  width: max-content;
 	background-color: var(--main-button-bg);
-	box-shadow: var(--slight-box-shadow);
 	z-index: var(--z-top);}
+
+.fab-message{
+	display: none;
+}
+#contact-fab-outer.message-reminder .fab-message{
+	display: block;
+	padding:calc(0.28 * var(--fab-size)) 0 calc(0.28 * var(--fab-size)) calc(0.5 * var(--fab-size));
+  line-height: 1.2;
+  font-size: 0.9em;
+}
+#contact-fab-outer.message-reminder #contact-fab{
+	box-shadow: none;
+  background-color: black; /* FIXME: theme changes */
+  fill: var(--constant-white-color);
+	margin: calc(0.14 * var(--fab-size));
+}
 #contact-fab a{ width: var(--fab-size); height: var(--fab-size); }
 #contact-fab svg{ padding: calc(0.28 * var(--fab-size)); }
-#contact-fab.send{
-    animation: 0.7s cubic-bezier(.44,-0.82,.87,-0.66) forwards send;
+#contact-fab-outer.send{
+    animation: 1.3s cubic-bezier(.44,-0.82,.87,-0.66) forwards send;
 }
 #contact-fab:active{
 	color: inherit;
@@ -406,7 +449,7 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 }
 @keyframes send{
     100%{
-        right: -10em;
+        right: -20em;
     }
 }
 
@@ -651,4 +694,9 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 	}
 	#learning .mockup-container{
 		 --mockup-container-height: var(--mockup-container-max-height);}
+}
+@media screen and (max-width:350px){
+	html{
+		font-size: 0.4em;
+	}
 }
