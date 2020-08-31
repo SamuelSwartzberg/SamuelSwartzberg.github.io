@@ -27,6 +27,23 @@ function getOppositeLang(lang){
   return lang==="de" ? "en" : "de";
 }
 
+var fitSelect = function (e) {
+  console.log(window.getComputedStyle(e.target.children[e.target.selectedIndex]).width);
+  var tempMeasureNode = document.createElement("div");
+  var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
+  tempMeasureNode.appendChild(tempText);
+  var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
+  var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
+  newAttachedNode.remove();
+  e.target.style.width = textWidth;
+}
+
+function fitAllSelects() {
+  document.querySelectorAll('select:not(.dance-selector)').forEach((item, i) => {
+    fitSelect({target:item});
+  });
+}
+
 function transposeSelects(currentLang){ // If the user switches the languages while having selects set, we want to make sure those selects are also correctly set in the new language
   let oldSelects = document.querySelectorAll(`html [lang="${currentLang}"] select`);
   let newSelects = document.querySelectorAll(`html [lang="${getOppositeLang(currentLang)}"] select`);
@@ -42,19 +59,11 @@ document.querySelector(".language-switcher").onclick = e => {
   else changeLanguage("en");
   // updateMailItems(document.querySelectorAll('.mail-select'));
   transposeSelects(currentLang);
+  fitAllSelects();
 }
 
 
-var fitSelect = function (e) {
-  console.log(window.getComputedStyle(e.target.children[e.target.selectedIndex]).width);
-  var tempMeasureNode = document.createElement("div");
-  var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
-  tempMeasureNode.appendChild(tempText);
-  var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
-  var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
-  newAttachedNode.remove();
-  e.target.style.width = textWidth;
-}
+
 var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
   document.querySelectorAll(allElementsSelector).forEach((item, i) => {
       item.classList.remove("active");
@@ -102,9 +111,7 @@ document.querySelector(".dance-selector").onchange = function (e,i) {
     };
 };
 
-document.querySelectorAll('select:not(.dance-selector)').forEach((item, i) => {
-  fitSelect({target:item});
-});
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
   document.querySelector("#name-input").oninput = function (e,i){
