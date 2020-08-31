@@ -28,9 +28,10 @@ function getOppositeLang(lang){
 }
 
 var fitSelect = function (e) {
-  console.log(window.getComputedStyle(e.target.children[e.target.selectedIndex]).width);
+  console.log(e.target.children[e.target.selectedIndex]);
   var tempMeasureNode = document.createElement("div");
   var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
+  console.log(tempText);
   tempMeasureNode.appendChild(tempText);
   var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
   var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
