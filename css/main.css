@@ -430,7 +430,7 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 	transition-property: width;
 	transition-duration: .5s;
 			transition-timing-function: ease;
-			width: 11.7em;
+			width: 12em;
 
 	height: var(--fab-size);
 	overflow: hidden;

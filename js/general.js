@@ -28,13 +28,13 @@ function getOppositeLang(lang){
 }
 
 var fitSelect = function (e) {
-  console.log(e.target.children[e.target.selectedIndex]);
   var tempMeasureNode = document.createElement("div");
   var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
-  console.log(tempText);
   tempMeasureNode.appendChild(tempText);
+  tempMeasureNode.style = "white-space: pre; overflow-wrap: normal;";
   var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
   var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
+  console.log(newAttachedNode.textContent);
   newAttachedNode.remove();
   e.target.style.width = textWidth;
 }
