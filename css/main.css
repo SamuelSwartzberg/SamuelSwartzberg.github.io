@@ -415,13 +415,13 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 	display: flex;
     border-radius: calc( var(--fab-size)*1.28 / 2);
     background-color: var(--main-button-bg);
-    align-items: flex-end;
+    align-items: center;
     box-shadow: var(--slight-box-shadow);
 		width: var(--fab-size);
 		height: var(--fab-size);
 		transition-property: width;
 		transition-duration: .5s;
-		transition-timing-function: ease-in;
+		transition-timing-function: ease;
     z-index: var(--z-top);
 		justify-content: flex-end;
 }
@@ -429,10 +429,10 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 #contact-fab-outer.message-reminder{
 	transition-property: width;
 	transition-duration: .5s;
-			transition-timing-function: ease-in;
-  width: 65vw;
-	height: auto;
-	max-height: calc(2* var(--fab-size));
+			transition-timing-function: ease;
+			width: 13.3em;
+
+	height: calc(1.28* var(--fab-size));
 	overflow: hidden;
 }
 
@@ -445,13 +445,16 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 	z-index: var(--z-top);}
 
 .fab-message{
-	display: none;
+	padding:calc(0.14 * var(--fab-size)) 0 calc(0.14 * var(--fab-size)) calc(0.5 * var(--fab-size));
+	line-height: 1.2;
+	font-size: 0.8em;
+	max-height: var(--fab-size);
+	overflow: hidden;
+	white-space: pre;
+	word-break: keep-all;
+				margin-right: auto;
 }
 #contact-fab-outer.message-reminder .fab-message{
-	display: block;
-	padding:calc(0.28 * var(--fab-size)) 0 calc(0.28 * var(--fab-size)) calc(0.5 * var(--fab-size));
-  line-height: 1.2;
-  font-size: 0.9em;
 }
 #contact-fab-outer.message-reminder #contact-fab{
 	box-shadow: none;

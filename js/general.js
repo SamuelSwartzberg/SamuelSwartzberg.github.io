@@ -309,5 +309,5 @@ document.querySelector("#contact-fab").onclick = () => {
   }, 3000)
 }
 
-window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.add("message-reminder")},300000000);
-window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.remove("message-reminder")},100000000);
+window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.add("message-reminder")},45000);
+window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.remove("message-reminder")},52000);
