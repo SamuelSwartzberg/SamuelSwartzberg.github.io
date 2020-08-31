@@ -487,8 +487,6 @@ Language switchign
 	position: absolute;
 	top: 1em;
 	right: 1em;
-	width: 1em;
-	height: 1em;
 }
 html[lang="de"] .language-switcher::before{
 	display: block;
