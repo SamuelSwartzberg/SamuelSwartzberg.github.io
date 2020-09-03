@@ -424,6 +424,7 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 		transition-timing-function: ease;
     z-index: var(--z-top);
 		justify-content: flex-end;
+		color: var(--constant-black-color);
 }
 
 #contact-fab-outer.message-reminder{
