@@ -36,6 +36,7 @@ option{color: inherit; background-color: var(--main-bg-color);
 /*Utility classes*/
 .center-content-horizontally{ display: flex; flex-direction: column; justify-content: center; }
 .center-content-both{ display: flex; justify-content: center; align-items: center; }
+.wiggle{animation: wiggle 6s infinite;}
 
 /*Common operations*/
 

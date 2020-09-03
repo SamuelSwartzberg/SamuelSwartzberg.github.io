@@ -333,3 +333,17 @@ window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.
 let finalMessage = document.querySelector('#contact .message-body');
 console.log(window.getComputedStyle(finalMessage).height);
 document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 50}px`;
+
+let wiggleSend = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log("is intersecting");
+      document.querySelector("#contact-fab-outer").classList.add("wiggle");
+    } else {
+      document.querySelector("#contact-fab-outer").classList.remove("wiggle");
+    }
+  });
+};
+
+let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 1});
+bottomObserverWiggle.observe(finalMessage);
