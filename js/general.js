@@ -1,3 +1,13 @@
+// Helper methods
+
+// Adapted from https://stackoverflow.com/questions/442404/retrieve-the-position-x-y-of-an-html-element-relative-to-the-browser-window
+function getOffsetFromTopOfDocument(element) {
+  var bodyRect = document.body.getBoundingClientRect(),
+      elemRect = element.getBoundingClientRect(),
+      offset   = elemRect.top - bodyRect.top;
+  return offset;
+}
+
 // Language handling
 
 function getLanguageInit() {
@@ -319,3 +329,7 @@ document.querySelector("#contact-fab").onclick = () => {
 
 window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.add("message-reminder")},45000);
 window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.remove("message-reminder")},52000);
+
+let finalMessage = document.querySelector('#contact .message-body');
+console.log(window.getComputedStyle(finalMessage).height);
+document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 50}px`;

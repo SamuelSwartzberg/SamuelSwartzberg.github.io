@@ -150,6 +150,10 @@ a:active, a.quicklink:active { background-color: var(--main-font-color); color: 
 	}
 } */
 
+.main-container{
+				overflow: hidden;
+}
+
 
 /* Mockups - general */
 .mockup-container{
@@ -366,7 +370,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 /* contact */
 
-#contact{ max-height: 77rem; overflow: hidden; }
+
 #contact .header-line{
 	margin-bottom: 0.8em;
 }
@@ -485,9 +489,11 @@ Language switchign
 */
 
 .language-switcher{
+	font-size: 1.5em;
 	position: absolute;
-	top: 1em;
-	right: 1em;
+	padding: 1em;
+	top: 0;
+	right:0;
 }
 html[lang="de"] .language-switcher::before{
 	display: block;
