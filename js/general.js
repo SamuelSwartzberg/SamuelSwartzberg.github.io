@@ -340,13 +340,13 @@ document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDo
 
 let wiggleSend = (entries, observer) => {
   entries.forEach(entry => {
+    let fabOuter= document.querySelector("#contact-fab-outer");
     if (entry.isIntersecting) {
-      console.log("is intersecting");
-
-      document.querySelector("#contact-fab-outer").classList.add("wiggle");
+      fabOuter.classList.add("wiggle");
     } else {
-      console.log("is not intersecting");
-      document.querySelector("#contact-fab-outer").classList.remove("wiggle");
+      window.setTimeout(()=>{
+        fabOuter.classList.remove("wiggle");
+      },300);
     }
   });
 };
