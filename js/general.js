@@ -8,6 +8,10 @@ function getOffsetFromTopOfDocument(element) {
   return offset;
 }
 
+function windowIsScrolledToBottom() {
+  return (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2;
+}
+
 // Language handling
 
 function getLanguageInit() {
@@ -338,13 +342,19 @@ let wiggleSend = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       console.log("is intersecting");
-      window.scrollBy(0,-2);
+
       document.querySelector("#contact-fab-outer").classList.add("wiggle");
     } else {
+      console.log("is not intersecting");
       document.querySelector("#contact-fab-outer").classList.remove("wiggle");
     }
   });
 };
+window.setInterval(()=>{
+  if (windowIsScrolledToBottom()){
+    window.scrollBy(0,-30);
+  }
+},500)
 
 let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 1});
 bottomObserverWiggle.observe(finalMessage);
