@@ -338,6 +338,7 @@ let wiggleSend = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       console.log("is intersecting");
+      window.scrollBy(0,-2);
       document.querySelector("#contact-fab-outer").classList.add("wiggle");
     } else {
       document.querySelector("#contact-fab-outer").classList.remove("wiggle");
