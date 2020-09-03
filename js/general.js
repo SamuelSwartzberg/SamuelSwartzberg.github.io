@@ -356,5 +356,5 @@ window.setInterval(()=>{
   }
 },500)
 
-let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 1});
+let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 0.95});
 bottomObserverWiggle.observe(finalMessage);
