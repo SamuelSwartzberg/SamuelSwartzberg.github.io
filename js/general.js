@@ -336,7 +336,7 @@ window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.
 
 let finalMessage = document.querySelector('#contact .message-body');
 console.log(window.getComputedStyle(finalMessage).height);
-document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 50}px`;
+document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 20}px`;
 
 let wiggleSend = (entries, observer) => {
   entries.forEach(entry => {
@@ -356,5 +356,5 @@ window.setInterval(()=>{
   }
 },500)
 
-let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 0.95});
+let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 1});
 bottomObserverWiggle.observe(finalMessage);
