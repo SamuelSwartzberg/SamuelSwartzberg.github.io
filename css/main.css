@@ -72,41 +72,50 @@ h2{	line-height: var(--text-line-height);}
 
 /*Dummy lines*/#code article:not(:first-of-type) pre code, .subject-bar, #translation .dummy article pre{ color: transparent; background-color: var(--bg-slight-offset); line-height: 1.9em; }
 
-body{--z-bottom: 0; --z-low: 1; --z-high: 2; --z-higher: 3; --z-top: 4;}
+body{--z-bottom: 0; --z-low: 1; --z-high: 2; --z-higher: 3; --z-top: 4; --z-infinity: 1000000;}
 
 body{--side-padding: 7.5vw; --page-side-padding: var(--side-padding); --mockup-side-padding: var(--side-padding);
 	--fab-size: 12vw; --fab-card-mid-place: calc(var(--page-side-padding) + var(--mockup-side-padding) - (0.5 * var(--fab-size)));
 	--fab-offset: var(--fab-card-mid-place)}
 
 body{
+	--dark-card-color:rgb(38,38,38);
+	--dark-theme-color: rgb(138, 180, 248);
+	--dark-bg-color: #000;
+	--dark-font-color: #fff;
+
+	--light-card-color: #fff;
+	--light-bg-color: #fff;
+	--light-font-color: #000;
+	--light-theme-color: #fff;
+
+
 	--transparent-white: rgba(255,255,255,0.6);
 	--slightly-white: rgba(255,255,255,0.1);
 
 	--constant-black-color: #000;
 	--constant-white-color: #fff;
 
-	--main-font-color: #000;
-	--main-bg-color: #fff;
-	--card-bg-color: var(--main-bg-color);
+	--main-font-color: var(--light-font-color);
+	--main-bg-color: var(--light-bg-color);
+	--card-bg-color: var(--light-card-color);
+	--opposite-card-bg-color: var(--dark-card-color);
 	--bg-slight-offset: rgba(0,0,0,0.1);
 	--slight-box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.3);
 	--main-box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
 	--deemphasize-font-color: rgba(0,0,0,0.6);
-	--code-bg-color: #011627;
-	--code-font-color: #fff;
-	--code-deemphasize-color: var(--transparent-white);
 	--main-button-bg:#fff;}
 
 body.dark-theme{
 	--transparent-white: rgba(255,255,255,0.75);
 
-	--main-bg-color: #000;
-	--main-font-color: #fff;
+	--main-bg-color: var(--dark-bg-color);
+	--main-font-color: var(--dark-font-color);
 
 	--deemphasize-font-color: var(--transparent-white);
-	--card-bg-color: rgb(38,38,38);
-	--code-bg-color: var(--card-bg-color);
-	--dark-theme-color: rgb(138, 180, 248);
+	--card-bg-color: var(--dark-card-color);
+	--opposite-card-bg-color: var(--light-card-color);
+
 	--main-button-bg: var(--dark-theme-color);
 	--bg-slight-offset: rgba(255,255,255,0.1);
 	}
@@ -115,8 +124,7 @@ body{
 	color: var(--main-font-color);
 	background-color: var(--main-bg-color);}
 
-.hljs { color: var(--code-deemphasize-color); }
-.hljs-important{ color: var(--code-font-color); }
+.important{font-weight: bold;} /* probably temporary */
 
 .main-container, section, .mockup-border, .mockup-body{ display: flex; flex-direction: column; }
 
@@ -275,7 +283,6 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	--mockup-container-height: calc( var(--mockup-container-max-height) * 5 / 7);}
 
 #code .mockup-border{
-	background: var(--code-bg-color);
 	color: var(--code-font-color);
 	--bg-slight-offset: var(--slightly-white);}
 
@@ -308,7 +315,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	animation: none;
 }
 
-#code .language-selector-container::after, .dark-theme .language-selector-container::after{
+.dark-theme .language-selector-container::after{
 	background-image: url('../svg/triangle-white.svg');
 }
 
@@ -322,23 +329,41 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 .theme-changer {
 
 	padding: calc(0.2 * var(--size));
+	z-index: var(--z-high);
 	box-sizing: border-box;
 	display: inline-block;
 	position: absolute;
 	background: var(--main-button-bg); }
 
 .theme-changer, .breathing-inverter-circle{
+
 	width: var(--size);
 	height: var(--size);
 	margin-left: calc(2 * var(--arrow-size));
 }
 .breathing-inverter-circle{
-	animation: breathe 3s ease-in-out infinite;
+	animation: breathe 2.5s ease-in-out infinite;
 	border-radius: calc(0.5 * var(--size));
-	background-color: white;
+	z-index: var(--z-low);
+	transform: scale(1.5);
+	backdrop-filter: invert(90%);
+}
+.discovered .breathing-inverter-circle{
+	animation: breathe-tame 2.5s ease-in-out infinite;
+}
+.clicked .breathing-inverter-circle{
+	animation: explode-breath 0.5s ease-in;
 }
 @keyframes breathe {
-	50%{transform: scale(2.5);}
+	50%{transform: scale(4.5);}
+}
+@keyframes explode-breath {
+	100%{
+		transform: scale(100);
+	}
+}
+@keyframes breathe-tame {
+	50%{transform: scale(2);}
 }
 .theme-changer svg{ fill: var(--constant-black-color);}
 .theme-changer:after {

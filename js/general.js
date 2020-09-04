@@ -195,6 +195,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var body = document.querySelector("body");
     body.classList.toggle("dark-theme");
     document.querySelector("meta[name='theme-color']").content = getComputedStyle(body).getPropertyValue("--main-bg-color");
+    themeChanger.parentNode.classList.add("discovered");
     }
   // var images = document.querySelectorAll(".image-container picture");
   // for (var i = 0; i < images.length; i++) {

@@ -242,7 +242,7 @@ data-name=""><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 2
                 </select>
               </div>
           </div>
-          <div class="mockup-body">
+          <div class="mockup-body show-overflow">
             <div class="css-code">
 <article><code><select class="dance-selector" title="Dance selector.">
   <option value="" selected>Select...</option>
@@ -250,9 +250,9 @@ data-name=""><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 2
   <option value="#code">#code</option>
   <option value="#contact">#contact</option>
 </select></code><pre><code><code class="hljs css"><span class="hljs-selector-class">.mockup-border</span>{
-  <span class="hljs-attribute">animation</span>: <span class="hljs-important">dance</span> <span class="hljs-number">3s</span> linear,
-  <span class="hljs-important">color-change</span> <span class="hljs-number">3s</span> linear,
-  <span class="hljs-important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
+  <span class="hljs-attribute">animation</span>: <span class="important">dance</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
 }</code></code></pre></article>
 <article><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>dance</span> {
   <span class="hljs-number">6.25%</span>, <span class="hljs-number">18.75%</span>{
@@ -273,13 +273,13 @@ data-name=""><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 2
   <span class="hljs-attribute">align-items</span>: center;
 </code></pre></article>
             </div>
-            <div class="js-code active">
+            <div class="js-code active show-overflow">
 <article class="show-overflow"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> theme&#8203;Changer =
-  <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="hljs-important">"theme-changer"</span>);
-  theme&#8203;Changer.<span class="hljs-important">onclick</span> =
+  <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="important">"theme-changer"</span>);
+  theme&#8203;Changer.<span class="important">onclick</span> =
   <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, i</span>)</span>{
 <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="hljs-string">"body"</span>).
-  classList.toggle(<span class="hljs-important">"dark-theme"</span>);
+  classList.toggle(<span class="important">"dark-theme"</span>);
 }</code></pre>
                 <div class="clickme-bubble-container">
                   <code class="hljs"><span class="hljs-comment"><span lang="en">//Change the theme</span><span lang="de">//Das Design wechseln</span></span></code>
@@ -295,20 +295,7 @@ data-name=""><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 2
     </svg></div>
     <div class="breathing-inverter-circle"></div></div>
                 </div></article>
-                <article>
-<pre><code>for (var i = 0;
-i < images.length; i++) {
-  var bubble =
-  document.create&#8203;Element('div');
-  bubble.set&#8203;Attribute('class',
-  'img-bubble');
-  if(i==0){
-    bubble.set&#8203;Attribute('class',
-    'img-bubble active');
-  }
-  document.query&#8203;Selector(".image-bubbles").append&#8203;Child(bubble);
-}</code></pre>
-                </article>
+  
               </div>
               <div class="html-code">
 <article><pre><code>&lt;div class=&quot;main-container&quot;&gt;
