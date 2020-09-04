@@ -75,6 +75,7 @@ document.querySelector(".language-switcher").onclick = e => {
   // updateMailItems(document.querySelectorAll('.mail-select'));
   transposeSelects(currentLang);
   fitAllSelects();
+  setDocumentHeight(document.querySelector('#contact .message-body'));
 }
 
 
@@ -86,20 +87,32 @@ var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
   document.querySelectorAll(correctSelectorPrefix+e.target.value).forEach((item, i) => {
     item.classList.add("active");
   });
+}
+
+function changeActiveAnimated (e, subsection, selectSelector){
   fitSelect(e);
+  document.querySelector(subsection + " .mockup-border").classList.add("change-swipe");
+
+  window.setTimeout(()=>{
+    changeActive(e, subsection + selectSelector, subsection + " .mockup-body .");
+  }, 200);
+  window.setTimeout(()=>{
+    document.querySelector(subsection + " .mockup-border").classList.remove("change-swipe");
+  },420);
 }
 document.querySelector(".code-selector").onchange = function (e,i) {
-  changeActive(e, "#code .mockup-body > div", "#code .mockup-body .");};
+  changeActiveAnimated(e, "#code", " .mockup-body > div");};
 
+let discovered = false;
 document.querySelectorAll(".tl-topic-selector").forEach((selector) => {
   selector.onchange =function (e,i) {
-    changeActive(e, "#translation .mockup-body .topic", "#translation .mockup-body .");
-    e.target.parentElement.classList.add("discovered"); /* to be able to stop the animation */};
+    changeActiveAnimated(e, "#translation"," .mockup-body .topic");
+    discovered=true;};
 });
 
 document.querySelectorAll(".tl-lang-selector").forEach((selector) => {
   selector.onchange = function (e,i) {
-    changeActive(e, "#translation .mockup-body .lang", "#translation .mockup-body .");};
+    changeActiveAnimated(e, "#translation", " .mockup-body .lang");};
 });
 
 document.querySelector(".dance-selector").onchange = function (e,i) {
@@ -126,6 +139,39 @@ document.querySelector(".dance-selector").onchange = function (e,i) {
     };
 };
 
+function getNextInSelect(select) {
+  let currentValue = select.value;
+  for (var i = 0; i < select.children.length; i++) {
+    console.log(i);
+    if (i === select.children.length-1){
+      if (select.children[0].value==="dummy")
+        return select.children[1].value;
+      else
+        return select.children[0].value;
+    }
+    if (select.children[i].value === currentValue) {
+      if (select.children[i+1].disabled){
+        continue;
+      }
+      return select.children[i+1].value;
+    }
+  }
+
+}
+
+window.setInterval(()=>{
+  if (discovered) return;
+  let selectContainer = document.querySelector( "#translation .language-selector-container");
+  selectContainer.classList.add("change-swipe");
+  let selectElement = selectContainer.firstElementChild;
+      let fakeEvent = {target:selectElement};
+  window.setTimeout(()=>{
+    selectElement.value = getNextInSelect(selectElement);
+    fitSelect(fakeEvent);
+  }, 200)
+  window.setTimeout(()=>changeActiveAnimated(fakeEvent, "#translation"," .mockup-body .topic"), 50);
+  window.setTimeout(()=>selectContainer.classList.remove("change-swipe"), 470);
+}, 6000);
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -335,8 +381,11 @@ window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.
 window.setTimeout(() => {document.querySelector("#contact-fab-outer").classList.remove("message-reminder")},52000);
 
 let finalMessage = document.querySelector('#contact .message-body');
-console.log(window.getComputedStyle(finalMessage).height);
-document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 20}px`;
+
+function setDocumentHeight(finalMessage){
+  document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 20}px`;
+}
+setDocumentHeight(finalMessage);
 
 let wiggleSend = (entries, observer) => {
   entries.forEach(entry => {
