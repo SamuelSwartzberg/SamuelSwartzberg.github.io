@@ -27,7 +27,7 @@ input[type=text]{ border: none; font: inherit; color: inherit; resize: none; lin
 html{scroll-behavior: smooth;}
 
 /* Styling general html elements */
-a, .fake-link{ color: inherit; font-weight:bold; text-decoration: none; color: var(--bold-font-color);}
+a, .fake-link{text-decoration: none; color: var(--bold-font-color);}
 pre{display: inline; white-space: pre-wrap;}
 option{color: inherit; background-color: var(--main-bg-color);
 }
@@ -117,7 +117,7 @@ body{
 
 	--font-shade: 0,0,0;
 	--bold-font-color: var(--light-font-color);
-	--main-font-color: rgba(var(--font-shade), 0.65);
+	--main-font-color: rgba(var(--font-shade), 0.7);
 	--deemphasize-font-color: rgba(var(--font-shade),0.45);
 
 	--main-bg-color: var(--light-bg-color);
@@ -156,7 +156,7 @@ body{
 	color: var(--main-font-color);
 	background-color: var(--main-bg-color);}
 
-.important{color: var(--bold-font-color);} /* probably temporary */
+#code .mockup-body .important{color: var(--bold-font-color);} /* probably temporary */
 
 .main-container, section, .mockup-border, .mockup-body{ display: flex; flex-direction: column; }
 
@@ -276,6 +276,7 @@ padding-right: var(--arrow-clickability-distance);}
 section:first-of-type > .text-section-container{ padding-top: 20rem; }
 .quicklink-container{ display: flex; flex-wrap: wrap; }
 .quicklink{
+	font-weight: var(--bold-font-weight);
 	display: block;
 	box-shadow: var(--main-box-shadow);
 	flex: 1 0 40%;
@@ -283,7 +284,7 @@ section:first-of-type > .text-section-container{ padding-top: 20rem; }
 	margin: var(--quicklink-margin);
 	border-radius: var(--medium-border-radius);
 	background-color: var(--card-bg-color);
-	fill: var(--main-font-color);
+	fill: var(--bold-font-color);
 	overflow: hidden;
 	--hover-raise-distance: -0.4em;
 }
