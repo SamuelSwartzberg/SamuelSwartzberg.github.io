@@ -41,6 +41,10 @@ function getOppositeLang(lang){
   return lang==="de" ? "en" : "de";
 }
 
+function getCurrentLang() {
+  return document.querySelector('html').lang;
+}
+
 var fitSelect = function (e) {
   var tempMeasureNode = document.createElement("div");
   var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
@@ -64,7 +68,7 @@ function transposeSelects(currentLang){ // If the user switches the languages wh
   let newSelects = document.querySelectorAll(`html [lang="${getOppositeLang(currentLang)}"] select`);
   for (var i = 0; i < oldSelects.length; i++) {
     newSelects[i].value = oldSelects[i].value;
-    newSelects[i].onchange({target:newSelects[i]});
+    newSelects[i].onchange({target:newSelects[i]}, true);
   }
 }
 
@@ -181,9 +185,11 @@ document.querySelector(".code-selector").onchange = function (e,i) {
 
 let discovered = false;
 document.querySelectorAll(".tl-topic-selector").forEach((selector) => {
-  selector.onchange =function (e,i) {
+  selector.onchange =function (e, isFake) {
     changeActiveAnimated(e, "#translation"," .mockup-body .topic");
-    discovered=true;};
+    if (!isFake){
+      discovered=true;
+    }};
 });
 
 document.querySelectorAll(".tl-lang-selector").forEach((selector) => {
@@ -237,7 +243,7 @@ function getNextInSelect(select) {
 
 window.setInterval(()=>{
   if (discovered) return;
-  let selectContainer = document.querySelector( "#translation .language-selector-container");
+  let selectContainer = document.querySelector( `#translation [lang=${getCurrentLang()}] .language-selector-container`);
   selectContainer.classList.add("change-swipe");
   let selectElement = selectContainer.firstElementChild;
       let fakeEvent = {target:selectElement};
