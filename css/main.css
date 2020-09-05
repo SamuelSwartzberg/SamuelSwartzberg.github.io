@@ -79,7 +79,7 @@ code, #translation .mockup-body{font-size: var(--small-font-size);}
 #translation .mockup-body{line-height:1.6em; }
 h1{font-size: var(--big-font-size);font-weight: var(--bold-font-weight); color: var(--bold-font-color);}
 h2{	line-height: var(--text-line-height);}
-#contact .header-line .name-desc{ font-weight: bold; color: var(--deemphasize-font-color); }
+#contact .header-line .name-desc{ font-weight: bold; }
 
 /*Dummy lines*/#code article:not(:first-of-type) pre code, .subject-bar, #translation .dummy article pre{ color: transparent; background-color: var(--bg-slight-offset); line-height: 1.9em; }
 
@@ -589,7 +589,6 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 
 #contact .message-body{
 	padding: 0.25em 0;
-	color: var(--deemphasize-font-color);
 	line-height: 1.3;
 }
 #contact .message-body pre{
