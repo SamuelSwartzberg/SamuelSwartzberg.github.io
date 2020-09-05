@@ -126,7 +126,6 @@ document.querySelector(".code-selector").onchange = function (e,i) {
       setTimeout(function () {
           pictureInPicture.classList.add("positioned");
           pictureInPicture.classList.add("spawned");
-          nameInput.focus();
       }, 50);
       setTimeout(function () {
           pictureInPicture.classList.add("arrived");
@@ -175,7 +174,7 @@ document.querySelector(".code-selector").onchange = function (e,i) {
 
   let pictureInPictureHideObserver = new IntersectionObserver(pipHide, {threshold: 0.4});
   pictureInPictureHideObserver.observe(document.querySelector('#intro'));
-  let pictureInPictureHideObserverBelow = new IntersectionObserver(continueScrollHide, {threshold: 0.2});
+  let pictureInPictureHideObserverBelow = new IntersectionObserver(continueScrollHide, {threshold: 0.35});
   pictureInPictureHideObserverBelow.observe(document.querySelector('#contact'));
   let pictureInPictureHideObserverRestore = new IntersectionObserver(reshow, {threshold: 1});
   pictureInPictureHideObserverRestore.observe(document.querySelector('#code .mockup-container'));

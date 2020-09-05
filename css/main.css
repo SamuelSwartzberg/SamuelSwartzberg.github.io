@@ -106,7 +106,9 @@ body{
 	--constant-white-color: #fff;
 
 	--main-font-color: var(--light-font-color);
+	--font-shade: 0,0,0;
 	--main-bg-color: var(--light-bg-color);
+
 	--opposite-bg-color: var(--dark-bg-color);
 	--card-bg-color: var(--light-card-color);
 	--opposite-card-bg-color: var(--dark-card-color);
@@ -125,6 +127,7 @@ body.dark-theme{
 	--main-bg-color: var(--dark-bg-color);
 		--opposite-bg-color: var(--light-bg-color);
 	--main-font-color: var(--dark-font-color);
+--font-shade: 255,255,255;
 
 	--deemphasize-font-color: var(--transparent-white);
 	--card-bg-color: var(--dark-card-color);
@@ -312,22 +315,22 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	width: 14ch;}
 
 #code .html-code input, #code .css-code select{
+	border: 0.075em solid var(--bg-slight-offset);
 	padding: 0.15em 0.3em;
 	border-radius: var(--small-border-radius);
 	color: var(--main-font-color);
-	--bg-shade: 0,0,0;
 	--current-opacity: 0.08;
-	background-color: rgba(var(--bg-shade), var(--current-opacity));
+	background-color: rgba(var(--font-shade), var(--current-opacity));
 	animation: pulseBG 3s linear infinite;
 --opacity-range: 1.8; /*relative to current bg-color*/}
 
 
 @keyframes pulseBG {
-	0%, 100%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) * var(--opacity-range)));}
-	50%{ background-color: rgba(var(--bg-shade), calc(var(--current-opacity) / var(--opacity-range))); }}
+	0%, 100%{ background-color: rgba(var(--font-shade), calc(var(--current-opacity) * var(--opacity-range)));}
+	50%{ background-color: rgba(var(--font-shade), calc(var(--current-opacity) / var(--opacity-range))); }}
 
 #code .html-code input:focus{
-	border: 0.1rem solid var(--transparent-white);
+	border: 0.1rem solid var(--deemphasize-font-color);
 	animation: none;
 }
 
