@@ -730,8 +730,11 @@ html[lang="en"] [lang="de"]{
 	#translation .original-translation-container .text .hideable{
 		font-size: 0;
 	}
-	#translation .original-translation-container .translation .text::after{
+	#translation .original-translation-container .translation .text[lang="en"]::after{
 		content: "Trans."
+	}
+	#translation .original-translation-container .translation .text[lang="de"]::after{
+		content: "Übers."
 	}
 	#translation .original-translation-container .original .text::after{
 		content: "Orig."

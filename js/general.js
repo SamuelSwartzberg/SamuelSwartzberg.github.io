@@ -261,7 +261,7 @@ window.setInterval(()=>{
     selectElement.value = getNextInSelect(selectElement);
     fitSelect(fakeEvent);
   }, 200)
-  window.setTimeout(()=>changeActiveAnimated(fakeEvent, "#translation"," .mockup-body .topic"), 50);
+  window.setTimeout(()=>changeActiveAnimated(fakeEvent, "#translation"," .mockup-body .topic", showOriginalOrTranslation), 50);
   window.setTimeout(()=>selectContainer.classList.remove("change-swipe"), 470);
 }, 6000);
 
