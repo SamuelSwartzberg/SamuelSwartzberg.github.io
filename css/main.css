@@ -71,6 +71,7 @@ code{font-family: 'Inconsolata', monospace;}
 
 body{--default-font-size: 2.7rem; font-size: var(--default-font-size); --big-font-size: calc(2.2 * var(--default-font-size)); --small-font-size: calc( 0.77 * var(--default-font-size));
 	--text-line-height: 1.3em;
+	--default-font-size-retrievable: 1em;
 	font-weight: 400; --bold-font-weight: 750;
 	--small-border-radius: 0.5rem; --medium-border-radius: calc( 2 * var(--small-border-radius)); --big-border-radius: calc( 3 * var(--small-border-radius));
 }
@@ -339,7 +340,7 @@ align-items: center;
     font-family: 'Nunito';
     margin-right: 0.6ch;
 		line-height: 1.2;
-		font-size: 1.07em;
+		margin-top: .035em;
 }
 
 #translation .original-translation-container svg{
@@ -726,7 +727,17 @@ html[lang="en"] [lang="de"]{
 		font-size: 0.4em;
 	}
 }
-
+@media screen and (max-width:500px) {
+	#translation .original-translation-container .text .hideable{
+		font-size: 0;
+	}
+	#translation .original-translation-container .translation .text::after{
+		content: "Trans."
+	}
+	#translation .original-translation-container .original .text::after{
+		content: "Orig."
+	}
+}
 /* Testing */
 
 @keyframes swipeaway { /* .6s ease-in-out */+
