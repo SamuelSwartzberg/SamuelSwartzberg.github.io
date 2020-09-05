@@ -51,7 +51,7 @@ var fitSelect = function (e) {
   tempMeasureNode.appendChild(tempText);
   tempMeasureNode.style = "white-space: pre; overflow-wrap: normal;";
   var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
-  var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+20)+"px";
+  var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+10)+"px";
   console.log(newAttachedNode.textContent);
   newAttachedNode.remove();
   e.target.style.width = textWidth;
@@ -93,12 +93,14 @@ var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
   });
 }
 
-function changeActiveAnimated (e, subsection, selectSelector){
+function changeActiveAnimated (e, subsection, selectSelector, afterChangeCallback){
   fitSelect(e);
   document.querySelector(subsection + " .mockup-border").classList.add("change-swipe");
 
   window.setTimeout(()=>{
     changeActive(e, subsection + selectSelector, subsection + " .mockup-body .");
+    if(afterChangeCallback)
+      afterChangeCallback();
   }, 200);
   window.setTimeout(()=>{
     document.querySelector(subsection + " .mockup-border").classList.remove("change-swipe");
@@ -183,18 +185,26 @@ document.querySelector(".code-selector").onchange = function (e,i) {
   let pictureInPictureHideObserverRestore = new IntersectionObserver(reshow, {threshold: 1});
   pictureInPictureHideObserverRestore.observe(document.querySelector('#code .mockup-container'));
 
+  function showOriginalOrTranslation(){
+    let originalOrTranslation=document.querySelector(".mockup-body .active .lang.active").dataset.version;
+    let getInverse = (orTr)=> orTr==="translation" ? "original" : "translation";
+    document.querySelector(".original-translation-container ."+originalOrTranslation).classList.add("flex-active");
+    document.querySelector(".original-translation-container ."+getInverse(originalOrTranslation)).classList.remove("flex-active");
+    console.log(originalOrTranslation);
+  }
 let discovered = false;
 document.querySelectorAll(".tl-topic-selector").forEach((selector) => {
   selector.onchange =function (e, isFake) {
-    changeActiveAnimated(e, "#translation"," .mockup-body .topic");
+    changeActiveAnimated(e, "#translation"," .mockup-body .topic", showOriginalOrTranslation);
     if (!isFake){
       discovered=true;
     }};
 });
 
+showOriginalOrTranslation();
 document.querySelectorAll(".tl-lang-selector").forEach((selector) => {
   selector.onchange = function (e,i) {
-    changeActiveAnimated(e, "#translation", " .mockup-body .lang");};
+    changeActiveAnimated(e, "#translation", " .mockup-body .lang",showOriginalOrTranslation);};
 });
 
 document.querySelector(".dance-selector").onchange = function (e,i) {

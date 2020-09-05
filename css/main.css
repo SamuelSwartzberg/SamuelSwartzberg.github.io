@@ -47,6 +47,7 @@ option{color: inherit; background-color: var(--main-bg-color);
     opacity: 1;
   }
 }
+
 /*Common operations*/
 
 .mockup-container > div.mockup-border, #translation .mockup-body > div > div, .clickable-l-r, .clickable-l-r > div, .image-container{
@@ -59,6 +60,7 @@ option{color: inherit; background-color: var(--main-bg-color);
 .clickme-bubble-container, .clickme-bubble-container *{ overflow: visible !important; }
 /*hide & seek*/
 .image-container picture, #code .mockup-body > div:not(.active), #translation .mockup-body div:not(.active){ display: none; } .active{ display: block !important; }
+.flex-active{display: flex !important;}
 
 
 /*Defining variables and base units*/
@@ -240,6 +242,7 @@ padding-right: var(--arrow-clickability-distance);}
 	display: block;
   content: ' ';
   background-image: url('../svg/triangle.svg');
+	opacity: 0.3;
 	--triangle-size: 0.6em;
   background-size: var(--triangle-size) var(--triangle-size);
   height: var(--triangle-size);
@@ -311,6 +314,39 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 #translation h1 > span:first-of-type{display: block;}
 
+#translation .mockup-header{
+	display: flex;
+    justify-content: space-between;
+}
+#translation .original-translation-container{
+	width: max-content;
+    fill: var(--deemphasize-font-color);
+    color: var(--deemphasize-font-color);
+}
+#translation .original-translation-container > div{
+	display: none;
+flex-flow: row-reverse nowrap;
+align-items: center;
+}
+
+#translation .original-translation-container .icon{
+	height: 1.25em;
+    width: 1.25em;
+}
+
+#translation .original-translation-container .text{
+	font-weight: bold;
+    font-family: 'Nunito';
+    margin-right: 0.6ch;
+		line-height: 1.2;
+		font-size: 1.07em;
+}
+
+#translation .original-translation-container svg{
+	height: 100%;
+    width: 100%;
+}
+
 /* Code */
 
 #code .mockup-container{
@@ -353,6 +389,7 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 .dark-theme .language-selector-container::after{
 	background-image: url('../svg/triangle-white.svg');
+	opacity: 0.4;
 }
 
 .clickme-bubble-container{
