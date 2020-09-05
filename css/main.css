@@ -27,7 +27,7 @@ input[type=text]{ border: none; font: inherit; color: inherit; resize: none; lin
 html{scroll-behavior: smooth;}
 
 /* Styling general html elements */
-a, .fake-link{ color: inherit; font-weight:bold; text-decoration: none;}
+a, .fake-link{ color: inherit; font-weight:bold; text-decoration: none; color: var(--bold-font-color);}
 pre{display: inline; white-space: pre-wrap;}
 option{color: inherit; background-color: var(--main-bg-color);
 }
@@ -74,7 +74,7 @@ body{--default-font-size: 2.7rem; font-size: var(--default-font-size); --big-fon
 }
 code, #translation .mockup-body{font-size: var(--small-font-size);}
 #translation .mockup-body{line-height:1.6em; }
-h1{font-size: var(--big-font-size);font-weight: var(--bold-font-weight);}
+h1{font-size: var(--big-font-size);font-weight: var(--bold-font-weight); color: var(--bold-font-color);}
 h2{	line-height: var(--text-line-height);}
 #contact .header-line .name-desc{ font-weight: bold; color: var(--deemphasize-font-color); }
 
@@ -87,6 +87,9 @@ body{--side-padding: 7.5vw; --page-side-padding: var(--side-padding); --mockup-s
 	--fab-offset: var(--fab-card-mid-place)}
 
 body{
+
+	/* The colors that will be used in the relevant themes */
+
 	--dark-card-color:rgb(38,38,38);
 	--dark-theme-color: rgb(138, 180, 248);
 	--dark-bg-color: #000;
@@ -97,6 +100,7 @@ body{
 	--light-font-color: #000;
 	--light-theme-color: #fff;
 
+	/* Permanent colors */
 
 	--transparent-white: rgba(255,255,255,0.6);
 	--slightly-white: rgba(255,255,255,0.1);
@@ -104,45 +108,55 @@ body{
 	--constant-black-color: #000;
 	--constant-white-color: #fff;
 
-	--main-font-color: var(--light-font-color);
-	--font-shade: 0,0,0;
-	--main-bg-color: var(--light-bg-color);
+	/* Shadows - only relevant for the light theme, of course */
 
-	--opposite-bg-color: var(--dark-bg-color);
-	--card-bg-color: var(--light-card-color);
-	--opposite-card-bg-color: var(--dark-card-color);
-	--bg-slight-offset: rgba(0,0,0,0.1);
-	--bg-slight-offset-opaque: #d6d6d6;
 	--slight-box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.3);
 	--main-box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
-	--deemphasize-font-color: rgba(0,0,0,0.6);
+
+	/* Colors specific to this theme */
+
+	--font-shade: 0,0,0;
+	--bold-font-color: var(--light-font-color);
+	--main-font-color: rgba(var(--font-shade), 0.65);
+	--deemphasize-font-color: rgba(var(--font-shade),0.45);
+
+	--main-bg-color: var(--light-bg-color);
+	--opposite-bg-color: var(--dark-bg-color);
+
+	--card-bg-color: var(--light-card-color);
+	--opposite-card-bg-color: var(--dark-card-color);
+
+	--bg-slight-offset: rgba(0,0,0,0.1);
+	--bg-slight-offset-opaque: #d6d6d6;
+
 	--main-button-bg:var(--light-theme-color);
 	--opposite-button-bg: var(--dark-theme-color);
 	}
 
 body.dark-theme{
-	--transparent-white: rgba(255,255,255,0.75);
+	--font-shade: 255,255,255;
+	--bold-font-color: var(--dark-font-color);
+	--main-font-color: rgba(var(--font-shade), 0.65);
+	--deemphasize-font-color: rgba(var(--font-shade),0.45);
 
 	--main-bg-color: var(--dark-bg-color);
-		--opposite-bg-color: var(--light-bg-color);
-	--main-font-color: var(--dark-font-color);
---font-shade: 255,255,255;
+	--opposite-bg-color: var(--light-bg-color);
 
-	--deemphasize-font-color: var(--transparent-white);
 	--card-bg-color: var(--dark-card-color);
 	--opposite-card-bg-color: var(--light-card-color);
 
-	--main-button-bg: var(--dark-theme-color);
-	--opposite-button-bg: var(--light-theme-color);
 	--bg-slight-offset: rgba(255,255,255,0.1);
 	--bg-slight-offset-opaque: #1a1a1a;
+
+	--main-button-bg: var(--dark-theme-color);
+	--opposite-button-bg: var(--light-theme-color);
 	}
 
 body{
 	color: var(--main-font-color);
 	background-color: var(--main-bg-color);}
 
-.important{font-weight: bold;} /* probably temporary */
+.important{color: var(--bold-font-color);} /* probably temporary */
 
 .main-container, section, .mockup-border, .mockup-body{ display: flex; flex-direction: column; }
 
@@ -213,6 +227,7 @@ a:active, a.quicklink:active { background-color: var(--main-font-color); color: 
   align-items: center;
 	justify-content: left;
 	font-weight: var(--bold-font-weight);
+	color: var(--bold-font-color);
 	--arrow-clickability-distance: 1em;
 	}
 
@@ -535,7 +550,7 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 
 #contact .message-body{
 	padding: 0.25em 0;
-	opacity: 0.6;
+	color: var(--deemphasize-font-color);
 	line-height: 1.3;
 }
 #contact .message-body pre{
