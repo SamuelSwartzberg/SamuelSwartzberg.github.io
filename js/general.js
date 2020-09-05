@@ -9,57 +9,68 @@ function getOffsetFromTopOfDocument(element) {
 }
 
 function windowIsScrolledToBottom() {
-  return (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2;
+  return (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 2; } // From Stackoverflow, the 2px are a solution to a mac bug
+
+function createFakeEvent(node){
+  return {target:node};
+}
+
+let getScalingFactor = (dimension1, dimension2) => {
+  return dimension1/dimension2;
 }
 
 // Language handling
 
+// Methods
+
+function sanitizeLanguage(language) { // Transform UA Language strings into the only form we need, either de or en
+  return language.startsWith("de") ? "de" : "en"; }
+function getOppositeLang(lang){
+  return lang==="de" ? "en" : "de";}
+function getCurrentLang() {
+  return document.querySelector('html').lang; }
+
+// Init
+
 function getLanguageInit() {
   if (localStorage.getItem("language")){
-    return localStorage.getItem("language");
+    return localStorage.getItem("language"); // If the user has changed the language before, we've saved in localStorage and will retrieve it
   } else {
     return navigator.languages
     ? navigator.languages[0]
-    : (navigator.language || navigator.userLanguage); // cf https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference/25603630#25603630
+    : (navigator.language || navigator.userLanguage); // One-liner to get the users preferred language, supports older browsers too (that's why it's so long)
+    //cf https://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference/25603630#25603630
   }
-}
-
-function sanitizeLanguage(language) {
-  if (language.startsWith("de")) return "de";
-  else return "en";
 }
 
 function changeLanguage(language){
   language = sanitizeLanguage(language);
   localStorage.setItem("language", language);
-  document.querySelector("html").lang = language;
-}
+  document.querySelector("html").lang = language; }
 
 changeLanguage(getLanguageInit());
 
-function getOppositeLang(lang){
-  return lang==="de" ? "en" : "de";
-}
+// Methods for handling selects
 
-function getCurrentLang() {
-  return document.querySelector('html').lang;
-}
-
-var fitSelect = function (e) {
+var fitSelect = function (e) { // Set the width of the select so that the arrow will be placed directly next to the text
+  // Without this, the select is always as wide as its widest options
+  //Create a div with the same text as the select ...
   var tempMeasureNode = document.createElement("div");
   var tempText = document.createTextNode(e.target.children[e.target.selectedIndex].text);
   tempMeasureNode.appendChild(tempText);
-  tempMeasureNode.style = "white-space: pre; overflow-wrap: normal;";
+  tempMeasureNode.style = "white-space: pre; overflow-wrap: normal;"; // Make sure it doesn't add a line break and miscalculate
   var newAttachedNode = e.target.parentNode.appendChild(tempMeasureNode);
+  // Calculate the width of that tiv
   var textWidth = (parseInt(window.getComputedStyle(newAttachedNode).width)+10)+"px";
   console.log(newAttachedNode.textContent);
   newAttachedNode.remove();
+  //And assign that width to the select
   e.target.style.width = textWidth;
-}
+};
 
-function fitAllSelects() {
+function fitAllSelects() { //Apply the method fitting the selects to all relevant selects
   document.querySelectorAll('select:not(.dance-selector)').forEach((item, i) => {
-    fitSelect({target:item});
+    fitSelect(createFakeEvent(item));
   });
 }
 
@@ -68,15 +79,38 @@ function transposeSelects(currentLang){ // If the user switches the languages wh
   let newSelects = document.querySelectorAll(`html [lang="${getOppositeLang(currentLang)}"] select`);
   for (var i = 0; i < oldSelects.length; i++) {
     newSelects[i].value = oldSelects[i].value;
-    newSelects[i].onchange({target:newSelects[i]}, true);
+    newSelects[i].onchange(createFakeEvent(newSelects[i]), true);
   }
 }
 
+// Changing the active based on the select
+
+var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
+  document.querySelectorAll(allElementsSelector).forEach((item, i) => {
+    item.classList.remove("active"); }); // Remove active from all elements
+  document.querySelectorAll(correctSelectorPrefix+e.target.value).forEach((item, i) => {
+    item.classList.add("active"); }); //And add it to the one that we swiched to
+}
+
+function changeActiveAnimated (e, subsection, selectSelector, afterChangeCallback){
+  fitSelect(e);
+  document.querySelector(subsection + " .mockup-border").classList.add("change-swipe"); //Add the class that does the sideways swipe aimation
+
+  window.setTimeout(()=>{
+    changeActive(e, subsection + selectSelector, subsection + " .mockup-body .");
+    if(afterChangeCallback)
+      afterChangeCallback();
+  }, 200); //Change the content exactly when the element is temporarily invisble
+  window.setTimeout(()=>{
+    document.querySelector(subsection + " .mockup-border").classList.remove("change-swipe"); //Remove the class that does the sideways swipe aimation, so we can reanimate by reapplying it later
+  },420); // The time when the animation is finished
+}
+
+// Clickhandlers
+
 document.querySelector(".language-switcher").onclick = e => {
-  let currentLang = document.querySelector("html").lang;
-  if (currentLang === "en") changeLanguage("de");
-  else changeLanguage("en");
-  // updateMailItems(document.querySelectorAll('.mail-select'));
+  let currentLang = getCurrentLang();
+  changeLanguage(getOppositeLang(currentLang));
   transposeSelects(currentLang);
   fitAllSelects();
   setDocumentHeight(document.querySelector('#contact .message-body'));
@@ -84,65 +118,51 @@ document.querySelector(".language-switcher").onclick = e => {
 
 
 
-var changeActive = function(e, allElementsSelector, correctSelectorPrefix){
-  document.querySelectorAll(allElementsSelector).forEach((item, i) => {
-      item.classList.remove("active");
-  });
-  document.querySelectorAll(correctSelectorPrefix+e.target.value).forEach((item, i) => {
-    item.classList.add("active");
-  });
-}
 
-function changeActiveAnimated (e, subsection, selectSelector, afterChangeCallback){
-  fitSelect(e);
-  document.querySelector(subsection + " .mockup-border").classList.add("change-swipe");
-
-  window.setTimeout(()=>{
-    changeActive(e, subsection + selectSelector, subsection + " .mockup-body .");
-    if(afterChangeCallback)
-      afterChangeCallback();
-  }, 200);
-  window.setTimeout(()=>{
-    document.querySelector(subsection + " .mockup-border").classList.remove("change-swipe");
-  },420);
-}
 document.querySelector(".code-selector").onchange = function (e,i) {
   changeActiveAnimated(e, "#code", " .mockup-body > div");
+
   let pictureInPicture = document.getElementsByClassName('picture-in-picture')[0];
-  if (e.target.value==="html-code"){
+  if (e.target.value==="html-code"){ // spawn and handle te pip
     window.setTimeout(()=>{
       let pipBoundingRect = pictureInPicture.getBoundingClientRect();
       let nameInput = document.querySelector("#name-input");
       let nameInputBoundingRect = nameInput.getBoundingClientRect();
-      let getScalingFactor = (dimension1, dimension2) => {
-        return dimension1/dimension2;
-      }
-      console.log(pipBoundingRect);
+
+      // Since we want the pip element to come out of the textinput, we need to transfrom it to there
+
+      // How much bigger or smaller is the pip?
       let xScalingFactor = getScalingFactor(nameInputBoundingRect.width, pipBoundingRect.width),
           yScalingFactor = getScalingFactor(nameInputBoundingRect.height, pipBoundingRect.height);
+
+      // How much (in absolute length) have we shrunk (or grown) the pip?
       let pipXShrinkResult = pipBoundingRect.width - xScalingFactor * pipBoundingRect.width,
           pipYShrinkResult = pipBoundingRect.height - yScalingFactor * pipBoundingRect.height;
+
+      // How much will we have to move the pip?
       let xOffset = nameInputBoundingRect.left - (pipBoundingRect.left + pipXShrinkResult/2),
           yOffset = nameInputBoundingRect.top - (pipBoundingRect.top + pipXShrinkResult/2);
+
+      //Apply the values to the pip CSS
       pictureInPicture.style.setProperty("--translate-x", `${xOffset}px`);
       pictureInPicture.style.setProperty("--translate-y", `${yOffset}px`);
       pictureInPicture.style.setProperty("--scale-x", `${xScalingFactor}`);
       pictureInPicture.style.setProperty("--scale-y", `${yScalingFactor}`);
 
       setTimeout(function () {
-          pictureInPicture.classList.add("positioned");
-          pictureInPicture.classList.add("spawned");
+          pictureInPicture.classList.add("positioned"); // This class appliies the transforms necessary to get the element moving back
+          pictureInPicture.classList.add("spawned"); // This makes it visible
       }, 50);
       setTimeout(function () {
-          pictureInPicture.classList.add("arrived");
+          pictureInPicture.classList.add("arrived"); // This starts the bobbing animation
       }, 1050);
 
-    }, 400);
+    }, 400); //400ms since we want the sideswiping animation of the select swich to finish first
   } else{
     pictureInPicture.classList.remove("spawned", "arrived");
     pictureInPicture.style="";
     setTimeout(function () {
-        pictureInPicture.classList.remove("positioned");
+        pictureInPicture.classList.remove("positioned"); // This is removed later so we can have the pip fade out without moving back
     }, 1000);
   }
 
@@ -151,7 +171,6 @@ document.querySelector(".code-selector").onchange = function (e,i) {
 
   let pipHide = (entries, observer) => {
     entries.forEach(entry => {
-          console.log("hey");
       let pictureInPicture= document.querySelector(".picture-in-picture");
       if (entry.isIntersecting) {
         pictureInPicture.classList.add("hidden");
