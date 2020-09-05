@@ -38,7 +38,16 @@ option{color: inherit; background-color: var(--main-bg-color);
 .center-content-both{ display: flex; justify-content: center; align-items: center; }
 .wiggle{animation: wiggle 6s infinite;}
 .show-overflow{overflow: visible !important;}
-
+.cursor{animation: 1s blink step-end infinite; font-weight: normal;}
+.hidden{opacity: 0 !important; pointer-events: none;}
+@keyframes blink{
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 /*Common operations*/
 
 .mockup-container > div.mockup-border, #translation .mockup-body > div > div, .clickable-l-r, .clickable-l-r > div, .image-container{
@@ -102,6 +111,7 @@ body{
 	--card-bg-color: var(--light-card-color);
 	--opposite-card-bg-color: var(--dark-card-color);
 	--bg-slight-offset: rgba(0,0,0,0.1);
+	--bg-slight-offset-opaque: #d6d6d6;
 	--slight-box-shadow: 0 0.25rem 0.75rem 0 rgba(0,0,0,.3);
 	--main-box-shadow: 0.3rem 0.8rem 3rem 0 rgba(0,0,0,.1);
 	--deemphasize-font-color: rgba(0,0,0,0.6);
@@ -123,6 +133,7 @@ body.dark-theme{
 	--main-button-bg: var(--dark-theme-color);
 	--opposite-button-bg: var(--light-theme-color);
 	--bg-slight-offset: rgba(255,255,255,0.1);
+	--bg-slight-offset-opaque: #1a1a1a;
 	}
 
 body{
@@ -289,11 +300,10 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 
 #code .mockup-border{
 	color: var(--main-font-color);
-	--bg-slight-offset: var(--slightly-white);
 	position: relative;}
 
 	#code .code-selector option, #code .css-code option{
-		background-color: var(--code-bg-color);
+		background-color: var(--card-bg-color);
 	}
 
 #code .html-code input{
@@ -387,26 +397,37 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
   margin-top: calc(-1 * var(--arrow-size)); margin-left: calc(-0.8 * var(--arrow-size)); /*prevent tiny line*/}
 
 .picture-in-picture{
+	opacity: 0;
 	position: fixed;
     top: 1.5em;
     left: 50%;
-		transform: translateX(-50%);
+transition: opacity 0.5s;
     width: 60%;
 		z-index: var(--z-higher);
     height: 20%;
 		box-shadow:0 0.25rem 0.75rem 0 rgba(0,0,0,.1);
-
+		transform: translateX(var(--translate-x)) translateY(var(--translate-y)) scaleX(var(--scale-x)) scaleY(var(--scale-y));
 	box-sizing: border-box;
-	animation: bob 2s infinite linear;
 	--arrow-size: 1em;
-
-	display: inline-block;
+	pointer-events: none;
 }
-.picture-in-picture:after {
+.picture-in-picture.spawned{
+	opacity: 1;
+}
+.picture-in-picture.positioned{
+  transform: translateX(-50%) translateY(0) scaleX(1) scaleY(1);
+	transition: transform 1s, opacity 0.4s;
+}
+.picture-in-picture.arrived{
+	transition: opacity 0.5s;
+	pointer-events: auto;
+	animation: bob 2s infinite linear;
+}
+.picture-in-picture::after {
 	content: '';
   position: absolute; left: 50%; top: 0; width: 0; height: 0;
   border: var(--arrow-size) solid transparent;
-  border-top-color: #eee;
+  border-top-color: var(--bg-slight-offset-opaque);
   border-bottom: 0;
 	transform: rotate(180deg);
   margin-top: calc(-0.9 * var(--arrow-size)); margin-left: calc(-1 * var(--arrow-size)); /*prevent tiny line*/}
@@ -427,11 +448,11 @@ a.quicklink > div > div:first-of-type{ margin-bottom: 1.5em; }
 	width: 100%;
 height: 100%;
 padding: 1em 0.5em 0.5em 0.5em;
-border: .1em solid #eee;
-background-color: var(--card-bg-color);
+border: .1em solid var(--bg-slight-offset);
+background-color: var(--main-bg-color);
 border-radius: var(--medium-border-radius);
 	box-sizing: border-box;
-overflow: scroll;
+overflow: hidden;
 }
 .name-pip{
 	--big-font-size: 1.7em;
@@ -623,7 +644,7 @@ html[lang="en"] [lang="de"]{
 .dance *{color: var(--transparent-white) !important;border-color: var(--slightly-white) !important;fill:var(--transparent-white) !important; }
 .dance .language-selector-container::after{ display: none !important; }
 @keyframes dance { 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{ transform: translateX(0) translateY(0); } 6.25%, 18.75%{transform: translateX(calc(-1 * var(--distance))) translateY(0);} 31.25%, 43.75%{transform: translateX(0) translateY(var(--distance));} 56.25%, 68.75%{transform: translateX(0) translateY(calc(-1 * var(--distance)));} 81.25%, 93.75%{transform: translateX(var(--distance)) translateY(0);}}
-@keyframes color-change{ 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--code-bg-color);} 6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);} 18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);} 31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);} 43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);} 56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);} 68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);} 81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);} 93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);} }
+@keyframes color-change{ 0%, 12.5%, 25%, 37.5%, 50%, 62.5%, 75%, 87.5%, 100%{background-color: var(--card-bg-color);} 6.25%{--hue: 0; background-color: hsla(var(--hue),100%,50%,1);} 18.75%{--hue: 51; background-color: hsla(var(--hue),100%,50%,1);} 31.25%{--hue: 102; background-color: hsla(var(--hue),100%,50%,1);} 43.75%{--hue: 153; background-color: hsla(var(--hue),100%,50%,1);} 56.25%{--hue: 204; background-color: hsla(var(--hue),100%,50%,1);} 68.75%{--hue: 255; background-color: hsla(var(--hue),100%,50%,1);} 81.25%{--hue: 306; background-color: hsla(var(--hue),100%,50%,1);} 93.75%{--hue: 360; background-color: hsla(var(--hue),100%,50%,1);} }
 
 @font-face {
   font-family: 'Inter';

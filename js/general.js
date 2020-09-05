@@ -101,7 +101,84 @@ function changeActiveAnimated (e, subsection, selectSelector){
   },420);
 }
 document.querySelector(".code-selector").onchange = function (e,i) {
-  changeActiveAnimated(e, "#code", " .mockup-body > div");};
+  changeActiveAnimated(e, "#code", " .mockup-body > div");
+  let pictureInPicture = document.getElementsByClassName('picture-in-picture')[0];
+  if (e.target.value==="html-code"){
+    window.setTimeout(()=>{
+      let pipBoundingRect = pictureInPicture.getBoundingClientRect();
+      let nameInput = document.querySelector("#name-input");
+      let nameInputBoundingRect = nameInput.getBoundingClientRect();
+      let getScalingFactor = (dimension1, dimension2) => {
+        return dimension1/dimension2;
+      }
+      console.log(pipBoundingRect);
+      let xScalingFactor = getScalingFactor(nameInputBoundingRect.width, pipBoundingRect.width),
+          yScalingFactor = getScalingFactor(nameInputBoundingRect.height, pipBoundingRect.height);
+      let pipXShrinkResult = pipBoundingRect.width - xScalingFactor * pipBoundingRect.width,
+          pipYShrinkResult = pipBoundingRect.height - yScalingFactor * pipBoundingRect.height;
+      let xOffset = nameInputBoundingRect.left - (pipBoundingRect.left + pipXShrinkResult/2),
+          yOffset = nameInputBoundingRect.top - (pipBoundingRect.top + pipXShrinkResult/2);
+      pictureInPicture.style.setProperty("--translate-x", `${xOffset}px`);
+      pictureInPicture.style.setProperty("--translate-y", `${yOffset}px`);
+      pictureInPicture.style.setProperty("--scale-x", `${xScalingFactor}`);
+      pictureInPicture.style.setProperty("--scale-y", `${yScalingFactor}`);
+
+      setTimeout(function () {
+          pictureInPicture.classList.add("positioned");
+          pictureInPicture.classList.add("spawned");
+          nameInput.focus();
+      }, 50);
+      setTimeout(function () {
+          pictureInPicture.classList.add("arrived");
+      }, 1050);
+
+    }, 400);
+  } else{
+    pictureInPicture.classList.remove("spawned", "arrived");
+    pictureInPicture.style="";
+    setTimeout(function () {
+        pictureInPicture.classList.remove("positioned");
+    }, 1000);
+  }
+
+};
+
+
+  let pipHide = (entries, observer) => {
+    entries.forEach(entry => {
+          console.log("hey");
+      let pictureInPicture= document.querySelector(".picture-in-picture");
+      if (entry.isIntersecting) {
+        pictureInPicture.classList.add("hidden");
+      } else {
+        pictureInPicture.classList.remove("hidden");
+      }
+    });
+  };
+  let continueScrollHide = (entries, observer) => {
+    entries.forEach(entry => {
+      let pictureInPicture= document.querySelector(".picture-in-picture");
+      if (entry.isIntersecting) {
+        pictureInPicture.classList.add("hidden");
+      }
+    });
+  };
+  let reshow = (entries, observer) => {
+    entries.forEach(entry => {
+      let pictureInPicture= document.querySelector(".picture-in-picture");
+      if (entry.isIntersecting) {
+        pictureInPicture.classList.remove("hidden");
+      }
+    });
+  };
+
+
+  let pictureInPictureHideObserver = new IntersectionObserver(pipHide, {threshold: 0.4});
+  pictureInPictureHideObserver.observe(document.querySelector('#intro'));
+  let pictureInPictureHideObserverBelow = new IntersectionObserver(continueScrollHide, {threshold: 0.2});
+  pictureInPictureHideObserverBelow.observe(document.querySelector('#contact'));
+  let pictureInPictureHideObserverRestore = new IntersectionObserver(reshow, {threshold: 1});
+  pictureInPictureHideObserverRestore.observe(document.querySelector('#code .mockup-container'));
 
 let discovered = false;
 document.querySelectorAll(".tl-topic-selector").forEach((selector) => {
@@ -192,6 +269,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
   var themeChanger=document.querySelector(".theme-changer");
   themeChanger.onclick=function(e, i){
+    document.querySelectorAll('#code .mockup-border, #code .mockup-body').forEach((item, i) => {
+      item.classList.add("show-overflow");
+    });
+
     themeChanger.style.backgroundColor="var(--opposite-button-bg)";
     themeChanger.parentNode.classList.add("discovered", "clicked");
     window.setTimeout(()=>{
@@ -200,6 +281,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       document.querySelector("meta[name='theme-color']").content = getComputedStyle(body).getPropertyValue("--main-bg-color");
       themeChanger.parentNode.classList.remove("clicked");
       themeChanger.style.backgroundColor="var(--main-button-bg)";
+      document.querySelectorAll('#code .mockup-border, #code .mockup-body').forEach((item, i) => {
+        item.classList.remove("show-overflow");
+      });
     }, 100);
 
 
