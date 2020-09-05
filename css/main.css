@@ -28,7 +28,7 @@ input[type=text]{ border: none; font: inherit; color: inherit; resize: none; lin
 html{scroll-behavior: smooth;}
 
 /* Styling general html elements */
-a{ color: inherit; font-weight:bold; text-decoration: none;}
+a, .fake-link{ color: inherit; font-weight:bold; text-decoration: none;}
 pre{display: inline; white-space: pre-wrap;}
 option{color: inherit; background-color: var(--main-bg-color);
 }
