@@ -420,6 +420,7 @@ align-items: center;
 	border-radius: calc(0.5 * var(--size));
 	z-index: var(--z-low);
 	transform: scale(1.5);
+	-webkit-backdrop-filter: invert(100%);
 	backdrop-filter: invert(100%);
 }
 .discovered .breathing-inverter-circle{
