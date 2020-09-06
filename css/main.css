@@ -168,7 +168,7 @@ body{
 
 /*Main layout*/
 
-section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding);}
+section{ padding: calc(0.83 * var(--big-font-size)) var(--mockup-side-padding); flex: 0 0 auto;}
 
 /* Text headers */
 .text-section-container{ padding: calc(1.17 * var(--big-font-size)) 0 calc(0.83 * var(--big-font-size)) 0;}

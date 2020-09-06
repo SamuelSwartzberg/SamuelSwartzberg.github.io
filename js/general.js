@@ -210,7 +210,7 @@ let getScalingFactor = (dimension1, dimension2) => {
 }
 
 function setDocumentHeight(finalMessage){ // cut off the email preview at the right place
-  document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/)) + 20}px`;
+  document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/), 10) + 20}px`;
   console.log(window.getComputedStyle(finalMessage).height.match(/\d*/));
   console.log(window.getComputedStyle(finalMessage).height);
   console.log(getOffsetFromTopOfDocument(finalMessage));
