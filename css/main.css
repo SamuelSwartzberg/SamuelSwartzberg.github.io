@@ -589,11 +589,8 @@ padding-right: calc(var(--arrow-clickability-distance) + 0.25em);
 }
 
 #contact .message-body{
-	padding: 0.25em 0;
+	padding: 0.25em 0 1em 0;
 	line-height: 1.3;
-}
-#contact .message-body pre{
-	padding-bottom: 1ch;
 }
 /*FAB*/
 

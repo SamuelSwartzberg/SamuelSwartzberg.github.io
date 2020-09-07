@@ -209,11 +209,16 @@ let getScalingFactor = (dimension1, dimension2) => {
   return dimension1/dimension2;
 }
 
+function parsePxStringInt(pxstring) {
+  return parseInt(pxstring.match(/\d*/), 10);
+}
+
+function getVerticalPadding(node) {
+  return parsePxStringInt(window.getComputedStyle(node).paddingTop) + parsePxStringInt(window.getComputedStyle(node).paddingBottom);
+}
+
 function setDocumentHeight(finalMessage){ // cut off the email preview at the right place
-  document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + parseInt(window.getComputedStyle(finalMessage).height.match(/\d*/), 10) + 20}px`;
-  console.log(window.getComputedStyle(finalMessage).height.match(/\d*/));
-  console.log(window.getComputedStyle(finalMessage).height);
-  console.log(getOffsetFromTopOfDocument(finalMessage));
+  document.querySelector(".main-container").style.height = `${getOffsetFromTopOfDocument(finalMessage) + getVerticalPadding(finalMessage) +  parsePxStringInt(window.getComputedStyle(finalMessage).height)}px`;
 }
 
 function getNextInSelect(select) { // get the next value of the <select> element
@@ -534,7 +539,9 @@ window.setInterval(()=>{
 
 showWhetherOriginalOrTranslation();
 let finalMessage = document.querySelector('#contact .message-body');
-setDocumentHeight(finalMessage);
+setTimeout(function () {
+  setDocumentHeight(finalMessage);
+}, 100);
 
 // Scroll Intersection Management
 
@@ -548,7 +555,7 @@ let wiggleSend = (entries, observer) => { // Wiggle when user has reached bottom
         fabOuter.classList.remove("wiggle");
       },300); } }); }; // Let the animation finish
 
-let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 1});
+let bottomObserverWiggle = new IntersectionObserver(wiggleSend, {threshold: 0.99});
 bottomObserverWiggle.observe(finalMessage);
 
 let pictureInPictureHideObserver = new IntersectionObserver(getHideWhenIntersecting('.picture-in-picture'), {threshold: 0.4});
