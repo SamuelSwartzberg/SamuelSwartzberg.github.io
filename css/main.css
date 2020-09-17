@@ -60,7 +60,7 @@ option{color: inherit; background-color: var(--main-bg-color);
 
 /*Defining variables and base units*/
 html{font-size: 0.43em;}
-body{font-family: 'Inter', Helvetica, Arial, sans-serif; max-width: 100vw; overflow-wrap: break-word;}
+body{font-family: 'Inter', Helvetica, Arial, sans-serif; max-width: 100vw; overflow-wrap: break-word; overscroll-behavior: none;‚}
 code{font-family: 'Inconsolata', monospace;}
 .app .mockup-body, #contact .mockup-border{font-family: 'Nunito';}
 
