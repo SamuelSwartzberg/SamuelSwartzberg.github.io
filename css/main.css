@@ -716,6 +716,7 @@ Language switchign
 	padding: 1em;
 	top: 0;
 	right:0;
+	color: #fff; /* emoji shouldn't inherit color */
 }
 html[lang="de"] .language-switcher::before{
 	display: block;
