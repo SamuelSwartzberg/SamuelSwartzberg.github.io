@@ -325,6 +325,14 @@ function changeActiveAnimated (e, subsection, selectSelector, afterChangeCallbac
 
 // Event Handlers
 
+document.querySelectorAll('.quicklink').forEach((quicklink, i) => { //since #anchor links break the document due to the cut off overflow situation with contact, this method makes them scroll to their targets instead
+  quicklink.onclick = event =>
+    window.scrollTo(0,
+      getOffsetFromTopOfDocument(
+        document.querySelector(quicklink.dataset.target)));
+});
+
+
 document.querySelector(".language-switcher").onclick = e => { // Handle the changing of the language by the user
   let currentLang = getCurrentLang();
   changeLanguage(getOppositeLang(currentLang)); // Change the language of the <html> node
