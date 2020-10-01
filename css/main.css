@@ -545,6 +545,9 @@ overflow: hidden;
   padding-bottom: .2em;
 }
 
+#about-me .mockup-container{
+  height: auto;
+}
 
 #about-me .mockup-body{
 	column-count: 1;
@@ -762,7 +765,7 @@ html[lang="en"] [lang="de"]{
 }
 @media screen and (max-width:350px){
 	html{
-		font-size: 0.4em;
+		font-size: 0.35em;
 	}
 }
 @media screen and (max-width:500px) {
