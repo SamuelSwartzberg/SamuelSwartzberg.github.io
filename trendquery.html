@@ -12,7 +12,7 @@ let beginning = "2004-01-01";
 let datestring = beginning + " " + currentdate;
 let queryarr =[];
 for (var query of queries) {
-  queryarr.push({"keyword":query,"geo":"","time":datestring})
+  queryarr.push({"keyword":query,"geo":geo,"time":datestring})
 }
 console.log(queryarr);
 trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":
