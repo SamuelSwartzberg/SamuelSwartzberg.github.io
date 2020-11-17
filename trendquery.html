@@ -5,7 +5,7 @@ var REGEX_JAPANESE = /[\u3000-\u303f]|[\u3040-\u309f]|[\u30a0-\u30ff]|[\uff00-\u
 
 queries = queries.map(item => decodeURI(item));
 
-var hasJapanese = (str) => return REGEX_JAPANESE.test(str);
+var hasJapanese = (str) => REGEX_JAPANESE.test(str);
 
 var geo = queries.some(hasJapanese) ? "JP" : "";
 let currentdate = new Date().toISOString().split('T')[0];
