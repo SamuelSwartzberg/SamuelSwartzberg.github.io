@@ -1,0 +1,21 @@
+<script src="https://ssl.gstatic.com/trends_nrtr/2402_RC03/embed_loader.js" type="text/javascript"></script> <script type="text/javascript">
+let queries = window.location.search.split("=")[1].split(",");
+
+var REGEX_JAPANESE = /[\u3000-\u303f]|[\u3040-\u309f]|[\u30a0-\u30ff]|[\uff00-\uff9f]|[\u4e00-\u9faf]|[\u3400-\u4dbf]/;
+
+queries = queries.map(item => decodeURI(item));
+
+var hasJapanese = (str) => REGEX_JAPANESE.test(str);
+
+var geo = queries.some(hasJapanese) ? "JP" : "";
+let currentdate = new Date().toISOString().split('T')[0];
+let beginning = "2004-01-01";
+let datestring = beginning + " " + currentdate;
+let queryarr =[];
+for (var query of queries) {
+  queryarr.push({"keyword":query,"geo":geo,"time":datestring})
+}
+console.log(queryarr);
+trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":
+  	queryarr,
+    "category":0,"property":""}, {"exploreQuery":"date=all&q="+queries.join(","),"guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
