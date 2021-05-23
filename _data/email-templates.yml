@@ -1,0 +1,30 @@
+-
+  type: defaultMail
+  pretty_name: 
+    - General inquiry
+    - All&shy;ge&shy;meine Anfrage
+-
+  type: translationArea
+  pretty_name: 
+    - Area of expertise
+    - Fach&shy;gebiete
+-
+  type: translationRates
+  pretty_name: 
+    - Trans&shy;lation rates
+    - Preise für Über&shy;setzungen
+-
+  type: webdev
+  pretty_name: 
+    - New website/app
+    - Neue Website/App
+-
+  type: webdevMaintenance
+  pretty_name: 
+    - Website improve&shy;ment
+    - Website-Erneuer&shy;ung
+-
+  type: confession
+  pretty_name: 
+    - 愛の告白
+    - 愛の告白

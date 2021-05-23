@@ -784,7 +784,7 @@ html[lang="en"] [lang="de"]{
 }
 /* Testing */
 
-@keyframes swipeaway { /* .6s ease-in-out */+
+@keyframes swipeaway { /* .6s ease-in-out */ 
 	0%{
 		transform: translateX(0);
 		opacity: 1;

@@ -2,6 +2,7 @@
   is_active: active
   versions:
     - lang: en
+      pretty_name: Choose...
       version: translation
       is_active: active
       blurbs: 
@@ -13,6 +14,7 @@
           We value sustain&shy;ability. Many years down the line, the JET BELT® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s seam&shy;lessly adjust&shy;able length to account for the changes – and to thus fit your needs exactly.
     - lang: de
       version: original
+      pretty_name: zum Beispiel
       blurbs:
         - > 
           Kompromisslos hochwertig. Alle Gürtel und Verschlüsse werden aus den besten Materialien hergestellt und handgefertigt, um unseren Ansprüchen an einen Premium-Gürtel gerecht zu werden.
@@ -20,9 +22,10 @@
           Das einzigartige JET BELT® System beruht auf der Safetybelt-Funktion, die Sie als Standard in allen Passagierflugzeugen finden. Der Gürtel lässt sich in Sekundenbruchteilen öffnen und wieder schließen.
         - > 
           Wir setzen auf Nachhaltigkeit. Der einzigartige JET BELT® ist so konzipiert, dass er auch nach vielen Jahren noch seine Funktion behält. Die stufenlos verstellbare Länge passt sich ausserdem an Ihre Lebenssituation an! 
-- topic: blurbs
+
   versions:
     - lang: en
+      pretty_name: Blurbs.
       version: translation
       is_active: active
       blurbs:
@@ -34,6 +37,7 @@
           'We value <span class="important">sustain&shy;ability</span>. Many years down the line, the <span class="important">JET BELT</span>® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s <span class="important">seam&shy;lessly</span> adjust&shy;able length to account for the changes – and to thus fit your needs exactly.'
     - lang: de
       version: original
+      pretty_name: Blurbs.
       blurbs:
         - > 
           Kompromisslos <span class="important">hochwertig</span>. Alle <span class="important">Gürtel</span> und Verschlüsse werden aus den besten Materialien hergestellt und <span class="important">handgefertigt</span>, um unseren Ansprüchen an einen <span class="important">Premium</span>-Gürtel gerecht zu werden.
@@ -45,6 +49,7 @@
   versions:
     - lang: en
       is_active: active
+      pretty_name: CSR.
       version: original
       blurbs:
         - > 
@@ -56,6 +61,7 @@
           Several regulations have to be respected by suppliers, if applicable, amongst others: (i) European Union: Regulation concerning the Registration, Evaluation,  Authorization and Restriction of Chemicals (REACH), Regulation concerning Restriction of Hazardous Substances (RoHS), Timber Regulation,  F-Gases Regulation, Conflict Minerals Regulation; (ii)  USA: Dodd-Frank Act, Sec 1502 “Conflict Minerals”,  California Transparency in Supply Chains Act of 2010, Business Supply Chain, Transparency on Trafficking and Slavery Act of 2015; (iii) Germany: Requirements out of the National Action Plan on ensuring  Human Rights in the Supply Chain.
     - lang: de
       version: translation
+      pretty_name: CSR.
       blurbs:
         - > 
           Zulieferer verpflichten sich, mit angemessenem Aufwand <span class="important">kontinuierlich</span> an der Entwicklung und Umsetzung von <span class="important">verbesserten Maßnahmen</span> zur Sicherstellung von Best Practices im Bereich <span class="important">Nachhaltigkeit</span> und <span class="important">Qualitätsstandards</span> zu arbeiten.
@@ -67,6 +73,7 @@
   versions:
     - lang: en
       is_active: active
+      pretty_name: Legal.
       version: translation
       blurbs:
         - > 
@@ -77,6 +84,7 @@
           To ensure visiting our website is <span class="important">enjoyable</span>, to enable certain <span class="important">features</span>, to show <span class="important">relevant products</span> as well as to enable market <span class="important">research</span>, we use so-called cookies. This serves to ensure our - in the course of weighing the various interests prevailing - <span class="important">legitimate interest</span> in the <span class="important">optimized display</span> of our products and of our website <span class="important">in accordance with Article 6(1) (f) GDPR.</span>
     - lang: de
       version: original
+      pretty_name: Im&shy;pressen.
       blurbs:
         - > 
           <span class="important">Cookies</span> sind kleine <span class="important">Textdateien</span>, die <span class="important">automatisch</span> auf Ihrem Endgerät <span class="important">gespeichert</span> werden. Einige der von uns verwendeten Cookies werden nach <span class="important">Ende der Browser-Sitzung</span>, also nach Schließen Ihres Browsers, wieder <span class="important">gelöscht</span> (sog. <span class="important">Sitzungs-Cookies</span>). Andere Cookies verbleiben auf Ihrem Endgerät und ermöglichen uns, Ihren <span class="important">Browser</span> beim nächsten Besuch <span class="important">wiederzuerkennen</span> (persistente Cookies).
@@ -88,6 +96,7 @@
   versions:
     - lang: en
       version: original
+      pretty_name: much more!
       is_active: active
       blurbs:
         - > 
@@ -98,6 +107,7 @@
           '<b>History</b>: There is a way, though, in which this analysis cannot reveal the true impact of the printing press, in which it misses the point entirely. Most of the linguistic standardization and reform occurred later, from 1650 onward via the establishment of a German state, universal schooling system and near-universal literacy. All these phenomena are bound up in a world in which the printing press is inextricably enmeshed. '
     - lang: de
       version: translation
+      pretty_name: vieles andere!
       blurbs:
         - > 
           '<b>Journalismus</b>: Schlussendlich will uns <i>Time of Eve</i> vor allem eins sagen: Wir können unsere Differenzen überwinden, uns verstehen und vielleicht sogar lieben lernen. Immer wieder stellt <i>Time of Eve</i> Rikuo - und uns - die (auch in der deutschen Version nicht übersetzte) Frage: Are you enjoying the Time of Eve? Der Weg dorthin ist nicht leicht, aber schlussendlich gelangt Rikuo zu seiner Antwort: Er würde sie nicht missen wollen.'

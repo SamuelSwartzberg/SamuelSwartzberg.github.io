@@ -1,0 +1,28 @@
+-
+  quicklink:
+    pretty_name:
+      - Trans&shy;lation.
+      - Überset&shy;zungen.
+    svg_name: translation_bun_reverse
+    target: \translation
+-
+  quicklink:
+    pretty_name:
+      - Code.
+      - Code.
+    svg_name: code
+    target: \code
+-
+  quicklink:
+    pretty_name:
+      - About me.
+      - Über mich.
+    svg_name: scroll
+    target: \about_me
+-
+  quicklink:
+    pretty_name:
+      - Contact.
+      - Kontakt.
+    svg_name: speech_bubble
+    target: \#contact

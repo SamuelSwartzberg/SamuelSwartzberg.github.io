@@ -1,0 +1,33 @@
+      <!-- <section id="learning" class="with-mockup">
+        <div class="text-section-container">
+          <h1>(Language) Learning.</h1>
+          <h2>Learn something. And never forget it.</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border ">
+            <div class="clickable-l-r">
+              <div class="clickable-l">
+
+              </div>
+              <div class="clickable-r">
+
+              </div>
+            </div>
+            <div class="image-container">
+              <picture alt="A mockup of a grammatical reordering flashcard." class="active">
+                <source srcset="images/screen1.webp 463w" type="image/webp">
+                <img src="images/screen1.png">
+              </picture>
+              <picture alt="A mockup of a japanese text reordering flashcard." class="">
+                <source srcset="images/screen2.webp 452w" type="image/webp">
+                <img src="images/screen2.png">
+              </picture>
+              <picture alt="A mockup of a japanese vocabulary flashcard." class="">
+                <source srcset="images/screen3.webp 451w" type="image/webp">
+                <img src="images/screen3.png">
+              </picture>
+            </div>
+            <div class="image-bubbles center-content-both"></div>
+          </div>
+        </div>
+      </section> -->

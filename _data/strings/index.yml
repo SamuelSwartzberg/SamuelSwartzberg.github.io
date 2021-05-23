@@ -1,0 +1,16 @@
+- 
+  index: 0
+  lang: en
+  tl-topic-selector:
+    title: Translation topic selector.
+  subject: "Subject:"
+  mail-select:
+    title: "Mail subject selector."
+- 
+  index: 1
+  lang: de
+  tl-topic-selector:
+    title: Übersetzungsthemaauswahl.
+  subject: "Betreff:"
+  mail-select:
+    title: "Emailbetreffauswahl."
