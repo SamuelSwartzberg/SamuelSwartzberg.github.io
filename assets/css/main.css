@@ -729,10 +729,10 @@ html[lang="en"] .language-switcher::before{
 	display: block;
 	content: "🇩🇪";
 }
-html[lang="de"] [lang="en"]{
+html[lang="de"] #lang-wrapper[lang="en"]{
 	display: none;
 }
-html[lang="en"] [lang="de"]{
+html[lang="en"] #lang-wrapper[lang="de"]{
 	display: none;
 }
 

@@ -1,0 +1,35 @@
+<article><code><select class="dance-selector" title="Dance selector.">
+  <option value="" selected>Select...</option>
+  <option value="#translation">#translation</option>
+  <option value="#contact">#contact</option>
+</select></code>
+  <pre><code><code class="hljs css"><span class="hljs-selector-class">.mockup-border</span>{
+  <span class="hljs-attribute">animation</span>: <span class="important">dance</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
+}</code></code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>dance</span> {
+  <span class="hljs-number">6.25%</span>, <span class="hljs-number">18.75%</span>{
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">8vw</span>)
+    <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>color-change</span>{
+  <span class="hljs-number">6.25%</span>{
+    <span class="hljs-variable">--hue</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">background-color</span>:
+    <span class="hljs-built_in">hsla</span>(<span class="hljs-built-in">var</span>(<span class="hljs-variable">--hue</span>),<span class="hljs-number">100%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-selector-class">.language-selector-container</span>{
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">align-items</span>: center;
+</code></pre>
+</article>

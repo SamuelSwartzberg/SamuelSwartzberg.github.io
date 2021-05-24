@@ -1,16 +1,108 @@
 - 
   index: 0
   lang: en
-  tl-topic-selector:
-    title: Translation topic selector.
-  subject: "Subject:"
-  mail-select:
-    title: "Mail subject selector."
+  language-names:
+    en: English
+    de: German
+  site-header:
+    h1:
+      before-insert: Hi
+      after-insert: ", I'm Sam."
+    h2: |
+      I do things with <span class="important">language</span>. Message me at <a href="mailto:{{site.email}}">me@&shy;samswartzberg&shy;.com</a>, check out my <a href="cv">CV Generator</a> or scroll to see more...</span>
+  fab:
+    message: |
+      Any questions?
+      Just send me an email!
+  translate:
+    header:
+      h1: Translate
+      topic-selector:
+        title: Translation topic selector.
+      h2: |
+        The <span class="important">hand-crafted</span> trans&shy;lation you need. <span class="important">English</span> to <span class="important">German</span> as well as <span class="important-dropped">German</span> to <span class="important-dropped">English</span>.
+    body:
+      lang-selector:
+        title: "Translation language selector."
+  code: 
+    header:
+      h2: |
+        It's not merely the words that do the talking - <span class="important">delivery and inter&shy;action</span> speak to your <span class="important">identity and values</span>. Take a peek!
+  about-me:
+    header:
+      h1: About me.
+      h2: We all have a story. Want to hear mine?
+    body: 
+      h3: |
+        I'm <span class="important">Sam</span>.
+      paras:
+        - |
+          I grew up in Munich, a <span class="important">German</span> by day, an <span class="important">American</span> by night.
+        - | 
+          Education-wise, I'm in the process of receiving my B. A. in Culture and Technology, a <span class="important">multi-disciplinary and bilingual Bachelor</span> which involved courses in philosophy, history, and linguistics. Translation-wise, I cut my teeth as a substitute translator for my father, himself a translator, translating ad copy and CSR.
+        - |
+          I'm incredibly curious and so am knowledgeable in a <span class="important">wide variety of fields</span>, stretching from film to rhetoric and from sports to computer science. Currently, I'm also studying Japanese and Spanish.
+  contact:
+    header:
+      h1: Inter&shy;ested? Anything else?
+      h2: Got a <span class="important">project</span>? Trans&shy;lation, code, both combined - or something else? Just message me!
+    body: 
+      from: "From:"
+      to: "To:"
+      subject: "Subject:"
+      mail-select:
+        title: "Mail subject selector."
 - 
   index: 1
   lang: de
-  tl-topic-selector:
-    title: Übersetzungsthemaauswahl.
-  subject: "Betreff:"
-  mail-select:
-    title: "Emailbetreffauswahl."
+  language-names:
+    en: Englisch
+    de: Deutsch
+  site-header:
+    h1:
+      before-insert: Hey
+      after-insert: ', ich heiße Sam.'
+    h2: |
+      <span class="important">Sprache</span> ist mein Handwerk und meine Muse. Schick mir eine <a href="mailto:{{site.email}}">Email</a>, schau bei meinem <a href="cv">Lebens&shy;lauf-Generator</a> vorbei oder scroll einfach ein bisschen weiter...
+  fab:
+    message: |
+      Noch Fragen? Schreib
+      mir einfach eine Email!
+  translate:
+    header:
+      h1: Ich übersetze
+      topic-selector:
+        title: Übersetzungsthemaauswahl.
+      h2: |
+        Überset&shy;zungen - <span class="important-dropped">speziell</span> auf deinen Text <span class="important-dropped">zuge&shy;schnit&shy;ten</span>. Vom <span class="important">Deutschen</span> ins <span class="important">Englische</span> und umgekehrt.
+    body:
+      lang-selector:
+        title: "Sprachauswahl für Übersetzung."
+  code: 
+    header:
+      h2: |
+        Manchmal braucht es mehr als Worte - es braucht eine Umsetzung, bei der Inhalt, Design und Umsetzung alle dieselbe Sprache sprechen.
+  about-me:
+    header:
+      h1: Über mich.
+      h2: Meine Ausbildung, Interessen und Fähigkeiten.
+    body: 
+      h3: |
+        Ich bin <span class="important">Sam</span>.
+      paras:
+        - |
+          Ich bin in München, halb als <span class="important">Amerikaner</span> und halb <span class="important">Deutsch</span>, aufgewachsen.
+        - |
+          Meinen B. A. in Kultur und Technologie, einem <span class="important">interdisziplinären, zweisprachig ausgelegtem Bachelor</span> mit Kursen in Philosophie, Geschichte und Linguistik, erhalte ich gerade. Das Übersetzungshandwerk habe ich bei meinem Vater - ebenfalls Übersetzer - gelernt, vor allem im Übersetzen von Werbetexten und CSR.
+        - |
+          Ich bin von Natur aus wissbegierig und kenne mich daher in einem <span class="important">breiten Spektrum an Bereichen</span> aus: Von Film bis Rhetorik und von Sport bis Informatik, und vielen anderen dazu.
+  contact:
+    header:
+      h1: Neugierig geworden?
+      h2: Gibt es etwas zu <span class="important">übersetzen</span>, zu <span class="important">coden</span>, beides <span class="important">zusammen</span>  - oder ganz was anderes? Schreib mir einfach eine <span class="important">Email</span>!
+    body: 
+      from: "Von:"
+      to: "An:"
+      subject: "Betreff:"
+      mail-select:
+        title: "Emailbetreffauswahl."

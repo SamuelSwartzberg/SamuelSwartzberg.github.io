@@ -31,57 +31,60 @@
   <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <div class="language-switcher"></div>
-  <div class="picture-in-picture">
-    <div class="pip-inner">
-      <div class="dance-pip"></div>
-      <div class="name-pip">
-        <div class="text-section-container">
-          <h1><span lang="en">Hi</span><span lang="de">Hey</span><span class="insert-name"></span><span class="cursor">|</span><span lang="en">, I'm Sam.</span><span lang="de">, ich heiße Sam.</span></h1>
-          <h2><span lang="en">I do things with <span class="important">language</span>. Message me at <span class="fake-link">me@&shy;samswartzberg&shy;.com</span>, check out my <span class="fake-link">CV Generator</span> or scroll to see more...</span>
-          <span lang="de"><span class="important">Sprache</span> ist mein Handwerk und meine Muse. Schick mir eine <span class="fake-link">Email</span>, schau bei meinem <span class="fake-link">Lebens&shy;lauf-Generator</span> vorbei oder scroll einfach ein bisschen weiter...</span></h2>
-        </div></div>
-    </div>
-  </div>
-  <div id="contact-fab-outer"><div class="fab-message"><span lang="en">Any questions?
-Just send me an email!</span><span lang="de">Noch Fragen? Schreib
-mir einfach eine Email!</span></div><div id="contact-fab"><a title="Send email." class="center-content-both" href="mailto:me@samswartzberg.com"><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 24 24" width="200"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg></a></div></div>
-  <div class="main-container">
-    <section id="intro">
-      <div class="text-section-container">
-        <h1><span lang="en">Hi</span><span lang="de">Hey</span><span class="insert-name"></span><span lang="en">, I'm Sam.</span><span lang="de">, ich heiße Sam.</span></h1>
-        <h2><span lang="en">I do things with <span class="important">language</span>. <a href="https://munichmarauders.org">Message</a> me at <a href="mailto:me@samswartzberg.com">me@&shy;samswartzberg&shy;.com</a>, check out my <a href="cv">CV Generator</a> or scroll to see more...</span>
-        <span lang="de"><span class="important">Sprache</span> ist mein Handwerk und meine Muse. Schick mir eine <a href="mailto:me@samswartzberg.com">Email</a>, schau bei meinem <a href="cv">Lebens&shy;lauf-Generator</a> vorbei oder scroll einfach ein bisschen weiter...</span></h2>
-      </div>
-      <div class="rest-intro center-content-horizontally">
-        <div class="quicklink-container">
-          
-            <a class="quicklink" data-target="\translation">
-              <div>
-                <div>
-                  <span lang="en">Trans&shy;lation.</span><span lang="de">Überset&shy;zungen.</span>
-                </div>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-  <g class="Color1">
-    <g transform="matrix(1,0,0,1,-6,-6)">
-        <path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/>
-    </g>
-    <path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/>
-  </g>
-  <g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2">
-    <path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/>
-  </g>
-</svg>
 
-              </div>
-            </a>
-          
-            <a class="quicklink" data-target="\code">
-              <div>
+  <div id="lang-wrapper" lang="en">
+    <div class="language-switcher"></div>
+    <div class="picture-in-picture">
+      <div class="pip-inner">
+        <div class="dance-pip"></div>
+        <div class="name-pip">
+          <div class="text-section-container">
+            <h1>
+              Hi
+              <span class="insert-name"></span><span class="cursor">|</span><span lang="en">
+              , I'm Sam.
+            </h1>
+            <h2>I do things with <span class="important">language</span>. Message me at <a href="mailto:{{site.email}}">me@&shy;samswartzberg&shy;.com</a>, check out my <a href="cv">CV Generator</a> or scroll to see more...</span>
+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact-fab-outer">
+      <div class="fab-message">Any questions?
+Just send me an email!
+</div>
+        <div id="contact-fab">
+          <a title="Send email." class="center-content-both" href="mailto:"><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 24 24" width="200"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+        </div>
+      </div>
+    <div class="main-container">
+      <section id="intro">
+        <div class="text-section-container">
+          <h1>Hi<span class="insert-name"></span>, I'm Sam.</h1>
+          <h2>I do things with <span class="important">language</span>. Message me at <a href="mailto:{{site.email}}">me@&shy;samswartzberg&shy;.com</a>, check out my <a href="cv">CV Generator</a> or scroll to see more...</span>
+</h2>
+        </div>
+        <div class="rest-intro center-content-horizontally">
+          <div class="quicklink-container">
+            
+              <a class="quicklink" data-target="\translation">
                 <div>
-                  <span lang="en">Code.</span><span lang="de">Code.</span>
+                  <div>
+                    Trans&shy;lation.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="Color1"><g transform="matrix(1,0,0,1,-6,-6)"><path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/></g><path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/></g><g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2"><path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/></g></svg>
+
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+              </a>
+            
+              <a class="quicklink" data-target="\code">
+                <div>
+                  <div>
+                    Code.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <path class="Color1" d="M40,6L8,6C5.8,6 4,7.8 4,10L4,38C4,40.2 5.8,42 8,42L40,42C42.2,42 44,38.2 44,36L44,10C44,7.8 42.2,6 40,6ZM40,38L8,38L8,10L40,10L40,38Z"/>
   <g class="Color2">
       <rect x="12" y="30" width="16" height="4"/>
@@ -93,25 +96,25 @@ mir einfach eine Email!</span></div><div id="contact-fab"><a title="Send email."
   </g>
 </svg>
 
-              </div>
-            </a>
-          
-            <a class="quicklink" data-target="\about_me">
-              <div>
-                <div>
-                  <span lang="en">About me.</span><span lang="de">Über mich.</span>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M15,20A1,1 0 0,0 16,19V4H8A1,1 0 0,0 7,5V16H5V5A3,3 0 0,1 8,2H19A3,3 0 0,1 22,5V6H20V5A1,1 0 0,0 19,4A1,1 0 0,0 18,5V9L18,19A3,3 0 0,1 15,22H5A3,3 0 0,1 2,19V18H13A2,2 0 0,0 15,20M9,6H14V8H9V6M9,10H14V12H9V10M9,14H14V16H9V14Z" /></svg>
+              </a>
+            
+              <a class="quicklink" data-target="\about_me">
+                <div>
+                  <div>
+                    About me.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M15,20A1,1 0 0,0 16,19V4H8A1,1 0 0,0 7,5V16H5V5A3,3 0 0,1 8,2H19A3,3 0 0,1 22,5V6H20V5A1,1 0 0,0 19,4A1,1 0 0,0 18,5V9L18,19A3,3 0 0,1 15,22H5A3,3 0 0,1 2,19V18H13A2,2 0 0,0 15,20M9,6H14V8H9V6M9,10H14V12H9V10M9,14H14V16H9V14Z" /></svg>
 
-              </div>
-            </a>
-          
-            <a class="quicklink" data-target="\#contact">
-              <div>
-                <div>
-                  <span lang="en">Contact.</span><span lang="de">Kontakt.</span>
                 </div>
-                <svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+              </a>
+            
+              <a class="quicklink" data-target="\#contact">
+                <div>
+                  <div>
+                    Contact.
+                  </div>
+                  <svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
   <g class="Color2">
       <rect x="12" y="24" width="16" height="4" style="fill-rule:nonzero;"/>
       <rect x="12" y="18" width="24" height="4" style="fill-rule:nonzero;"/>
@@ -120,20 +123,19 @@ mir einfach eine Email!</span></div><div id="contact-fab"><a title="Send email."
   <path class="Color1" d="M8,4C5.8,4 4.02,5.8 4.02,8L4,44L12,36L40,36C42.2,36 44,34.2 44,32L44,8C44,5.8 42.2,4 40,4L8,4ZM8,8L40,8L40,32L10.34,32L8,34.34L8,8Z" style="fill-rule:nonzero;"/>
 </svg>
 
-              </div>
+                </div>
+              </a>
+            
             </a>
-          
-          </a>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="translation" class="with-mockup app">
-      <div class="text-section-container">
-        <h1><span><span lang="en">Translate</span><span lang="de">Ich übersetze</span></span>
-          
+      </section>
+      <section id="translation" class="with-mockup app">
+        <div class="text-section-container">
+          <h1><span>Translate</span>
             <div lang="en">
               <div class="language-selector-container center-content-horizontally">
-                <select class="tl-topic-selector" title="lang_counter.tl-topic-selector.title">
+                <select class="tl-topic-selector" title="Translation topic selector.">
                   
                     <option value="dummy"  selected >Blurbs.</option>
                   
@@ -146,10 +148,446 @@ mir einfach eine Email!</span></div><div id="contact-fab"><a title="Send email."
                 </select>
               </div>
             </div>
-          
+          </h1>
+          <h2>The <span class="important">hand-crafted</span> trans&shy;lation you need. <span class="important">English</span> to <span class="important">German</span> as well as <span class="important-dropped">German</span> to <span class="important-dropped">English</span>.
+</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border">
+            <div class="mockup-header">
+              <div>
+                <div class="language-selector-container center-content-horizontally">
+                  <select class="tl-lang-selector" title="Translation language selector.">
+                    <option value="lang-en" selected>🇺🇸 English</option>
+                    <option value="lang-de" >🇩🇪 German</option>
+                  </select>
+                </div>
+              </div>
+              <div class="original-translation-container">
+                
+                <div class="original">
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+
+                  </div>
+                  <div class="text">
+                    <div class="hideable">
+                      Original
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="translation">
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="Color1"><g transform="matrix(1,0,0,1,-6,-6)"><path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/></g><path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/></g><g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2"><path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/></g></svg>
+
+                  </div>
+                  <div class="text">
+                    <div class="hideable">
+                      Translation
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="mockup-body">
+              
+                <div class="topic dummy active">
+                  
+                    <div class="lang lang-en active" data-version="translation">
+                      
+                        <article><pre>Superior <span class="important">quality</span> without compro&shy;mises. To meet and <span class="important">surpass</span> your expecta&shy;tions for a <span class="important">belt</span>, one that earns and not merely receives the label '<span class="important">premium</span>', each and every belt and buckle are <span class="important">hand-crafted</span> from high-grade materials.
+</pre></article>
+                      
+                        <article><pre>The unique <span class="important">JET BELT® System</span> is based on the <span class="important">Safety-Belt Tech&shy;nology</span>, the very same that keeps you <span class="important">safe</span> and <span class="important">comfor&shy;table</span> on every flight. Open and close the belt within milli&shy;seconds.
+</pre></article>
+                      
+                        <article><pre>'We value <span class="important">sustain&shy;ability</span>. Many years down the line, the <span class="important">JET BELT</span>® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s <span class="important">seam&shy;lessly</span> adjust&shy;able length to account for the changes – and to thus fit your needs exactly.'
+</pre></article>
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="original">
+                      
+                        <article><pre>Kompromisslos <span class="important">hochwertig</span>. Alle <span class="important">Gürtel</span> und Verschlüsse werden aus den besten Materialien hergestellt und <span class="important">handgefertigt</span>, um unseren Ansprüchen an einen <span class="important">Premium</span>-Gürtel gerecht zu werden.
+</pre></article>
+                      
+                        <article><pre>Das einzigartige <span class="important">JET BELT® System</span> beruht auf der <span class="important">Safetybelt-Funktion</span>, die Sie als Standard in allen Passagierflugzeugen finden. Der Gürtel lässt sich in <span class="important">Sekundenbruchteilen</span> öffnen und wieder schließen.
+</pre></article>
+                      
+                        <article><pre>Wir setzen auf <span class="important">Nachhaltigkeit</span>. Der einzigartige <span class="important">JET BELT®</span> ist so konzipiert, dass er auch nach <span class="important">vielen Jahren</span> noch seine Funktion behält. Die <span class="important">stufenlos verstellbare</span> Länge passt sich ausserdem an Ihre Lebenssituation an!
+</pre></article>
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="topic csr ">
+                  
+                    <div class="lang lang-en active" data-version="original">
+                      
+                        <article><pre>Suppliers shall make <span class="important">reasonable efforts</span> to <span class="important">continuously improve</span> the development and the implementation of measures to <span class="important">ensure</span> best business practice related to <span class="important">sustainability</span> und high <span class="important">quality standards</span>.
+</pre></article>
+                      
+                        <article><pre>Neither <span class="important">employees and subcontractors</span> nor <span class="important">any other representatives</span> of the suppliers shall <span class="important">grant, offer or accept bribes</span>, facilitation payments and benefits, inadmissible donations or other not reasonable granted benefits from or to customers, officials or other business partners.
+</pre></article>
+                      
+                        <article><pre>Moreover, <span class="important">suppliers</span> must ensure <span class="important">compliance</span> with other applicable product-related requirements, such as <span class="important">REACH</span> and <span class="important">RoHS</span>, and may be required to declare the material content and origin of products delivered to S&T.
+Several regulations have to be respected by suppliers, if applicable, amongst others: (i) European Union: Regulation concerning the Registration, Evaluation,  Authorization and Restriction of Chemicals (REACH), Regulation concerning Restriction of Hazardous Substances (RoHS), Timber Regulation,  F-Gases Regulation, Conflict Minerals Regulation; (ii)  USA: Dodd-Frank Act, Sec 1502 “Conflict Minerals”,  California Transparency in Supply Chains Act of 2010, Business Supply Chain, Transparency on Trafficking and Slavery Act of 2015; (iii) Germany: Requirements out of the National Action Plan on ensuring  Human Rights in the Supply Chain.
+</pre></article>
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="translation">
+                      
+                        <article><pre>Zulieferer verpflichten sich, mit angemessenem Aufwand <span class="important">kontinuierlich</span> an der Entwicklung und Umsetzung von <span class="important">verbesserten Maßnahmen</span> zur Sicherstellung von Best Practices im Bereich <span class="important">Nachhaltigkeit</span> und <span class="important">Qualitätsstandards</span> zu arbeiten.
+</pre></article>
+                      
+                        <article><pre>Das <span class="important">Anbieten, Geben oder Annehmen von Bestechungsaufwendungen</span> (gleich welcher Art), Schmiergeldern, unerlaubten Zuwendungen bzw. Spenden sowie anderer nicht angemessener Zahlungen, von oder an Geschäftspartner, Kunden, Amtsträger oder anderen Personen ist <span class="important">allen Arbeitnehmern und Subunternehmern</span> <span class="important">untersagt</span>.
+</pre></article>
+                      
+                        <article><pre>'Zusätzlich sind <span class="important">Zulieferer</span> verpflichtet, die <span class="important">Erfüllung</span> ähnlicher <span class="important">produktbezogenen Richtlinien</span>, unter anderem <span class="important">REACH</span> und <span class="important">RoHS</span>, sicherzustellen, und hierzu unter Umständen Angaben zur Zusammensetzung und Herkunft der an S&T gelieferten Produkte zu machen. Relevlante Verordnungen und Richtlinien sind unter anderem: (i) In der Europäischen Union: Die Verordnung zur Registrierung, Bewertung, Zulassung und Beschränkung chemischer Stoffe (REACH), die Richtlinie zur Beschränkung der Verwendung bestimmter gefährlicher Stoffe (RoHS), die Holzhandelsverordnung, die Verordnung über fluorierte Treibhausgase, sowie die Verordnung zur Sorgfaltspflicht beim Import von Konfliktmineralien; (ii) In den Vereinigten Staaten: Der Dodd-Frank Act, Abschnitt 1502 “Konfliktmineralien”, das kalifornische Gesetz zur Transparenz von Lieferketten von 2010, sowie das Gesetz zur Transparenz der Lieferkette bezüglich Menschenhandel und Sklaverei von 2015; (iii) In Deutschland: Relevante Anforderungen bezüglich der Lieferkette, enthalten in dem nationalen Aktionsplan „Wirtschaft und Menschenrechte“.'
+</pre></article>
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="topic legal ">
+                  
+                    <div class="lang lang-en active" data-version="translation">
+                      
+                        <article><pre><span class="important">Cookies</span> are small <span class="important">text files</span> that are <span class="important">automatically saved</span> on your device. Some of these cookies are <span class="important">deleted</span> at the <span class="important">end of your browser session</span> - that is, when you close your browser (so-called <span class="important">session cookies</span>). Other cookies remain on your device and allow us to <span class="important">recognize your browser</span> on your next visit (<span class="important">persistent cookies</span>).
+</pre></article>
+                      
+                        <article><pre>The American corporation <span class="important">Google LLC</span> is <span class="important">certified</span> for data <span class="important">transfer</span> to and <span class="important">storage</span> of data on a Google server in the US in accordance with the <span class="important">EU-US-Privacy Shield</span>. The <span class="important">European Commission</span> has judged corporations certified to be in accordance with the Privacy Shield to provide an sufficient level of <span class="important">data protection</span>.
+</pre></article>
+                      
+                        <article><pre>To ensure visiting our website is <span class="important">enjoyable</span>, to enable certain <span class="important">features</span>, to show <span class="important">relevant products</span> as well as to enable market <span class="important">research</span>, we use so-called cookies. This serves to ensure our - in the course of weighing the various interests prevailing - <span class="important">legitimate interest</span> in the <span class="important">optimized display</span> of our products and of our website <span class="important">in accordance with Article 6(1) (f) GDPR.</span>
+</pre></article>
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="original">
+                      
+                        <article><pre><span class="important">Cookies</span> sind kleine <span class="important">Textdateien</span>, die <span class="important">automatisch</span> auf Ihrem Endgerät <span class="important">gespeichert</span> werden. Einige der von uns verwendeten Cookies werden nach <span class="important">Ende der Browser-Sitzung</span>, also nach Schließen Ihres Browsers, wieder <span class="important">gelöscht</span> (sog. <span class="important">Sitzungs-Cookies</span>). Andere Cookies verbleiben auf Ihrem Endgerät und ermöglichen uns, Ihren <span class="important">Browser</span> beim nächsten Besuch <span class="important">wiederzuerkennen</span> (persistente Cookies).
+</pre></article>
+                      
+                        <article><pre>Soweit Informationen auf Server von <span class="important">Google</span> in den USA <span class="important">übertragen</span> und dort <span class="important">gespeichert</span> werden, ist die amerikanische Aktiengesellschaft <span class="important">Google LLC</span> unter dem <span class="important">EU-US-Privacy Shield</span> zertifiziert. Im Rahmen dieses Abkommens zwischen den USA und der <span class="important">Europäischen Kommission</span> hat diese für unter dem Privacy Shield zertifizierte Unternehmen ein <span class="important">angemessenes Datenschutzniveau festgestellt.</span>
+</pre></article>
+                      
+                        <article><pre>Um den Besuch unserer Website <span class="important">attraktiv zu gestalten</span> und die Nutzung bestimmter <span class="important">Funktionen</span> zu ermöglichen, um <span class="important">passende Produkte</span> anzuzeigen oder zur <span class="important">Marktforschung</span> verwenden wir auf verschiedenen Seiten sogenannte Cookies. Dies dient der Wahrung unserer im Rahmen einer Interessensabwägung <span class="important">überwiegenden berechtigten Interessen</span> an einer <span class="important">optimierten Darstellung</span> unseres Angebots <span class="important">gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO.</span>
+</pre></article>
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="topic more ">
+                  
+                    <div class="lang lang-en active" data-version="original">
+                      
+                        <article><pre>'<b>Journalism</b>: The conclusion <i>Time of Eve</i> arrives at and invites its viewers to embrace is one of general inclusivity: We can learn to understand and love each other, despite our differences. Repeatedly, <i>Time of Eve</i> asks: Are you enjoying the Time of Eve? By the end, Rikuo's answer is a resounding yes.'
+</pre></article>
+                      
+                        <article><pre>'<b>Papers</b>: Sentences can say things. For our purposes, let us say they say that, i.e. they express a proposition (One could also say they perform the illocutionary act of saying that). Sentences can also imply things one has not, strictly speaking, said. One way a sentence can imply another is to entail it. Another way one can imply something is to implicate something.'
+</pre></article>
+                      
+                        <article><pre>'<b>History</b>: There is a way, though, in which this analysis cannot reveal the true impact of the printing press, in which it misses the point entirely. Most of the linguistic standardization and reform occurred later, from 1650 onward via the establishment of a German state, universal schooling system and near-universal literacy. All these phenomena are bound up in a world in which the printing press is inextricably enmeshed. '
+</pre></article>
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="translation">
+                      
+                        <article><pre>'<b>Journalismus</b>: Schlussendlich will uns <i>Time of Eve</i> vor allem eins sagen: Wir können unsere Differenzen überwinden, uns verstehen und vielleicht sogar lieben lernen. Immer wieder stellt <i>Time of Eve</i> Rikuo - und uns - die (auch in der deutschen Version nicht übersetzte) Frage: Are you enjoying the Time of Eve? Der Weg dorthin ist nicht leicht, aber schlussendlich gelangt Rikuo zu seiner Antwort: Er würde sie nicht missen wollen.'
+</pre></article>
+                      
+                        <article><pre>"<b>Wissenschaftliche Arbeiten</b>: Sätze können etwas aussagen. Bezeichnen wir hier dieses 'Aussagen' als ein Aussagen, dass etwas der Fall ist, also das Ausdrücken einer Proposition. (Man könnte auch sagen, dass Sätze den illokutionären Akt des Aussagens, dass etwas der Fall ist, vollziehen.) Zusätzlich können Sätze aber auch Dinge implizieren, die man nicht im engeren Sinne <i>gesagt</i> hat: Zum einen können sie eine andere Proposition beinhalten; zum anderen können sie aber auch etwas implikieren."
+</pre></article>
+                      
+                        <article><pre>'<b>Geschichte</b>: Diese Analyse kann allerdings die Auswirkungen der Erfindung der Druckpresse nicht abschließend klären, ja, gewissermaßen schlägt sie sogar einen Irrweg ein: Der Großteil der Sprachstandardisierung und -reform geschah erst viel später, etwa ab 1650, mittels der allgemeinen Schulpflicht, der Gründung des deutschen Staates und der gesellschaftsübergreifenden Alphabetisierung. Eben jene Prozesse sind in einer Welt, in der es die Druckpresse nicht gegeben hätte, undenkbar.'</pre></article>
+                      
+                    </div>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="code" class="with-mockup">
+        <div class="text-section-container">
+          <h1>Code.</h1>
+          <h2>It's not merely the words that do the talking - <span class="important">delivery and inter&shy;action</span> speak to your <span class="important">identity and values</span>. Take a peek!
+</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border">
+            <div class="mockup-header">
+              <div class="language-selector-container center-content-horizontally">
+                <select class="code-selector" title="Code selector.">
+                  <option value="js-code" selected>JS</option>
+                  <option value="css-code">CSS</option>
+                  <option value="html-code">HTML</option>
+                </select>
+              </div>
+            </div>
+            <div class="mockup-body">
+              <div class="js-code active show-overflow">
+                <article class="show-overflow">
+  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> theme&#8203;Changer =
+  <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="important">"theme-changer"</span>);
+  theme&#8203;Changer.<span class="important">onclick</span> =
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, i</span>)</span>{
+<span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="hljs-string">"body"</span>).
+  classList.toggle(<span class="important">"dark-theme"</span>);
+}</code></pre>
+  <div class="clickme-bubble-container">
+    <code
+      class="hljs"><span class="hljs-comment"><span lang="en">//Change the theme</span><span lang="de">//Das Design wechseln</span></span></code>
+    <div class="theme-changer-outer">
+      <div class="theme-changer"></div>
+      <div class="breathing-inverter-circle"></div>
+    </div>
+  </div>
+</article>
+              </div>
+              <div class="css-code">
+                <article><code><select class="dance-selector" title="Dance selector.">
+  <option value="" selected>Select...</option>
+  <option value="#translation">#translation</option>
+  <option value="#contact">#contact</option>
+</select></code>
+  <pre><code><code class="hljs css"><span class="hljs-selector-class">.mockup-border</span>{
+  <span class="hljs-attribute">animation</span>: <span class="important">dance</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
+}</code></code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>dance</span> {
+  <span class="hljs-number">6.25%</span>, <span class="hljs-number">18.75%</span>{
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">8vw</span>)
+    <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>color-change</span>{
+  <span class="hljs-number">6.25%</span>{
+    <span class="hljs-variable">--hue</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">background-color</span>:
+    <span class="hljs-built_in">hsla</span>(<span class="hljs-built-in">var</span>(<span class="hljs-variable">--hue</span>),<span class="hljs-number">100%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-selector-class">.language-selector-container</span>{
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">align-items</span>: center;
+</code></pre>
+</article>
+              </div>
+              <div class="html-code">
+                <article><pre><code>&lt;div class=&quot;main-container&quot;&gt;
+  &lt;section id=&quot;intro&quot;&gt;
+  &lt;div class=&quot;text-section-container&quot;&gt;
+  &lt;h1&gt;<span class="important">Hi</span><input id="name-input" type="text"><span class="important">, I&#39;m Sam.</span>&lt;/h1&gt;
+  &lt;h2&gt;I do things with language. Message me at &lt;a href=&quot;mailto:&quot;&gt;&lt;/a&gt; or scroll to see more...&lt;/h2&gt;
+  &lt;/div&gt;</code></pre></article>
+  <article><pre><code>&lt;div class=&quot;rest-intro center-content-horizontally&quot;&gt;
+  &lt;div class=&quot;quicklink-container&quot;&gt;</code></pre></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about-me" class="with-mockup">
+        <div class="text-section-container">
+          <h1>About me.</h1>
+          <h2>We all have a story. Want to hear mine?</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border">
+            <div class="mockup-body">
+              <div class="mockup-header">
+                <h3></h3>
+                <div class="photo-bubble">
+                  <img class="headshot" src="/paper/media/profile-image.jpg" alt="A picture of Sam Swartzberg.">
+                </div>
+              </div>
+              
+                <p>I grew up in Munich, a <span class="important">German</span> by day, an <span class="important">American</span> by night.
+</p>
+              
+                <p>Education-wise, I'm in the process of receiving my B. A. in Culture and Technology, a <span class="important">multi-disciplinary and bilingual Bachelor</span> which involved courses in philosophy, history, and linguistics. Translation-wise, I cut my teeth as a substitute translator for my father, himself a translator, translating ad copy and CSR.
+</p>
+              
+                <p>I'm incredibly curious and so am knowledgeable in a <span class="important">wide variety of fields</span>, stretching from film to rhetoric and from sports to computer science. Currently, I'm also studying Japanese and Spanish.
+</p>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="text-section-container">
+          <h1>Inter&shy;ested? Anything else?</h1>
+          <h2>Got a <span class="important">project</span>? Trans&shy;lation, code, both combined - or something else? Just message me!</h2>
+        </div>
+        <div class="mockup-container app">
+          <div class="mockup-border">
+            <div class="mockup-header">
+              <div class="header-line">
+                <div class="header-line-inner">
+                  <span class="name-desc">
+                    From:
+                  </span>
+                  <span class="insert-name"></span>
+                </div>
+              </div>
+              <div class="header-line"><div class="header-line-inner"><span class="name-desc"><To:</span><span> me@&shy;samswartzberg&shy;.com</span></div></div>
+              <div class="header-line subject">
+                <div>
+                  <div class="header-line-inner">
+                    <div class="name-desc"></div>
+                    <div class="language-selector-container subject-selector"><select class="mail-select" title="Mail subject selector.">
+                      
+                        <option value="defaultMail">General inquiry</option>
+                      
+                        <option value="translationArea">Area of expertise</option>
+                      
+                        <option value="translationRates">Trans&shy;lation rates</option>
+                      
+                        <option value="webdev">New website/app</option>
+                      
+                        <option value="webdevMaintenance">Website improve&shy;ment</option>
+                      
+                        <option value="confession">愛の告白</option>
+                      
+                    </select></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="message-body">
+<pre>
+</pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+      
+    </div>
+  
+  <div id="lang-wrapper" lang="de">
+    <div class="language-switcher"></div>
+    <div class="picture-in-picture">
+      <div class="pip-inner">
+        <div class="dance-pip"></div>
+        <div class="name-pip">
+          <div class="text-section-container">
+            <h1>
+              Hey
+              <span class="insert-name"></span><span class="cursor">|</span><span lang="en">
+              , ich heiße Sam.
+            </h1>
+            <h2><span class="important">Sprache</span> ist mein Handwerk und meine Muse. Schick mir eine <a href="mailto:{{site.email}}">Email</a>, schau bei meinem <a href="cv">Lebens&shy;lauf-Generator</a> vorbei oder scroll einfach ein bisschen weiter...
+</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact-fab-outer">
+      <div class="fab-message">Noch Fragen? Schreib
+mir einfach eine Email!
+</div>
+        <div id="contact-fab">
+          <a title="Send email." class="center-content-both" href="mailto:"><svg xmlns="http://www.w3.org/2000/svg" height="200" viewBox="0 0 24 24" width="200"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+        </div>
+      </div>
+    <div class="main-container">
+      <section id="intro">
+        <div class="text-section-container">
+          <h1>Hey<span class="insert-name"></span>, ich heiße Sam.</h1>
+          <h2><span class="important">Sprache</span> ist mein Handwerk und meine Muse. Schick mir eine <a href="mailto:{{site.email}}">Email</a>, schau bei meinem <a href="cv">Lebens&shy;lauf-Generator</a> vorbei oder scroll einfach ein bisschen weiter...
+</h2>
+        </div>
+        <div class="rest-intro center-content-horizontally">
+          <div class="quicklink-container">
+            
+              <a class="quicklink" data-target="\translation">
+                <div>
+                  <div>
+                    Überset&shy;zungen.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="Color1"><g transform="matrix(1,0,0,1,-6,-6)"><path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/></g><path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/></g><g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2"><path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/></g></svg>
+
+                </div>
+              </a>
+            
+              <a class="quicklink" data-target="\code">
+                <div>
+                  <div>
+                    Code.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <path class="Color1" d="M40,6L8,6C5.8,6 4,7.8 4,10L4,38C4,40.2 5.8,42 8,42L40,42C42.2,42 44,38.2 44,36L44,10C44,7.8 42.2,6 40,6ZM40,38L8,38L8,10L40,10L40,38Z"/>
+  <g class="Color2">
+      <rect x="12" y="30" width="16" height="4"/>
+      <rect x="12" y="14" width="16" height="4"/>
+      <rect x="32" y="30" width="4" height="4"/>
+      <rect x="32" y="14" width="4" height="4"/>
+      <rect x="12" y="22" width="4" height="4"/>
+      <rect x="20" y="22" width="16" height="4"/>
+  </g>
+</svg>
+
+                </div>
+              </a>
+            
+              <a class="quicklink" data-target="\about_me">
+                <div>
+                  <div>
+                    Über mich.
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M15,20A1,1 0 0,0 16,19V4H8A1,1 0 0,0 7,5V16H5V5A3,3 0 0,1 8,2H19A3,3 0 0,1 22,5V6H20V5A1,1 0 0,0 19,4A1,1 0 0,0 18,5V9L18,19A3,3 0 0,1 15,22H5A3,3 0 0,1 2,19V18H13A2,2 0 0,0 15,20M9,6H14V8H9V6M9,10H14V12H9V10M9,14H14V16H9V14Z" /></svg>
+
+                </div>
+              </a>
+            
+              <a class="quicklink" data-target="\#contact">
+                <div>
+                  <div>
+                    Kontakt.
+                  </div>
+                  <svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <g class="Color2">
+      <rect x="12" y="24" width="16" height="4" style="fill-rule:nonzero;"/>
+      <rect x="12" y="18" width="24" height="4" style="fill-rule:nonzero;"/>
+      <rect x="12" y="12" width="24" height="4" style="fill-rule:nonzero;"/>
+  </g>
+  <path class="Color1" d="M8,4C5.8,4 4.02,5.8 4.02,8L4,44L12,36L40,36C42.2,36 44,34.2 44,32L44,8C44,5.8 42.2,4 40,4L8,4ZM8,8L40,8L40,32L10.34,32L8,34.34L8,8Z" style="fill-rule:nonzero;"/>
+</svg>
+
+                </div>
+              </a>
+            
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="translation" class="with-mockup app">
+        <div class="text-section-container">
+          <h1><span>Ich übersetze</span>
             <div lang="de">
               <div class="language-selector-container center-content-horizontally">
-                <select class="tl-topic-selector" title="lang_counter.tl-topic-selector.title">
+                <select class="tl-topic-selector" title="Übersetzungsthemaauswahl.">
                   
                     <option value="dummy"  selected >Blurbs.</option>
                   
@@ -162,193 +600,184 @@ mir einfach eine Email!</span></div><div id="contact-fab"><a title="Send email."
                 </select>
               </div>
             </div>
-          
-        </h1>
-        <h2><span lang="en">The <span class="important">hand-crafted</span> trans&shy;lation you need. <span class="important">English</span> to <span class="important">German</span> as well as <span class="important-dropped">German</span> to <span class="important-dropped">English</span>.</span><span lang="de">Überset&shy;zungen - <span class="important-dropped">speziell</span> auf deinen Text <span class="important-dropped">zuge&shy;schnit&shy;ten</span>. Vom <span class="important">Deutschen</span> ins <span class="important">Englische</span> und umgekehrt.</span></h2>
-      </div>
-      <div class="mockup-container">
-        <div class="mockup-border">
-          <div class="mockup-header">
-            <div lang="en">
-              <div class="language-selector-container center-content-horizontally">
-                <select class="tl-lang-selector" title="Translation language selector.">
-                  <option value="lang-en" selected>🇺🇸 English</option>
-                  <option value="lang-de" >🇩🇪 German</option>
-                 </select>
+          </h1>
+          <h2>Überset&shy;zungen - <span class="important-dropped">speziell</span> auf deinen Text <span class="important-dropped">zuge&shy;schnit&shy;ten</span>. Vom <span class="important">Deutschen</span> ins <span class="important">Englische</span> und umgekehrt.
+</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border">
+            <div class="mockup-header">
+              <div>
+                <div class="language-selector-container center-content-horizontally">
+                  <select class="tl-lang-selector" title="Sprachauswahl für Übersetzung.">
+                    <option value="lang-en" selected>🇺🇸 Englisch</option>
+                    <option value="lang-de" >🇩🇪 Deutsch</option>
+                  </select>
+                </div>
+              </div>
+              <div class="original-translation-container">
+                
+                <div class="original">
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+
+                  </div>
+                  <div class="text">
+                    <div class="hideable">
+                      Original
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="translation">
+                  <div class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g class="Color1"><g transform="matrix(1,0,0,1,-6,-6)"><path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/></g><path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/></g><g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2"><path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/></g></svg>
+
+                  </div>
+                  <div class="text">
+                    <div class="hideable">
+                      Translation
+                    </div>
+                  </div>
+                </div>
+                
               </div>
             </div>
-            <div lang="de">
-              <div class="language-selector-container center-content-horizontally">
-                <select class="tl-lang-selector" title="Sprachauswahl für Übersetzung.">
-                  <option value="lang-en" selected>🇺🇸 Englisch</option>
-                  <option value="lang-de" >🇩🇪 Deutsch</option>
-                 </select>
-              </div>
-            </div>
-            <div class="original-translation-container">
-              <div class="original">
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" ><path d="M0 0h24v24H0V0z" fill="none"/><path d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+            <div class="mockup-body">
+              
+                <div class="topic dummy active">
+                  
+                    <div class="lang lang-en active" data-version="translation">
+                      
+                        <article><pre>Superior <span class="important">quality</span> without compro&shy;mises. To meet and <span class="important">surpass</span> your expecta&shy;tions for a <span class="important">belt</span>, one that earns and not merely receives the label '<span class="important">premium</span>', each and every belt and buckle are <span class="important">hand-crafted</span> from high-grade materials.
+</pre></article>
+                      
+                        <article><pre>The unique <span class="important">JET BELT® System</span> is based on the <span class="important">Safety-Belt Tech&shy;nology</span>, the very same that keeps you <span class="important">safe</span> and <span class="important">comfor&shy;table</span> on every flight. Open and close the belt within milli&shy;seconds.
+</pre></article>
+                      
+                        <article><pre>'We value <span class="important">sustain&shy;ability</span>. Many years down the line, the <span class="important">JET BELT</span>® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s <span class="important">seam&shy;lessly</span> adjust&shy;able length to account for the changes – and to thus fit your needs exactly.'
+</pre></article>
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="original">
+                      
+                        <article><pre>Kompromisslos <span class="important">hochwertig</span>. Alle <span class="important">Gürtel</span> und Verschlüsse werden aus den besten Materialien hergestellt und <span class="important">handgefertigt</span>, um unseren Ansprüchen an einen <span class="important">Premium</span>-Gürtel gerecht zu werden.
+</pre></article>
+                      
+                        <article><pre>Das einzigartige <span class="important">JET BELT® System</span> beruht auf der <span class="important">Safetybelt-Funktion</span>, die Sie als Standard in allen Passagierflugzeugen finden. Der Gürtel lässt sich in <span class="important">Sekundenbruchteilen</span> öffnen und wieder schließen.
+</pre></article>
+                      
+                        <article><pre>Wir setzen auf <span class="important">Nachhaltigkeit</span>. Der einzigartige <span class="important">JET BELT®</span> ist so konzipiert, dass er auch nach <span class="important">vielen Jahren</span> noch seine Funktion behält. Die <span class="important">stufenlos verstellbare</span> Länge passt sich ausserdem an Ihre Lebenssituation an!
+</pre></article>
+                      
+                    </div>
+                  
                 </div>
-                <div class="text">
-                  <div class="hideable">
-                    Original
-                  </div>
-                </div>
-              </div>
-              <div class="translation">
-                <div class="icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"> <g class="Color1"> <g transform="matrix(1,0,0,1,-6,-6)"> <path d="M41.921,6L10,6C7.8,6 6,7.8 6,10L6.079,42C6.079,44.2 7.879,46 10.079,46L42,46C44.2,46 46,44.2 46,42L45.921,10C45.921,7.8 44.121,6 41.921,6ZM42,42L10.079,42L10,10L41.921,10L42,42Z" style="fill-rule:nonzero;"/> </g> <path d="M43.99,12L43.921,12L44,43.977L12.036,43.977L12,44L8,44L8.036,43.977L8.036,47.977L44,47.977C46.2,47.977 48,46.177 48,43.977L48,8L43.921,8L44,8L43.99,12Z"/> </g> <g xmlns="http://www.w3.org/2000/svg" transform="matrix(24.844,0,0,25.1342,7.52687,29.4953)" class="Color2"> <path d="M0.651,-0.561C0.614,-0.464 0.564,-0.381 0.502,-0.311C0.435,-0.384 0.383,-0.468 0.345,-0.561L0.651,-0.561ZM0.964,-0.561L0.964,-0.703L0.575,-0.703L0.575,-0.855L0.425,-0.855L0.425,-0.703L0.041,-0.703L0.041,-0.561L0.182,-0.561C0.235,-0.422 0.299,-0.302 0.382,-0.203C0.283,-0.131 0.162,-0.079 0.019,-0.043C0.048,-0.008 0.094,0.062 0.111,0.099C0.259,0.054 0.386,-0.009 0.493,-0.093C0.596,-0.008 0.723,0.055 0.881,0.096C0.903,0.054 0.951,-0.016 0.986,-0.05C0.839,-0.082 0.716,-0.136 0.617,-0.209C0.703,-0.306 0.772,-0.422 0.823,-0.561L0.964,-0.561Z" style="fill-rule:nonzero;"/> </g> </svg>
-                </div>
-                <div class="text" lang="en">
-                  <div class="hideable">
-                    Translation
-                  </div>
-                </div>
-                <div class="text" lang="de">
-                  <div class="hideable">
-                    Translation
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mockup-body">
-            
-              <div class="topic dummy active">
-                
-                  <div class="lang lang-en active" data-version="translation">
-                    
-                      <article><pre>Superior <span class="important">quality</span> without compro&shy;mises. To meet and <span class="important">surpass</span> your expecta&shy;tions for a <span class="important">belt</span>, one that earns and not merely receives the label '<span class="important">premium</span>', each and every belt and buckle are <span class="important">hand-crafted</span> from high-grade materials.
+              
+                <div class="topic csr ">
+                  
+                    <div class="lang lang-en active" data-version="original">
+                      
+                        <article><pre>Suppliers shall make <span class="important">reasonable efforts</span> to <span class="important">continuously improve</span> the development and the implementation of measures to <span class="important">ensure</span> best business practice related to <span class="important">sustainability</span> und high <span class="important">quality standards</span>.
 </pre></article>
-                    
-                      <article><pre>The unique <span class="important">JET BELT® System</span> is based on the <span class="important">Safety-Belt Tech&shy;nology</span>, the very same that keeps you <span class="important">safe</span> and <span class="important">comfor&shy;table</span> on every flight. Open and close the belt within milli&shy;seconds.
+                      
+                        <article><pre>Neither <span class="important">employees and subcontractors</span> nor <span class="important">any other representatives</span> of the suppliers shall <span class="important">grant, offer or accept bribes</span>, facilitation payments and benefits, inadmissible donations or other not reasonable granted benefits from or to customers, officials or other business partners.
 </pre></article>
-                    
-                      <article><pre>'We value <span class="important">sustain&shy;ability</span>. Many years down the line, the <span class="important">JET BELT</span>® will still work as well as it did the first time. No matter how your life changes, you can adjust the JET BELT®'s <span class="important">seam&shy;lessly</span> adjust&shy;able length to account for the changes – and to thus fit your needs exactly.'
-</pre></article>
-                    
-                  </div>
-                
-                  <div class="lang lang-de " data-version="original">
-                    
-                      <article><pre>Kompromisslos <span class="important">hochwertig</span>. Alle <span class="important">Gürtel</span> und Verschlüsse werden aus den besten Materialien hergestellt und <span class="important">handgefertigt</span>, um unseren Ansprüchen an einen <span class="important">Premium</span>-Gürtel gerecht zu werden.
-</pre></article>
-                    
-                      <article><pre>Das einzigartige <span class="important">JET BELT® System</span> beruht auf der <span class="important">Safetybelt-Funktion</span>, die Sie als Standard in allen Passagierflugzeugen finden. Der Gürtel lässt sich in <span class="important">Sekundenbruchteilen</span> öffnen und wieder schließen.
-</pre></article>
-                    
-                      <article><pre>Wir setzen auf <span class="important">Nachhaltigkeit</span>. Der einzigartige <span class="important">JET BELT®</span> ist so konzipiert, dass er auch nach <span class="important">vielen Jahren</span> noch seine Funktion behält. Die <span class="important">stufenlos verstellbare</span> Länge passt sich ausserdem an Ihre Lebenssituation an!
-</pre></article>
-                    
-                  </div>
-                
-              </div>
-            
-              <div class="topic csr ">
-                
-                  <div class="lang lang-en active" data-version="original">
-                    
-                      <article><pre>Suppliers shall make <span class="important">reasonable efforts</span> to <span class="important">continuously improve</span> the development and the implementation of measures to <span class="important">ensure</span> best business practice related to <span class="important">sustainability</span> und high <span class="important">quality standards</span>.
-</pre></article>
-                    
-                      <article><pre>Neither <span class="important">employees and subcontractors</span> nor <span class="important">any other representatives</span> of the suppliers shall <span class="important">grant, offer or accept bribes</span>, facilitation payments and benefits, inadmissible donations or other not reasonable granted benefits from or to customers, officials or other business partners.
-</pre></article>
-                    
-                      <article><pre>Moreover, <span class="important">suppliers</span> must ensure <span class="important">compliance</span> with other applicable product-related requirements, such as <span class="important">REACH</span> and <span class="important">RoHS</span>, and may be required to declare the material content and origin of products delivered to S&T.
+                      
+                        <article><pre>Moreover, <span class="important">suppliers</span> must ensure <span class="important">compliance</span> with other applicable product-related requirements, such as <span class="important">REACH</span> and <span class="important">RoHS</span>, and may be required to declare the material content and origin of products delivered to S&T.
 Several regulations have to be respected by suppliers, if applicable, amongst others: (i) European Union: Regulation concerning the Registration, Evaluation,  Authorization and Restriction of Chemicals (REACH), Regulation concerning Restriction of Hazardous Substances (RoHS), Timber Regulation,  F-Gases Regulation, Conflict Minerals Regulation; (ii)  USA: Dodd-Frank Act, Sec 1502 “Conflict Minerals”,  California Transparency in Supply Chains Act of 2010, Business Supply Chain, Transparency on Trafficking and Slavery Act of 2015; (iii) Germany: Requirements out of the National Action Plan on ensuring  Human Rights in the Supply Chain.
 </pre></article>
-                    
-                  </div>
-                
-                  <div class="lang lang-de " data-version="translation">
-                    
-                      <article><pre>Zulieferer verpflichten sich, mit angemessenem Aufwand <span class="important">kontinuierlich</span> an der Entwicklung und Umsetzung von <span class="important">verbesserten Maßnahmen</span> zur Sicherstellung von Best Practices im Bereich <span class="important">Nachhaltigkeit</span> und <span class="important">Qualitätsstandards</span> zu arbeiten.
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="translation">
+                      
+                        <article><pre>Zulieferer verpflichten sich, mit angemessenem Aufwand <span class="important">kontinuierlich</span> an der Entwicklung und Umsetzung von <span class="important">verbesserten Maßnahmen</span> zur Sicherstellung von Best Practices im Bereich <span class="important">Nachhaltigkeit</span> und <span class="important">Qualitätsstandards</span> zu arbeiten.
 </pre></article>
-                    
-                      <article><pre>Das <span class="important">Anbieten, Geben oder Annehmen von Bestechungsaufwendungen</span> (gleich welcher Art), Schmiergeldern, unerlaubten Zuwendungen bzw. Spenden sowie anderer nicht angemessener Zahlungen, von oder an Geschäftspartner, Kunden, Amtsträger oder anderen Personen ist <span class="important">allen Arbeitnehmern und Subunternehmern</span> <span class="important">untersagt</span>.
+                      
+                        <article><pre>Das <span class="important">Anbieten, Geben oder Annehmen von Bestechungsaufwendungen</span> (gleich welcher Art), Schmiergeldern, unerlaubten Zuwendungen bzw. Spenden sowie anderer nicht angemessener Zahlungen, von oder an Geschäftspartner, Kunden, Amtsträger oder anderen Personen ist <span class="important">allen Arbeitnehmern und Subunternehmern</span> <span class="important">untersagt</span>.
 </pre></article>
-                    
-                      <article><pre>'Zusätzlich sind <span class="important">Zulieferer</span> verpflichtet, die <span class="important">Erfüllung</span> ähnlicher <span class="important">produktbezogenen Richtlinien</span>, unter anderem <span class="important">REACH</span> und <span class="important">RoHS</span>, sicherzustellen, und hierzu unter Umständen Angaben zur Zusammensetzung und Herkunft der an S&T gelieferten Produkte zu machen. Relevlante Verordnungen und Richtlinien sind unter anderem: (i) In der Europäischen Union: Die Verordnung zur Registrierung, Bewertung, Zulassung und Beschränkung chemischer Stoffe (REACH), die Richtlinie zur Beschränkung der Verwendung bestimmter gefährlicher Stoffe (RoHS), die Holzhandelsverordnung, die Verordnung über fluorierte Treibhausgase, sowie die Verordnung zur Sorgfaltspflicht beim Import von Konfliktmineralien; (ii) In den Vereinigten Staaten: Der Dodd-Frank Act, Abschnitt 1502 “Konfliktmineralien”, das kalifornische Gesetz zur Transparenz von Lieferketten von 2010, sowie das Gesetz zur Transparenz der Lieferkette bezüglich Menschenhandel und Sklaverei von 2015; (iii) In Deutschland: Relevante Anforderungen bezüglich der Lieferkette, enthalten in dem nationalen Aktionsplan „Wirtschaft und Menschenrechte“.'
+                      
+                        <article><pre>'Zusätzlich sind <span class="important">Zulieferer</span> verpflichtet, die <span class="important">Erfüllung</span> ähnlicher <span class="important">produktbezogenen Richtlinien</span>, unter anderem <span class="important">REACH</span> und <span class="important">RoHS</span>, sicherzustellen, und hierzu unter Umständen Angaben zur Zusammensetzung und Herkunft der an S&T gelieferten Produkte zu machen. Relevlante Verordnungen und Richtlinien sind unter anderem: (i) In der Europäischen Union: Die Verordnung zur Registrierung, Bewertung, Zulassung und Beschränkung chemischer Stoffe (REACH), die Richtlinie zur Beschränkung der Verwendung bestimmter gefährlicher Stoffe (RoHS), die Holzhandelsverordnung, die Verordnung über fluorierte Treibhausgase, sowie die Verordnung zur Sorgfaltspflicht beim Import von Konfliktmineralien; (ii) In den Vereinigten Staaten: Der Dodd-Frank Act, Abschnitt 1502 “Konfliktmineralien”, das kalifornische Gesetz zur Transparenz von Lieferketten von 2010, sowie das Gesetz zur Transparenz der Lieferkette bezüglich Menschenhandel und Sklaverei von 2015; (iii) In Deutschland: Relevante Anforderungen bezüglich der Lieferkette, enthalten in dem nationalen Aktionsplan „Wirtschaft und Menschenrechte“.'
 </pre></article>
-                    
-                  </div>
-                
-              </div>
-            
-              <div class="topic legal ">
-                
-                  <div class="lang lang-en active" data-version="translation">
-                    
-                      <article><pre><span class="important">Cookies</span> are small <span class="important">text files</span> that are <span class="important">automatically saved</span> on your device. Some of these cookies are <span class="important">deleted</span> at the <span class="important">end of your browser session</span> - that is, when you close your browser (so-called <span class="important">session cookies</span>). Other cookies remain on your device and allow us to <span class="important">recognize your browser</span> on your next visit (<span class="important">persistent cookies</span>).
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="topic legal ">
+                  
+                    <div class="lang lang-en active" data-version="translation">
+                      
+                        <article><pre><span class="important">Cookies</span> are small <span class="important">text files</span> that are <span class="important">automatically saved</span> on your device. Some of these cookies are <span class="important">deleted</span> at the <span class="important">end of your browser session</span> - that is, when you close your browser (so-called <span class="important">session cookies</span>). Other cookies remain on your device and allow us to <span class="important">recognize your browser</span> on your next visit (<span class="important">persistent cookies</span>).
 </pre></article>
-                    
-                      <article><pre>The American corporation <span class="important">Google LLC</span> is <span class="important">certified</span> for data <span class="important">transfer</span> to and <span class="important">storage</span> of data on a Google server in the US in accordance with the <span class="important">EU-US-Privacy Shield</span>. The <span class="important">European Commission</span> has judged corporations certified to be in accordance with the Privacy Shield to provide an sufficient level of <span class="important">data protection</span>.
+                      
+                        <article><pre>The American corporation <span class="important">Google LLC</span> is <span class="important">certified</span> for data <span class="important">transfer</span> to and <span class="important">storage</span> of data on a Google server in the US in accordance with the <span class="important">EU-US-Privacy Shield</span>. The <span class="important">European Commission</span> has judged corporations certified to be in accordance with the Privacy Shield to provide an sufficient level of <span class="important">data protection</span>.
 </pre></article>
-                    
-                      <article><pre>To ensure visiting our website is <span class="important">enjoyable</span>, to enable certain <span class="important">features</span>, to show <span class="important">relevant products</span> as well as to enable market <span class="important">research</span>, we use so-called cookies. This serves to ensure our - in the course of weighing the various interests prevailing - <span class="important">legitimate interest</span> in the <span class="important">optimized display</span> of our products and of our website <span class="important">in accordance with Article 6(1) (f) GDPR.</span>
+                      
+                        <article><pre>To ensure visiting our website is <span class="important">enjoyable</span>, to enable certain <span class="important">features</span>, to show <span class="important">relevant products</span> as well as to enable market <span class="important">research</span>, we use so-called cookies. This serves to ensure our - in the course of weighing the various interests prevailing - <span class="important">legitimate interest</span> in the <span class="important">optimized display</span> of our products and of our website <span class="important">in accordance with Article 6(1) (f) GDPR.</span>
 </pre></article>
-                    
-                  </div>
-                
-                  <div class="lang lang-de " data-version="original">
-                    
-                      <article><pre><span class="important">Cookies</span> sind kleine <span class="important">Textdateien</span>, die <span class="important">automatisch</span> auf Ihrem Endgerät <span class="important">gespeichert</span> werden. Einige der von uns verwendeten Cookies werden nach <span class="important">Ende der Browser-Sitzung</span>, also nach Schließen Ihres Browsers, wieder <span class="important">gelöscht</span> (sog. <span class="important">Sitzungs-Cookies</span>). Andere Cookies verbleiben auf Ihrem Endgerät und ermöglichen uns, Ihren <span class="important">Browser</span> beim nächsten Besuch <span class="important">wiederzuerkennen</span> (persistente Cookies).
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="original">
+                      
+                        <article><pre><span class="important">Cookies</span> sind kleine <span class="important">Textdateien</span>, die <span class="important">automatisch</span> auf Ihrem Endgerät <span class="important">gespeichert</span> werden. Einige der von uns verwendeten Cookies werden nach <span class="important">Ende der Browser-Sitzung</span>, also nach Schließen Ihres Browsers, wieder <span class="important">gelöscht</span> (sog. <span class="important">Sitzungs-Cookies</span>). Andere Cookies verbleiben auf Ihrem Endgerät und ermöglichen uns, Ihren <span class="important">Browser</span> beim nächsten Besuch <span class="important">wiederzuerkennen</span> (persistente Cookies).
 </pre></article>
-                    
-                      <article><pre>Soweit Informationen auf Server von <span class="important">Google</span> in den USA <span class="important">übertragen</span> und dort <span class="important">gespeichert</span> werden, ist die amerikanische Aktiengesellschaft <span class="important">Google LLC</span> unter dem <span class="important">EU-US-Privacy Shield</span> zertifiziert. Im Rahmen dieses Abkommens zwischen den USA und der <span class="important">Europäischen Kommission</span> hat diese für unter dem Privacy Shield zertifizierte Unternehmen ein <span class="important">angemessenes Datenschutzniveau festgestellt.</span>
+                      
+                        <article><pre>Soweit Informationen auf Server von <span class="important">Google</span> in den USA <span class="important">übertragen</span> und dort <span class="important">gespeichert</span> werden, ist die amerikanische Aktiengesellschaft <span class="important">Google LLC</span> unter dem <span class="important">EU-US-Privacy Shield</span> zertifiziert. Im Rahmen dieses Abkommens zwischen den USA und der <span class="important">Europäischen Kommission</span> hat diese für unter dem Privacy Shield zertifizierte Unternehmen ein <span class="important">angemessenes Datenschutzniveau festgestellt.</span>
 </pre></article>
-                    
-                      <article><pre>Um den Besuch unserer Website <span class="important">attraktiv zu gestalten</span> und die Nutzung bestimmter <span class="important">Funktionen</span> zu ermöglichen, um <span class="important">passende Produkte</span> anzuzeigen oder zur <span class="important">Marktforschung</span> verwenden wir auf verschiedenen Seiten sogenannte Cookies. Dies dient der Wahrung unserer im Rahmen einer Interessensabwägung <span class="important">überwiegenden berechtigten Interessen</span> an einer <span class="important">optimierten Darstellung</span> unseres Angebots <span class="important">gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO.</span>
+                      
+                        <article><pre>Um den Besuch unserer Website <span class="important">attraktiv zu gestalten</span> und die Nutzung bestimmter <span class="important">Funktionen</span> zu ermöglichen, um <span class="important">passende Produkte</span> anzuzeigen oder zur <span class="important">Marktforschung</span> verwenden wir auf verschiedenen Seiten sogenannte Cookies. Dies dient der Wahrung unserer im Rahmen einer Interessensabwägung <span class="important">überwiegenden berechtigten Interessen</span> an einer <span class="important">optimierten Darstellung</span> unseres Angebots <span class="important">gemäß Art. 6 Abs. 1 S. 1 lit. f DSGVO.</span>
 </pre></article>
-                    
-                  </div>
-                
-              </div>
-            
-              <div class="topic more ">
-                
-                  <div class="lang lang-en active" data-version="original">
-                    
-                      <article><pre>'<b>Journalism</b>: The conclusion <i>Time of Eve</i> arrives at and invites its viewers to embrace is one of general inclusivity: We can learn to understand and love each other, despite our differences. Repeatedly, <i>Time of Eve</i> asks: Are you enjoying the Time of Eve? By the end, Rikuo's answer is a resounding yes.'
+                      
+                    </div>
+                  
+                </div>
+              
+                <div class="topic more ">
+                  
+                    <div class="lang lang-en active" data-version="original">
+                      
+                        <article><pre>'<b>Journalism</b>: The conclusion <i>Time of Eve</i> arrives at and invites its viewers to embrace is one of general inclusivity: We can learn to understand and love each other, despite our differences. Repeatedly, <i>Time of Eve</i> asks: Are you enjoying the Time of Eve? By the end, Rikuo's answer is a resounding yes.'
 </pre></article>
-                    
-                      <article><pre>'<b>Papers</b>: Sentences can say things. For our purposes, let us say they say that, i.e. they express a proposition (One could also say they perform the illocutionary act of saying that). Sentences can also imply things one has not, strictly speaking, said. One way a sentence can imply another is to entail it. Another way one can imply something is to implicate something.'
+                      
+                        <article><pre>'<b>Papers</b>: Sentences can say things. For our purposes, let us say they say that, i.e. they express a proposition (One could also say they perform the illocutionary act of saying that). Sentences can also imply things one has not, strictly speaking, said. One way a sentence can imply another is to entail it. Another way one can imply something is to implicate something.'
 </pre></article>
-                    
-                      <article><pre>'<b>History</b>: There is a way, though, in which this analysis cannot reveal the true impact of the printing press, in which it misses the point entirely. Most of the linguistic standardization and reform occurred later, from 1650 onward via the establishment of a German state, universal schooling system and near-universal literacy. All these phenomena are bound up in a world in which the printing press is inextricably enmeshed. '
+                      
+                        <article><pre>'<b>History</b>: There is a way, though, in which this analysis cannot reveal the true impact of the printing press, in which it misses the point entirely. Most of the linguistic standardization and reform occurred later, from 1650 onward via the establishment of a German state, universal schooling system and near-universal literacy. All these phenomena are bound up in a world in which the printing press is inextricably enmeshed. '
 </pre></article>
-                    
-                  </div>
-                
-                  <div class="lang lang-de " data-version="translation">
-                    
-                      <article><pre>'<b>Journalismus</b>: Schlussendlich will uns <i>Time of Eve</i> vor allem eins sagen: Wir können unsere Differenzen überwinden, uns verstehen und vielleicht sogar lieben lernen. Immer wieder stellt <i>Time of Eve</i> Rikuo - und uns - die (auch in der deutschen Version nicht übersetzte) Frage: Are you enjoying the Time of Eve? Der Weg dorthin ist nicht leicht, aber schlussendlich gelangt Rikuo zu seiner Antwort: Er würde sie nicht missen wollen.'
+                      
+                    </div>
+                  
+                    <div class="lang lang-de " data-version="translation">
+                      
+                        <article><pre>'<b>Journalismus</b>: Schlussendlich will uns <i>Time of Eve</i> vor allem eins sagen: Wir können unsere Differenzen überwinden, uns verstehen und vielleicht sogar lieben lernen. Immer wieder stellt <i>Time of Eve</i> Rikuo - und uns - die (auch in der deutschen Version nicht übersetzte) Frage: Are you enjoying the Time of Eve? Der Weg dorthin ist nicht leicht, aber schlussendlich gelangt Rikuo zu seiner Antwort: Er würde sie nicht missen wollen.'
 </pre></article>
-                    
-                      <article><pre>"<b>Wissenschaftliche Arbeiten</b>: Sätze können etwas aussagen. Bezeichnen wir hier dieses 'Aussagen' als ein Aussagen, dass etwas der Fall ist, also das Ausdrücken einer Proposition. (Man könnte auch sagen, dass Sätze den illokutionären Akt des Aussagens, dass etwas der Fall ist, vollziehen.) Zusätzlich können Sätze aber auch Dinge implizieren, die man nicht im engeren Sinne <i>gesagt</i> hat: Zum einen können sie eine andere Proposition beinhalten; zum anderen können sie aber auch etwas implikieren."
+                      
+                        <article><pre>"<b>Wissenschaftliche Arbeiten</b>: Sätze können etwas aussagen. Bezeichnen wir hier dieses 'Aussagen' als ein Aussagen, dass etwas der Fall ist, also das Ausdrücken einer Proposition. (Man könnte auch sagen, dass Sätze den illokutionären Akt des Aussagens, dass etwas der Fall ist, vollziehen.) Zusätzlich können Sätze aber auch Dinge implizieren, die man nicht im engeren Sinne <i>gesagt</i> hat: Zum einen können sie eine andere Proposition beinhalten; zum anderen können sie aber auch etwas implikieren."
 </pre></article>
-                    
-                      <article><pre>'<b>Geschichte</b>: Diese Analyse kann allerdings die Auswirkungen der Erfindung der Druckpresse nicht abschließend klären, ja, gewissermaßen schlägt sie sogar einen Irrweg ein: Der Großteil der Sprachstandardisierung und -reform geschah erst viel später, etwa ab 1650, mittels der allgemeinen Schulpflicht, der Gründung des deutschen Staates und der gesellschaftsübergreifenden Alphabetisierung. Eben jene Prozesse sind in einer Welt, in der es die Druckpresse nicht gegeben hätte, undenkbar.'</pre></article>
-                    
-                  </div>
-                
-              </div>
-            
+                      
+                        <article><pre>'<b>Geschichte</b>: Diese Analyse kann allerdings die Auswirkungen der Erfindung der Druckpresse nicht abschließend klären, ja, gewissermaßen schlägt sie sogar einen Irrweg ein: Der Großteil der Sprachstandardisierung und -reform geschah erst viel später, etwa ab 1650, mittels der allgemeinen Schulpflicht, der Gründung des deutschen Staates und der gesellschaftsübergreifenden Alphabetisierung. Eben jene Prozesse sind in einer Welt, in der es die Druckpresse nicht gegeben hätte, undenkbar.'</pre></article>
+                      
+                    </div>
+                  
+                </div>
+              
+            </div>
           </div>
-
         </div>
-      </div>
-    </section>
-    <section id="code" class="with-mockup">
-      <div class="text-section-container">
-        <h1>Code.</h1>
-        <h2><span lang="en">It's not merely the words that do the talking - <span class="important">delivery and inter&shy;action</span> speak to your <span class="important">identity and values</span>. Take a peek!</span>
-        <span lang="de">Manchmal braucht es mehr als Worte - es braucht eine Umsetzung, bei der Inhalt, Design und Umsetzung alle dieselbe Sprache sprechen.</span></h2>
-      </div>
-      <div class="mockup-container">
-        <div class="mockup-border">
-          <div class="mockup-header">
+      </section>
+      <section id="code" class="with-mockup">
+        <div class="text-section-container">
+          <h1>Code.</h1>
+          <h2>Manchmal braucht es mehr als Worte - es braucht eine Umsetzung, bei der Inhalt, Design und Umsetzung alle dieselbe Sprache sprechen.
+</h2>
+        </div>
+        <div class="mockup-container">
+          <div class="mockup-border">
+            <div class="mockup-header">
               <div class="language-selector-container center-content-horizontally">
                 <select class="code-selector" title="Code selector.">
                   <option value="js-code" selected>JS</option>
@@ -356,155 +785,144 @@ Several regulations have to be respected by suppliers, if applicable, amongst ot
                   <option value="html-code">HTML</option>
                 </select>
               </div>
-          </div>
-          <div class="mockup-body">
-            <div class="css-code">
-<article><code><select class="dance-selector" title="Dance selector.">
-  <option value="" selected>Select...</option>
-  <option value="#translation">#translation</option>
-  <option value="#contact">#contact</option>
-</select></code><pre><code><code class="hljs css"><span class="hljs-selector-class">.mockup-border</span>{
-  <span class="hljs-attribute">animation</span>: <span class="important">dance</span> <span class="hljs-number">3s</span> linear,
-  <span class="important">color-change</span> <span class="hljs-number">3s</span> linear,
-  <span class="important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
-}</code></code></pre></article>
-<article><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>dance</span> {
-  <span class="hljs-number">6.25%</span>, <span class="hljs-number">18.75%</span>{
-    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">8vw</span>)
-    <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>);
-  }
-</code></pre></article>
-<article><pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>color-change</span>{
-  <span class="hljs-number">6.25%</span>{
-    <span class="hljs-variable">--hue</span>: <span class="hljs-number">0</span>;
-    <span class="hljs-attribute">background-color</span>:
-    <span class="hljs-built_in">hsla</span>(<span class="hljs-built-in">var</span>(<span class="hljs-variable">--hue</span>),<span class="hljs-number">100%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>);
-  }
-</code></pre></article>
-<article><pre><code class="hljs css"><span class="hljs-selector-class">.language-selector-container</span>{
-	<span class="hljs-attribute">display</span>: flex;
-	<span class="hljs-attribute">flex-direction</span>: row;
-  <span class="hljs-attribute">align-items</span>: center;
-</code></pre></article>
             </div>
-            <div class="js-code active show-overflow">
-<article class="show-overflow"><pre><code class="hljs javascript"><span class="hljs-keyword">var</span> theme&#8203;Changer =
+            <div class="mockup-body">
+              <div class="js-code active show-overflow">
+                <article class="show-overflow">
+  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> theme&#8203;Changer =
   <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="important">"theme-changer"</span>);
   theme&#8203;Changer.<span class="important">onclick</span> =
   <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, i</span>)</span>{
 <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="hljs-string">"body"</span>).
   classList.toggle(<span class="important">"dark-theme"</span>);
 }</code></pre>
-                <div class="clickme-bubble-container">
-                  <code class="hljs"><span class="hljs-comment"><span lang="en">//Change the theme</span><span lang="de">//Das Design wechseln</span></span></code>
-                  <div class="theme-changer-outer"><div class="theme-changer"><svg width="100%" height="100%" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-                      <g transform="matrix(0.64,0,0,0.64,0,0)">
-                          <g transform="matrix(2.25522,0,0,1.21382,-104.227,-3.2533)">
-                              <path d="M68.386,2.68C56.15,2.68 46.216,21.138 46.216,43.872C46.216,66.607 56.15,85.065 68.386,85.065L68.386,2.68Z"></path>
-                          </g>
-                          <g transform="matrix(1.08913,0,0,1.08536,-8.92129,-2.46494)">
-                              <path d="M54.1,2.271C79.437,2.271 100.008,22.913 100.008,48.339C100.008,73.764 79.437,94.406 54.1,94.406C28.762,94.406 8.191,73.764 8.191,48.339C8.191,22.913 28.762,2.271 54.1,2.271ZM54.1,9.949C75.214,9.949 92.357,27.151 92.357,48.339C92.357,69.526 75.214,86.728 54.1,86.728C32.985,86.728 15.843,69.526 15.843,48.339C15.843,27.151 32.985,9.949 54.1,9.949Z"></path>
-                          </g>
-                      </g>
-    </svg></div>
-    <div class="breathing-inverter-circle"></div></div>
-                </div></article>
-
+  <div class="clickme-bubble-container">
+    <code
+      class="hljs"><span class="hljs-comment"><span lang="en">//Change the theme</span><span lang="de">//Das Design wechseln</span></span></code>
+    <div class="theme-changer-outer">
+      <div class="theme-changer"></div>
+      <div class="breathing-inverter-circle"></div>
+    </div>
+  </div>
+</article>
+              </div>
+              <div class="css-code">
+                <article><code><select class="dance-selector" title="Dance selector.">
+  <option value="" selected>Select...</option>
+  <option value="#translation">#translation</option>
+  <option value="#contact">#contact</option>
+</select></code>
+  <pre><code><code class="hljs css"><span class="hljs-selector-class">.mockup-border</span>{
+  <span class="hljs-attribute">animation</span>: <span class="important">dance</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">3s</span> linear,
+  <span class="important">color-change</span> <span class="hljs-number">1.5s</span> linear <span class="hljs-number">3s</span>;
+}</code></code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>dance</span> {
+  <span class="hljs-number">6.25%</span>, <span class="hljs-number">18.75%</span>{
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateX</span>(-<span class="hljs-number">8vw</span>)
+    <span class="hljs-built_in">translateY</span>(<span class="hljs-number">0</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-keyword">@keyframes</span> <span>color-change</span>{
+  <span class="hljs-number">6.25%</span>{
+    <span class="hljs-variable">--hue</span>: <span class="hljs-number">0</span>;
+    <span class="hljs-attribute">background-color</span>:
+    <span class="hljs-built_in">hsla</span>(<span class="hljs-built-in">var</span>(<span class="hljs-variable">--hue</span>),<span class="hljs-number">100%</span>,<span class="hljs-number">50%</span>,<span class="hljs-number">1</span>);
+  }
+</code></pre>
+</article>
+<article>
+  <pre><code class="hljs css"><span class="hljs-selector-class">.language-selector-container</span>{
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: row;
+  <span class="hljs-attribute">align-items</span>: center;
+</code></pre>
+</article>
               </div>
               <div class="html-code">
-<article><pre><code>&lt;div class=&quot;main-container&quot;&gt;
-&lt;section id=&quot;intro&quot;&gt;
-&lt;div class=&quot;text-section-container&quot;&gt;
-&lt;h1&gt;<span class="important">Hi</span><input id="name-input" type="text"><span class="important">, I&#39;m Sam.</span>&lt;/h1&gt;
-&lt;h2&gt;I do things with language. Message me at &lt;a href=&quot;mailto:&quot;&gt;me@samswartzberg.com&lt;/a&gt; or scroll to see more...&lt;/h2&gt;
-&lt;/div&gt;</code></pre></article>
-<article><pre><code>&lt;div class=&quot;rest-intro center-content-horizontally&quot;&gt;
-&lt;div class=&quot;quicklink-container&quot;&gt;</code></pre></article>
+                <article><pre><code>&lt;div class=&quot;main-container&quot;&gt;
+  &lt;section id=&quot;intro&quot;&gt;
+  &lt;div class=&quot;text-section-container&quot;&gt;
+  &lt;h1&gt;<span class="important">Hi</span><input id="name-input" type="text"><span class="important">, I&#39;m Sam.</span>&lt;/h1&gt;
+  &lt;h2&gt;I do things with language. Message me at &lt;a href=&quot;mailto:&quot;&gt;&lt;/a&gt; or scroll to see more...&lt;/h2&gt;
+  &lt;/div&gt;</code></pre></article>
+  <article><pre><code>&lt;div class=&quot;rest-intro center-content-horizontally&quot;&gt;
+  &lt;div class=&quot;quicklink-container&quot;&gt;</code></pre></article>
               </div>
             </div>
-
           </div>
         </div>
       </section>
       <section id="about-me" class="with-mockup">
         <div class="text-section-container">
-          <h1><span lang="en">About me.</span><span lang="de">Über mich.</span></h1>
-          <h2><span lang="en">We all have a story. Want to hear mine?</span><span lang="de">Meine Ausbildung, Interessen und Fähigkeiten.</span></h2>
+          <h1>Über mich.</h1>
+          <h2>Meine Ausbildung, Interessen und Fähigkeiten.</h2>
         </div>
         <div class="mockup-container">
           <div class="mockup-border">
             <div class="mockup-body">
               <div class="mockup-header">
-                <h3><span lang="en">I'm <span class="important">Sam</span>.</span><span lang="de">Ich bin <span class="important">Sam</span>.</span></h3>
+                <h3></h3>
                 <div class="photo-bubble">
                   <img class="headshot" src="/paper/media/profile-image.jpg" alt="A picture of Sam Swartzberg.">
                 </div>
               </div>
-              <p lang="en">I grew up in Munich, a <span class="important">German</span> by day, an <span class="important">American</span> by night.</p>
-              <p lang="de">Ich bin in München, halb als <span class="important">Amerikaner</span> und halb <span class="important">Deutsch</span>, aufgewachsen.</p>
-              <p lang="en">Education-wise, I'm in the process of receiving my B. A. in Culture and Technology, a <span class="important">multi-disciplinary and bilingual Bachelor</span> which involved courses in philosophy, history, and linguistics. Translation-wise, I cut my teeth as a substitute translator for my father, himself a translator, translating ad copy and CSR.</p>
-              <p lang="de">Meinen B. A. in Kultur und Technologie, einem <span class="important">interdisziplinären, zweisprachig ausgelegtem Bachelor</span> mit Kursen in Philosophie, Geschichte und Linguistik, erhalte ich gerade. Das Übersetzungshandwerk habe ich bei meinem Vater - ebenfalls Übersetzer - gelernt, vor allem im Übersetzen von Werbetexten und CSR.</p>
-              <p lang="en">I'm incredibly curious and so am knowledgeable in a <span class="important">wide variety of fields</span>, stretching from film to rhetoric and from sports to computer science. Currently, I'm also studying Japanese and Spanish.</p>
-              <p lang="de">Ich bin von Natur aus wissbegierig und kenne mich daher in einem <span class="important">breiten Spektrum an Bereichen</span> aus: Von Film bis Rhetorik und von Sport bis Informatik, und vielen anderen dazu.</p>
+              
+                <p>Ich bin in München, halb als <span class="important">Amerikaner</span> und halb <span class="important">Deutsch</span>, aufgewachsen.
+</p>
+              
+                <p>Meinen B. A. in Kultur und Technologie, einem <span class="important">interdisziplinären, zweisprachig ausgelegtem Bachelor</span> mit Kursen in Philosophie, Geschichte und Linguistik, erhalte ich gerade. Das Übersetzungshandwerk habe ich bei meinem Vater - ebenfalls Übersetzer - gelernt, vor allem im Übersetzen von Werbetexten und CSR.
+</p>
+              
+                <p>Ich bin von Natur aus wissbegierig und kenne mich daher in einem <span class="important">breiten Spektrum an Bereichen</span> aus: Von Film bis Rhetorik und von Sport bis Informatik, und vielen anderen dazu.
+</p>
+              
             </div>
           </div>
         </div>
       </section>
       <section id="contact">
         <div class="text-section-container">
-          <h1><span lang="en">Inter&shy;ested? Anything else?</span><span lang="de">Neugierig geworden?</span></h1>
-          <h2><span lang="en">Got a <span class="important">project</span>? Trans&shy;lation, code, both combined - or something else? Just message me!</span>
-          <span lang="de">Gibt es etwas zu <span class="important">übersetzen</span>, zu <span class="important">coden</span>, beides <span class="important">zusammen</span>  - oder ganz was anderes? Schreib mir einfach eine <span class="important">Email</span>!</span></h2>
+          <h1>Neugierig geworden?</h1>
+          <h2>Gibt es etwas zu <span class="important">übersetzen</span>, zu <span class="important">coden</span>, beides <span class="important">zusammen</span>  - oder ganz was anderes? Schreib mir einfach eine <span class="important">Email</span>!</h2>
         </div>
         <div class="mockup-container app">
           <div class="mockup-border">
             <div class="mockup-header">
-              <div class="header-line"><div class="header-line-inner"><span class="name-desc"><span lang="en">From:</span><span lang="de">Von:</span></span><span class="insert-name"></span></div></div>
-              <div class="header-line"><div class="header-line-inner"><span class="name-desc"><span lang="en">To:</span><span lang="de">An:</span></span><span> me@&shy;samswartzberg&shy;.com</span></div></div>
+              <div class="header-line">
+                <div class="header-line-inner">
+                  <span class="name-desc">
+                    Von:
+                  </span>
+                  <span class="insert-name"></span>
+                </div>
+              </div>
+              <div class="header-line"><div class="header-line-inner"><span class="name-desc"><An:</span><span> me@&shy;samswartzberg&shy;.com</span></div></div>
               <div class="header-line subject">
-                
-                  <div lang="en">
-                    <div class="header-line-inner">
-                      <div class="name-desc">Subject:</div>
-                      <div class="language-selector-container subject-selector"><select class="mail-select" title="Mail subject selector.">
-                        
-                          <option value="defaultMail">General inquiry</option>
-                        
-                          <option value="translationArea">Area of expertise</option>
-                        
-                          <option value="translationRates">Trans&shy;lation rates</option>
-                        
-                          <option value="webdev">New website/app</option>
-                        
-                          <option value="webdevMaintenance">Website improve&shy;ment</option>
-                        
-                          <option value="confession">愛の告白</option>
-                        
-                      </select></div>
-                    </div>
+                <div>
+                  <div class="header-line-inner">
+                    <div class="name-desc"></div>
+                    <div class="language-selector-container subject-selector"><select class="mail-select" title="Emailbetreffauswahl.">
+                      
+                        <option value="defaultMail">All&shy;ge&shy;meine Anfrage</option>
+                      
+                        <option value="translationArea">Fach&shy;gebiete</option>
+                      
+                        <option value="translationRates">Preise für Über&shy;setzungen</option>
+                      
+                        <option value="webdev">Neue Website/App</option>
+                      
+                        <option value="webdevMaintenance">Website-Erneuer&shy;ung</option>
+                      
+                        <option value="confession">愛の告白</option>
+                      
+                    </select></div>
                   </div>
-                
-                  <div lang="de">
-                    <div class="header-line-inner">
-                      <div class="name-desc">Betreff:</div>
-                      <div class="language-selector-container subject-selector"><select class="mail-select" title="Emailbetreffauswahl.">
-                        
-                          <option value="defaultMail">All&shy;ge&shy;meine Anfrage</option>
-                        
-                          <option value="translationArea">Fach&shy;gebiete</option>
-                        
-                          <option value="translationRates">Preise für Über&shy;setzungen</option>
-                        
-                          <option value="webdev">Neue Website/App</option>
-                        
-                          <option value="webdevMaintenance">Website-Erneuer&shy;ung</option>
-                        
-                          <option value="confession">愛の告白</option>
-                        
-                      </select></div>
-                    </div>
-                  </div>
-                 
+                </div>
               </div>
             </div>
             <div class="message-body">
@@ -514,7 +932,12 @@ Several regulations have to be respected by suppliers, if applicable, amongst ot
           </div>
         </div>
       </section>
+      </div>
+      
     </div>
-    <script src="/assets/js/general.js"></script>
-  </body>
+   
+  <script src="/assets/js/index/mailto-data.js"></script>
+  <script src="/assets/js/index/mailto.js"></script>
+  <script src="/assets/js/general.js"></script>
+</body>
 </html>

@@ -1,0 +1,17 @@
+<article class="show-overflow">
+  <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> theme&#8203;Changer =
+  <span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="important">"theme-changer"</span>);
+  theme&#8203;Changer.<span class="important">onclick</span> =
+  <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e, i</span>)</span>{
+<span class="hljs-built_in">document</span>.query&#8203;Selector(<span class="hljs-string">"body"</span>).
+  classList.toggle(<span class="important">"dark-theme"</span>);
+}</code></pre>
+  <div class="clickme-bubble-container">
+    <code
+      class="hljs"><span class="hljs-comment"><span lang="en">//Change the theme</span><span lang="de">//Das Design wechseln</span></span></code>
+    <div class="theme-changer-outer">
+      <div class="theme-changer">{{page.data.svgs.theme-changer}}</div>
+      <div class="breathing-inverter-circle"></div>
+    </div>
+  </div>
+</article>
