@@ -872,7 +872,8 @@ html {
 /* Print styles */
 
 @media print {
-  #options-container {
+  #options-container,
+  #home {
     display: none;
   }
   #cv-container-inner {
