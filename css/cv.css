@@ -408,13 +408,25 @@ html {
 }
 
 #cv-container-inner[data-theme="modern"] header.cv-section {
-  background-image: linear-gradient(to bottom, #fff 0% 50%, #fef200 50% 100%);
   font-size: 3em;
   width: max-content;
+  margin-left: -0.5em;
+  margin-bottom: 1em;
+}
+
+#cv-container-inner[data-theme="modern"] header.cv-section > h1 {
+  background-image: linear-gradient(to bottom, #fff 0% 50%, #fef200 50% 100%);
   font-weight: 700;
   padding: 0 0.5em;
-  margin-left: -0.5em;
-  margin-bottom: 1.5em;
+}
+
+#cv-container-inner[data-theme="modern"] header.cv-section > .pronouns {
+  font-size: 0.5em;
+  font-weight: bold;
+  color: var(--very-transparent-grey);
+  padding: 0 1.05em;
+  display: block;
+  margin-top: 0.5em;
 }
 
 #cv-container-inner[data-theme="modern"] .cv-section#contact {
